@@ -1,5 +1,5 @@
-#ifndef GUARD_DISEASE
-#define GUARD_DISEASE
+#ifndef GUARD_DISEASE_H
+#define GUARD_DISEASE_H
 
 #include <iostream>
 
@@ -25,6 +25,6 @@ public:
 
 
 
-#endif // GUARD_DISEASE
+#endif // GUARD_DISEASE_H
 
 
