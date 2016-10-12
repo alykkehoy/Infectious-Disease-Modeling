@@ -16,9 +16,14 @@ This file is a test run file for our disease libraries
 #include "text_parse.h" //parse through simulation parameter text file
 
 int main(){
-  //load simulation files 
+  /*
+  load simulation files (we'll do that later and set in this method now)
+  */
   
-  //create game engine loop that calls the methods of the other files
+  //new disease
+  Disease::Disease Zika("Zika", 1, 1); 
+  
+  //create engine loop that calls the methods of the other files
   
     //print out visual representation of the program 
   
