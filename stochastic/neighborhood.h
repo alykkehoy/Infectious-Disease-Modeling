@@ -1,0 +1,4 @@
+#ifndef GUARD_PERSON_H
+#define GUARD_PERSON_H
+
+#endif //GUARD_PERSON_H

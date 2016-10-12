@@ -22,4 +22,4 @@ public:
 
 
 
-#endif // GUARD_DISEASE
+#endif // GUARD_DISEASE_H
