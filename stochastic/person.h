@@ -1,5 +1,5 @@
-#ifndef GUARD_DISEASE
-#define GUARD_DISEASE
+#ifndef GUARD_PERSON_H
+#define GUARD_PERSON_H
 
 #include <iostream>
 
