@@ -5,6 +5,7 @@
 
 class Disease
 {
+private:
     std::string name;
     double alpha;
     double beta;
@@ -16,13 +17,7 @@ public:
     double getAlpha();
     double getBeta();
 
-    std::string setName(std::string n);
-    double setAlpha(double a);
-    double setBeta(double b);
-
-
 };
-
 
 
 #endif // GUARD_DISEASE_H
