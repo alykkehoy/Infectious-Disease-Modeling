@@ -1,0 +1,4 @@
+#ifndef GUARD_TEXT_PARSE_H
+#define GUARD_TEXT_PARSE_H
+
+#endif //GUARD_TEXT_PARSE_H
