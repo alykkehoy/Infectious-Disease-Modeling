@@ -1,9 +1,6 @@
 #ifndef GUARD_MAP_H
 #define GUARD_MAP_H
 
-#include <iostream>
-#include "Person.cpp"
-
 class Map
 {
 private:
