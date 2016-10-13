@@ -22,4 +22,3 @@ public:
 
 #endif // GUARD_DISEASE_H
 
-

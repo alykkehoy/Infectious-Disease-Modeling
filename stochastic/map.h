@@ -1,20 +1,18 @@
 #ifndef GUARD_MAP_H
 #define GUARD_MAP_H
 
-#include <iostream>
-#include "Person.cpp"
-
 class Map
 {
-    int rows;
-    int cols;
-    Person grid[rows][cols];
+    unsigned int rows;
+    unsigned int cols;
+    Person world[rows][cols];
 
 public:
     Map(rows, cols);
-    
-    Person getGrid();
-    
+     
+    Person getPerson(unsigned int row,unsigned int col);
+    void setPerson(unsigned int row, unsigned int col);
+    void startWorld();
 };
 
 
