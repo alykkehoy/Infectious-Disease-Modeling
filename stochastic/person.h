@@ -2,16 +2,16 @@
 #define GUARD_PERSON_H
 
 class Person
-{
-    enum State {S,I,R};
-     
+{    
 public:
-    Person(enum s);
+	enum State { S, I, R };
+	Person();
+    Person(State s);
 
-    enum getState();
-
-    void setState(enum s);
-    
+	char getState();
+    void setState(State s);
+private:
+	State state;
 };
 
 

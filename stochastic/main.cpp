@@ -21,7 +21,7 @@ int main(){
   */
   
   //new disease
-  Disease::Disease Zika("Zika", 1, 1); 
+  Disease Zika("Zika", 1, 1); 
   
   //create engine loop that calls the methods of the other files
   
