@@ -2,29 +2,30 @@
 #include <string.h>
 #include "person.h"
 
-Person::Person(State s) {
+Person::Person(char s) {
 	state = s;
+	infectionTime = 0;
 }
 
 Person::Person() {
-	Person(S);
+	Person('S');
 }
 
+void Person::set_infection_time(int time) {
+	infectionTime = time;
+}
+
+int Person::get_infection_time() {
+	return infectionTime;
+}
 
 char Person::getState(){
-	switch(state) {
-		case S:
-			return 'S';
-		case I:
-			return 'I';
-		case R:
-			return 'R';
-		default:
-			return '\0';
-	}
+	return state;
 }
 
-void Person::setState(State s) {
+void Person::setState(char s) {
 	state = s;
 	return;
 }
+
+

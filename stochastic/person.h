@@ -1,19 +1,14 @@
-#ifndef GUARD_PERSON_H
-#define GUARD_PERSON_H
-
+#pragma once
 class Person
 {    
 public:
-	enum State { S, I, R };
 	Person();
-    Person(State s);
-
+	void set_infection_time(int time);
+	int get_infection_time();
+    Person(char s);
 	char getState();
-    void setState(State s);
+    void setState(char s);
 private:
-	State state;
+	char state;
+	int infectionTime;
 };
-
-
-
-#endif // GUARD_DISEASE_H

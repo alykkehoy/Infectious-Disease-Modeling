@@ -57,5 +57,6 @@
     <None Include="..\..\stochastic\makefile">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

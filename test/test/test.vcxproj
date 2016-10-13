@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{FE6B3B8B-8635-4C07-9804-8A3D10E1E639}</ProjectGuid>
+    <ProjectGuid>{76B90461-B50E-4C20-9F4F-328DBB7F1BB9}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>ConsoleApplication1</RootNamespace>
+    <RootNamespace>test</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -146,25 +146,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="..\..\stochastic\_sim1.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\stochastic\disease.cpp" />
-    <ClCompile Include="..\..\stochastic\main.cpp" />
-    <ClCompile Include="..\..\stochastic\map.cpp" />
-    <ClCompile Include="..\..\stochastic\neighborhood.cpp" />
-    <ClCompile Include="..\..\stochastic\person.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\stochastic\disease.h" />
-    <ClInclude Include="..\..\stochastic\map.h" />
-    <ClInclude Include="..\..\stochastic\neighborhood.h" />
-    <ClInclude Include="..\..\stochastic\person.h" />
-    <ClInclude Include="..\..\stochastic\text_parse.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\stochastic\makefile" />
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

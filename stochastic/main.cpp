@@ -21,7 +21,10 @@ int main(){
   */
   
   //new disease
-  Disease Zika("Zika", 1, 1); 
+  //Disease Zika("Zika", 1, 1); 
+
+  Map map(10, 10);
+  map.print_map();
   
   //create engine loop that calls the methods of the other files
   
