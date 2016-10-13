@@ -5,13 +5,12 @@ class Person
 {
     enum State {S,I,R};
      
-
 public:
     Person(enum s);
 
     enum getState();
 
-    enum::setState(enum s);
+    void setState(enum s);
     
 };
 
