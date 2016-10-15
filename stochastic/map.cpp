@@ -30,8 +30,3 @@ void Map::print_map() {
 	return;
 }
 
-
-//TO DO
-void Map::take_step() {
-
-}
