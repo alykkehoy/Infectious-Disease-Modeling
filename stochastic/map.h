@@ -10,10 +10,10 @@ private:
 
 public:
     //Map(rows, cols);
-	void set_all_person_states(enum s);
-	void print_map();
+    void setEveryoneHealthy();
+    void print_map();
     Person getGrid();
-	void take_step();
+    bool isEnd(); //is it the end of the simulation?
 };
 
 

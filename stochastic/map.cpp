@@ -6,7 +6,7 @@
 #include "disease.h"
 
 Map::Map(unsigned int width, unsigned int height) {
-	srand(time(NULL));
+  srand(time(NULL));
   Person map[width][height];
   set_all_person_states(S);
 }
@@ -16,10 +16,10 @@ Person Map::getGrid() {
 	return map;
 }
 
-void Map::set_all_person_states(enum s) {
+void Map::setEveryoneHealthy() {
 	for (int i = 0; i < width; i++) {
 		for (int j = 0; j < height; j++) {
-			map[i][j].setState(s);
+			map[i][j].setState('S');
 		}
 	}
 	return;
@@ -30,3 +30,6 @@ void Map::print_map() {
 	return;
 }
 
+bool Map::isEnd() {
+  //calculate when we want to end the simulation automatically
+}

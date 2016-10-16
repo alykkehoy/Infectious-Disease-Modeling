@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include <iostream>
 #include <string.h>
 #include "person.h"

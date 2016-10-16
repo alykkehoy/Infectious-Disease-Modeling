@@ -22,9 +22,16 @@ int main(){
   
   //new disease
   Disease::Disease Zika("Zika", 1, 1); 
+  //new map
+  Map::Map World(10,10);
+  //select who is sick
   
   //create engine loop that calls the methods of the other files
-  
+  while(!Map::isEnd()){
+    //simulation functions 
+     
+      
+  } 
     //print out visual representation of the program 
   
   return 0;
