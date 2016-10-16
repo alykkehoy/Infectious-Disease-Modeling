@@ -4,14 +4,13 @@
 class Map
 {
 private:
-    int rows;
-    int cols;
-    Person grid[rows][cols];
+    Person grid[int rows][int cols];
 
 public:
-    //Map(rows, cols);
+    //Map(rows, cols) called grid because of potential name conflict
+    //with std::map
     void setEveryoneHealthy();
-    void print_map();
+    void printGrid();
     Person getGrid();
     bool isEnd(); //is it the end of the simulation?
 };
