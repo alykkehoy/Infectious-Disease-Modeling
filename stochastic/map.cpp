@@ -56,30 +56,30 @@ void Map::set_person_infection_time(int i, int j, int time) {
 }
 
 //TO DO
-Map Map::take_step(Disease& disease, Map currentMap) {
-	Map nextMap = currentMap;
-	for (int i = 0; i < rows; i++) {
-		for (int j = 0; j < cols; j++) {
-			if (population[i][j].getState() == 'S') {
-				for (int k = 0; k < number_of_adjacent_inffected(i, j, 1); k++) {
-					if (rand() % 100 <= disease.getBeta()) {
-						nextMap.set_person_state(i, j, 'I');
-						nextMap.set_person_infection_time(i, j, disease.getAlpha());
-					}
-				}
-			}
-			if (population[i][j].getState() == 'I') {
-				if (population[i][j].getState() == 0) {
-					nextMap.set_person_state(i, j, 'R');
-				}
-				else {
-					nextMap.set_person_infection_time(i, j, population[i][j].getState() - 1);
-				}
-			}
-		}
-	}
-	return nextMap;
-}
+//Map Map::take_step(Disease& disease, Map currentMap) {
+//	Map nextMap = currentMap;
+//	for (int i = 0; i < rows; i++) {
+//		for (int j = 0; j < cols; j++) {
+//			if (population[i][j].getState() == 'S') {
+//				for (int k = 0; k < number_of_adjacent_inffected(i, j, 1); k++) {
+//					if (rand() % 100 <= disease.getBeta()) {
+//						nextMap.set_person_state(i, j, 'I');
+//						nextMap.set_person_infection_time(i, j, disease.getAlpha());
+//					}
+//				}
+//			}
+//			if (population[i][j].getState() == 'I') {
+//				if (population[i][j].get_infection_time() == 0) {
+//					nextMap.set_person_state(i, j, 'R');
+//				}
+//				else {
+//					nextMap.set_person_infection_time(i, j, population[i][j].getState() - 1);
+//				}
+//			}
+//		}
+//	}
+//	return nextMap;
+//}
 
 //This is needed fixed for ranges greater than 1
 int Map::number_of_adjacent_inffected(int x, int y, int range) {
