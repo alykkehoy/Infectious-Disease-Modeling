@@ -2,14 +2,30 @@
 #include <string.h>
 #include "person.h"
 
-Person::Person(enum s) {
-	State = s;
+
+Person::Person(char s) {
+	state = s;
+	infectionTime = 0;
 }
 
-enum Person::getState() {
-	return State;
+Person::Person() {
+	Person('S');
 }
-void Person::setState(enum s) {
-	State = s;
+
+void Person::set_infection_time(int time) {
+	infectionTime = time;
+}
+
+int Person::get_infection_time() {
+	return infectionTime;
+}
+
+char Person::getState(){
+	return state;
+}
+
+void Person::setState(char s) {
+	state = s;
 	return;
 }
+
