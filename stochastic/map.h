@@ -7,22 +7,18 @@ class Person;
 class Map
 {
 public:
-	//Map(rows, cols) called grid because of potential name conflict
-	//with std::map
 	void setEveryoneHealthy();
-	void printGrid();
-	Person getGrid();
-	bool isEnd(); //is it the end of the simulation?
 	Map(int width, int height);
 	~Map();
 	Person** getGrid();
 	void print_map();
 	void set_person_state(int i, int j, char state);
 	void set_person_infection_time(int i, int j, int time);
-	//Map take_step(Disease& disease, Map currentMap);
+	Map take_step(Disease& disease, Map currentMap);
 	int number_of_adjacent_inffected(int x, int y, int range);
-	Person** population;
+
 private:
+	Person** population;
 	int rows;
 	int cols;
 
