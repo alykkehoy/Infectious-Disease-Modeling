@@ -9,13 +9,15 @@ private:
     std::string name;
     double alpha;
     double beta;
+	int range;
 
 public:
-    Disease(std::string n, double a, double b);
-
+    Disease(std::string n, double a, double b, int r);
+	Disease(std::string n, double a, double b);
     std::string getName();
     double getAlpha();
     double getBeta();
+	int get_range();
 
 };
 

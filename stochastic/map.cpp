@@ -42,7 +42,7 @@ void Map::setEveryoneHealthy() {
 void Map::random_seed(Disease& disease) {
 	int rand_x = rand() % rows;
 	int rand_y = rand() % cols;
-	std::cout << rand_x << " " << rand_y << std::endl;
+	std::cout << "Random seed: " << rand_x << "," << rand_y << std::endl;
 	set_person_state(rand_x, rand_y, 'I');
 	set_person_infection_time(rand_x, rand_y, disease.getAlpha());
 }
@@ -100,7 +100,7 @@ Map Map::take_step(Disease& disease) {
 }
 
 void Map::take_step_s(int i, int j, Disease& disease, Map& nextMap) {
-	for (int k = 0; k < number_of_adjacent_inffected(i, j, 1); k++) {
+	for (int k = 0; k < number_of_adjacent_inffected(i, j, disease.get_range()); k++) {
 
 		//for testing
 		//std::cout << i << " " << j << " " << number_of_adjacent_inffected(i, j, 1) << std::endl;
