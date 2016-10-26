@@ -11,6 +11,7 @@ public:
 	Map(int width, int height);
 	~Map();
 	Person** getGrid();
+	void random_seed(Disease& disease);
 	void print_map();
 	void print_test_map();
 	void set_person_state(int i, int j, char state);

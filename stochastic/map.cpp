@@ -39,6 +39,14 @@ void Map::setEveryoneHealthy() {
 	return;
 }
 
+void Map::random_seed(Disease& disease) {
+	int rand_x = rand() % rows;
+	int rand_y = rand() % cols;
+	std::cout << rand_x << " " << rand_y << std::endl;
+	set_person_state(rand_x, rand_y, 'I');
+	set_person_infection_time(rand_x, rand_y, disease.getAlpha());
+}
+
 void Map::print_map() {
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
