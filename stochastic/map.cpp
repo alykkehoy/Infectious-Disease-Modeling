@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
+#include <string>
 #include "person.h" 
 #include "map.h"
 #include "disease.h"
@@ -11,7 +12,6 @@ Map::Map(int width, int height) {
 	cols = width;
 
 	srand(time(NULL));
-	//Person** population;
 	population = new Person*[rows];
 	for (int i = 0; i < rows; i++) {
 		population[i] = new Person[cols];
@@ -42,7 +42,7 @@ void Map::setEveryoneHealthy() {
 void Map::random_seed(Disease& disease) {
 	int rand_x = rand() % rows;
 	int rand_y = rand() % cols;
-	std::cout << "Random seed: " << rand_x << "," << rand_y << std::endl;
+	std::cout << "Random seed for disease " << disease.getName() << ": " << rand_x << "," << rand_y << std::endl;
 	set_person_state(rand_x, rand_y, 'I');
 	set_person_infection_time(rand_x, rand_y, disease.getAlpha());
 }
@@ -85,11 +85,9 @@ Map Map::take_step(Disease& disease) {
 		for (int j = 0; j < cols; j++) {
 			if (population[i][j].getState() == 'S') {
 				take_step_s(i, j, disease, nextMap);
-
 			}
 			else if (population[i][j].getState() == 'I') {
 				take_step_i(i, j, nextMap);
-
 			}
 			else if (population[i][j].getState() == 'R') {
 				take_step_r(i, j, nextMap);
@@ -101,9 +99,6 @@ Map Map::take_step(Disease& disease) {
 
 void Map::take_step_s(int i, int j, Disease& disease, Map& nextMap) {
 	for (int k = 0; k < number_of_adjacent_inffected(i, j, disease.get_range()); k++) {
-
-		//for testing
-		//std::cout << i << " " << j << " " << number_of_adjacent_inffected(i, j, 1) << std::endl;
 		if (rand() % 100 <= disease.getBeta()) {
 			nextMap.set_person_state(i, j, 'I');
 			nextMap.set_person_infection_time(i, j, disease.getAlpha());
