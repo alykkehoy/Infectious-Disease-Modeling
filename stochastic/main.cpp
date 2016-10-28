@@ -14,23 +14,26 @@ This file is a test run file for our disease libraries
 #include "map.h"
 #include "disease.h"
 #include "text_parse.h" //parse through simulation parameter text file
+#include "Analytics.h"
 
 using namespace std;
 
 int main(){
-  int time = 50;
-  Map map(100, 30);
+  //int time = 50;
+  Analytics a;
+  a.print_analytics();
+  //Map map(100, 30);
   //test disease
-  Disease disease("test", 5, 30);
-  map.random_seed(disease);
+  //Disease disease("test", 5, 30);
+  //map.random_seed(disease);
   //map.random_seed(disease);
 
+
   
-  
-  for (int loops = 0; loops < time; loops++) {
-	  cout << "Time: " << loops << endl;
-	  map.print_map();
-	  map = map.take_step(disease);
-  }
+ // for (int loops = 0; loops < time; loops++) {
+	  //cout << "Time: " << loops << endl;
+	 // map.print_map();
+	 // map = map.take_step(disease);
+  //}
   return 0;
 }
