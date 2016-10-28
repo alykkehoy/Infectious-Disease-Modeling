@@ -154,6 +154,7 @@
     <ClCompile Include="..\..\stochastic\map.cpp" />
     <ClCompile Include="..\..\stochastic\neighborhood.cpp" />
     <ClCompile Include="..\..\stochastic\person.cpp" />
+    <ClCompile Include="Analytics.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\stochastic\disease.h" />
@@ -161,6 +162,7 @@
     <ClInclude Include="..\..\stochastic\neighborhood.h" />
     <ClInclude Include="..\..\stochastic\person.h" />
     <ClInclude Include="..\..\stochastic\text_parse.h" />
+    <ClInclude Include="Analytics.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\stochastic\makefile" />
