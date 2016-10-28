@@ -19,21 +19,20 @@ This file is a test run file for our disease libraries
 using namespace std;
 
 int main(){
-  //int time = 50;
+  int time = 50;
   Analytics a;
-  a.print_analytics();
-  //Map map(100, 30);
+  Map map(100, 30);
   //test disease
-  //Disease disease("test", 5, 30);
-  //map.random_seed(disease);
+  Disease disease("test", 5, 30);
+  map.random_seed(disease);
   //map.random_seed(disease);
 
 
   
- // for (int loops = 0; loops < time; loops++) {
-	  //cout << "Time: " << loops << endl;
-	 // map.print_map();
-	 // map = map.take_step(disease);
-  //}
+  for (int loops = 0; loops < time; loops++) {
+	  map = map.take_step(disease, a);
+  }
+  map.print_map();
+  a.print_analytics();
   return 0;
 }

@@ -2,6 +2,7 @@
 #define GUARD_MAP_H
 #include "person.h"
 #include "disease.h"
+#include "Analytics.h"
 
 class Person;
 class Map
@@ -18,9 +19,10 @@ public:
 	void set_person_infection_time(int i, int j, int time);
 
 	Map take_step(Disease& disease);
-	void take_step_s(int i, int j, Disease& disease, Map& nextMap);
-	void take_step_i(int i, int j, Map& nextMap);
-	void take_step_r(int i, int j, Map& nextMap);
+	Map take_step(Disease& disease, Analytics& a);
+	int take_step_s(int i, int j, Disease& disease, Map& nextMap);
+	int take_step_i(int i, int j, Map& nextMap);
+	int take_step_r(int i, int j, Map& nextMap);
 
 
 	int number_of_adjacent_inffected(int x, int y, int range);
