@@ -21,7 +21,7 @@ int main(){
   int time = 50;
   Map map(100, 30);
   //test disease
-  Disease disease("test", 5, 50);
+  Disease disease("test", 5, 30);
   map.random_seed(disease);
   //map.random_seed(disease);
 
