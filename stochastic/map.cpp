@@ -90,19 +90,20 @@ Map Map::take_step(Disease& disease, Analytics& a) {
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
 			if (population[i][j].getState() == 'S') {
-				delta_i += take_step_s(i, j, disease, nextMap);
+				delta_s -= take_step_s(i, j, disease, nextMap);
 			}
 			else if (population[i][j].getState() == 'I') {
-				delta_r += take_step_i(i, j, nextMap);
+				delta_i -= take_step_i(i, j, nextMap);
 			}
 			else if (population[i][j].getState() == 'R') {
 				take_step_r(i, j, nextMap);
 			}
 		}
 	}
+
 	a.add_to_delta_s(delta_s);
-	a.add_to_delta_i(delta_i);
-	a.add_to_delta_r(delta_r);
+	a.add_to_delta_i(delta_i + (-1) * delta_s);
+	a.add_to_delta_r(-1 * delta_i);
 	return nextMap;
 }
 
