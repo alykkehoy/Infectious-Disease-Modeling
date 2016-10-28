@@ -24,15 +24,15 @@ std::vector<int> Analytics::get_delta_r() {
 	return delta_r;
 }
 
-int Analytics::get_detla_i_val(int i) {
+int Analytics::get_delta_i_val(int i) {
 	return delta_i[i];
 }
 
-int Analytics::get_detla_s_val(int i) {
+int Analytics::get_delta_s_val(int i) {
 	return delta_s[i];
 }
 
-int Analytics::get_detla_r_val(int i) {
+int Analytics::get_delta_r_val(int i) {
 	return delta_r[i];
 }
 
