@@ -16,6 +16,7 @@ This file is a test run file for our disease libraries
 #include "text_parse.h" //parse through simulation parameter text file
 #include "analytics.h"
 #include "SIR.h"
+#include "SIRS.h"
 
 using namespace std;
 
@@ -31,13 +32,15 @@ int main(){
   map.random_seed(disease);
   a.set_num_seeds(1);
   //map.random_seed(disease);
-  SIR sir;
+  //SIR sir;
+  SIRS sirs;
 
   
   for (int loops = 0; loops < time; loops++) {
 	  std::cout << "Time: " << loops << std::endl;
 	  map.print_map();
-	  map = sir.take_step(disease, a, map);
+	  //map = sir.take_step(disease, a, map);
+	  map = sirs.take_step(disease, a, map);
   }
   std::cout << "Final: " << std::endl;
   map.print_map();

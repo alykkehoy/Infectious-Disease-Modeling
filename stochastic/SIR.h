@@ -1,4 +1,3 @@
-
 #pragma once
 #include "person.h"
 #include "disease.h"
