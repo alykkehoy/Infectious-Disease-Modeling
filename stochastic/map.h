@@ -18,11 +18,11 @@ public:
 	void set_person_state(int i, int j, char state);
 	void set_person_infection_time(int i, int j, int time);
 
-	Map take_step(Disease& disease);
-	Map take_step(Disease& disease, analytics& a);
-	int take_step_s(int i, int j, Disease& disease, Map& nextMap);
-	int take_step_i(int i, int j, Map& nextMap);
-	int take_step_r(int i, int j, Map& nextMap);
+	//Map take_step(Disease& disease);
+	//Map take_step(Disease& disease, analytics& a);
+	//int take_step_s(int i, int j, Disease& disease, Map& nextMap);
+	//int take_step_i(int i, int j, Map& nextMap);
+	//int take_step_r(int i, int j, Map& nextMap);
 
 
 	int number_of_adjacent_inffected(int x, int y, int range);
