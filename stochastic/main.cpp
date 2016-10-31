@@ -14,7 +14,7 @@ This file is a test run file for our disease libraries
 #include "map.h"
 #include "disease.h"
 #include "text_parse.h" //parse through simulation parameter text file
-#include "Analytics.h"
+#include "analytics.h"
 
 using namespace std;
 

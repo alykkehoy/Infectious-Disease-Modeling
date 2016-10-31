@@ -2,7 +2,7 @@
 #define GUARD_MAP_H
 #include "person.h"
 #include "disease.h"
-#include "Analytics.h"
+#include "analytics.h"
 
 class Person;
 class Map
