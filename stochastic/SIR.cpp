@@ -8,6 +8,7 @@ SIR::SIR() {
 SIR::~SIR() {
 
 }
+
 Map SIR::take_step(Disease& disease) {
 	analytics a;
 	return take_step(disease, a);
@@ -61,7 +62,7 @@ int SIR::take_step_i(int i, int j, Map& nextMap) {
 	}
 }
 
-int Map::take_step_r(int i, int j, Map& nextMap) {
+int SIR::take_step_r(int i, int j, Map& nextMap) {
 	nextMap.set_person_state(i, j, 'R');
 	return 0;
 }
