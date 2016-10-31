@@ -10,7 +10,12 @@ Disease::Disease(std::string n, double a, double b, double m_r, int r){
 }
 
 Disease::Disease(std::string n, double a, double b, double m_r) {
-	Disease(n, a, b, m_r, 1);
+	//Disease(n, a, b, m_r, 1);
+	range = 1;
+	name = n;
+	alpha = a; //average infectious period (aka 1/alpha)
+	beta = b; //contact rate
+	mortality_rate = m_r;
 }
 
 

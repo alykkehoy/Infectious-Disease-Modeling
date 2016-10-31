@@ -89,10 +89,14 @@ void Map::set_person_infection_time(int i, int j, int time) {
 	population[i][j].set_infection_time(time);
 }
 
+int Map::get_person_infection_time(int i, int j) {
+	return population[i][j].get_infection_time();
+}
 
 //This is needed fixed for ranges greater than 1
 int Map::number_of_adjacent_inffected(int x, int y, int range) {
 	int numInfected = 0;
+
 	for (int i = 1; i <= range; i++) {
 		if (x - i >= 0 && population[x - i][y].getState() == 'I') {
 			numInfected++;

@@ -31,13 +31,13 @@ int main(){
   map.random_seed(disease);
   a.set_num_seeds(1);
   //map.random_seed(disease);
-
+  SIR sir;
 
   
   for (int loops = 0; loops < time; loops++) {
 	  std::cout << "Time: " << loops << std::endl;
 	  map.print_map();
-	  map = map.take_step(disease, a);
+	  map = sir.take_step(disease, a, map);
   }
   std::cout << "Final: " << std::endl;
   map.print_map();
