@@ -19,8 +19,8 @@ This file is a test run file for our disease libraries
 using namespace std;
 
 int main(){
-	int pop_width = 100;
-	int pop_height = 30;
+  int pop_width = 100;
+  int pop_height = 30;
   int time = 50;
   analytics a;
   a.set_pop_size(pop_width  * pop_height);
