@@ -22,7 +22,7 @@ int main(){
 	int pop_width = 100;
 	int pop_height = 30;
   int time = 50;
-  Analytics a;
+  analytics a;
   a.set_pop_size(pop_width  * pop_height);
   Map map(pop_width, pop_height);
   //test disease

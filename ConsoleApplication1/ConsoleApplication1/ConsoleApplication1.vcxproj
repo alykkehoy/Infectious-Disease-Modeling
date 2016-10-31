@@ -149,7 +149,7 @@
     <Text Include="..\..\stochastic\_sim1.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\stochastic\Analytics.cpp" />
+    <ClCompile Include="..\..\stochastic\analytics.cpp" />
     <ClCompile Include="..\..\stochastic\disease.cpp" />
     <ClCompile Include="..\..\stochastic\main.cpp" />
     <ClCompile Include="..\..\stochastic\map.cpp" />
@@ -157,7 +157,7 @@
     <ClCompile Include="..\..\stochastic\person.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\stochastic\Analytics.h" />
+    <ClInclude Include="..\..\stochastic\analytics.h" />
     <ClInclude Include="..\..\stochastic\disease.h" />
     <ClInclude Include="..\..\stochastic\map.h" />
     <ClInclude Include="..\..\stochastic\neighborhood.h" />

@@ -78,11 +78,11 @@ void Map::set_person_infection_time(int i, int j, int time) {
 }
 
 Map Map::take_step(Disease& disease) {
-	Analytics a;
+	analytics a;
 	return take_step(disease, a);
 }
 
-Map Map::take_step(Disease& disease, Analytics& a) {
+Map Map::take_step(Disease& disease, analytics& a) {
 	Map nextMap(cols, rows);
 	int delta_s = 0;
 	int delta_i = 0;

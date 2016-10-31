@@ -5,12 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.vcxproj", "{FE6B3B8B-8635-4C07-9804-8A3D10E1E639}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BBC3748B-12D4-4368-808F-A9045E589EA4}"
-	ProjectSection(SolutionItems) = preProject
-		..\stochastic\Analytics.cpp = ..\stochastic\Analytics.cpp
-		..\stochastic\Analytics.h = ..\stochastic\Analytics.h
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64

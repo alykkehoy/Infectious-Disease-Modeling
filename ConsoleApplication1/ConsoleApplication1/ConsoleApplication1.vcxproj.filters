@@ -35,7 +35,7 @@
     <ClCompile Include="..\..\stochastic\person.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\stochastic\Analytics.cpp">
+    <ClCompile Include="..\..\stochastic\analytics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -55,7 +55,7 @@
     <ClInclude Include="..\..\stochastic\text_parse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\stochastic\Analytics.h">
+    <ClInclude Include="..\..\stochastic\analytics.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

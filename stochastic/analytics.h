@@ -1,10 +1,10 @@
 #pragma once
 #include <vector>
-class Analytics
+class analytics
 {
 public:
-	Analytics();
-	~Analytics();
+	analytics();
+	~analytics();
 	int get_pop_size();
 	void set_pop_size(int i);
 	int get_num_seeds();
