@@ -69,6 +69,18 @@ void Map::print_test_map() {
 	return;
 }
 
+char Map::get_person_state(int i, int j) {
+	return population[i][j].getState();
+}
+
+int Map::get_rows() {
+	return rows;
+}
+
+int Map::get_cols() {
+	return cols;
+}
+
 void Map::set_person_state(int i, int j, char state) {
 	population[i][j].setState(state);
 }

@@ -16,16 +16,11 @@ public:
 	void random_seed(Disease& disease);
 	void print_map();
 	void print_test_map();
+	int get_rows();
+	int get_cols();
 	void set_person_state(int i, int j, char state);
+	char get_person_state(int i, int j);
 	void set_person_infection_time(int i, int j, int time);
-
-	//Map take_step(Disease& disease);
-	//Map take_step(Disease& disease, analytics& a);
-	//int take_step_s(int i, int j, Disease& disease, Map& nextMap);
-	//int take_step_i(int i, int j, Map& nextMap);
-	//int take_step_r(int i, int j, Map& nextMap);
-
-
 	int number_of_adjacent_inffected(int x, int y, int range);
 
 private:
