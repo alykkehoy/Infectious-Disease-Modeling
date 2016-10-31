@@ -156,6 +156,7 @@
     <ClCompile Include="..\..\stochastic\neighborhood.cpp" />
     <ClCompile Include="..\..\stochastic\person.cpp" />
     <ClCompile Include="..\..\stochastic\SIR.cpp" />
+    <ClCompile Include="..\..\stochastic\SIRS.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\stochastic\analytics.h" />
@@ -164,6 +165,7 @@
     <ClInclude Include="..\..\stochastic\neighborhood.h" />
     <ClInclude Include="..\..\stochastic\person.h" />
     <ClInclude Include="..\..\stochastic\SIR.h" />
+    <ClInclude Include="..\..\stochastic\SIRS.h" />
     <ClInclude Include="..\..\stochastic\text_parse.h" />
   </ItemGroup>
   <ItemGroup>

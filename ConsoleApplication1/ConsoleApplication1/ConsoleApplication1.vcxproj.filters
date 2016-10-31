@@ -41,6 +41,9 @@
     <ClCompile Include="..\..\stochastic\SIR.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\stochastic\SIRS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\stochastic\disease.h">
@@ -62,6 +65,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\stochastic\SIR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\stochastic\SIRS.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

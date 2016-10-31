@@ -5,20 +5,21 @@
 
 class Disease
 {
-private:
-    std::string name;
-    double alpha;
-    double beta;
-	int range;
-
 public:
-    Disease(std::string n, double a, double b, int r);
-	Disease(std::string n, double a, double b);
+    Disease(std::string n, double a, double b, double m_r, int r);
+	Disease(std::string n, double a, double b, double m_r);
     std::string getName();
     double getAlpha();
     double getBeta();
+	double get_mortality_rate();
 	int get_range();
 
+private:
+	std::string name;
+	double alpha;
+	double beta;
+	double mortality_rate;
+	int range;
 };
 
 

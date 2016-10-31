@@ -27,7 +27,7 @@ int main(){
   a.set_pop_size(pop_width  * pop_height);
   Map map(pop_width, pop_height);
   //test disease
-  Disease disease("test", 5, 30);
+  Disease disease("test", 5, 30, 30);
   map.random_seed(disease);
   a.set_num_seeds(1);
   //map.random_seed(disease);
