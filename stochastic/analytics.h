@@ -20,6 +20,7 @@ public:
 	void add_to_delta_r(int i);
 	void print_delta_analytics();
 	void print_num_analytics();
+	void print_avg();
 	void create_num_s();
 	void create_num_i();
 	void create_num_r();

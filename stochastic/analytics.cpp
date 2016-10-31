@@ -73,6 +73,43 @@ void analytics::print_num_analytics() {
 	}
 }
 
+void analytics::print_avg() {
+	int sum_num_s = 0;
+	int sum_num_i = 0;
+	int sum_num_r = 0;
+
+	int sum_delta_s = 0;
+	int sum_delta_i = 0;
+	int sum_delta_r = 0;
+
+	if (num_i.size() == 0) {
+		create_num_s();
+		create_num_i();
+		create_num_r();
+	}
+	for (int i = 0; i < num_i.size(); i++) {
+		sum_num_s += num_s[i];
+		sum_num_i += num_i[i];
+		sum_num_r += num_r[i];
+	}
+
+	for (int i = 0; i < delta_i.size(); i++) {
+		sum_delta_s += delta_s[i];
+		sum_delta_i += delta_i[i];
+		sum_delta_r += delta_r[i];
+	}
+
+	std::cout << "Avg num s = " << sum_num_s / num_s.size() << std::endl;
+	std::cout << "Avg num i = " << sum_num_i / num_i.size() << std::endl;
+	std::cout << "Avg num r = " << sum_num_r / num_r.size() << std::endl;
+
+	std::cout << "Avg delta s = " << sum_delta_s / (int)delta_s.size() << std::endl;
+	std::cout << "Avg delta i = " << sum_delta_i / (int)delta_i.size() << std::endl;
+	std::cout << "Avg delta r = " << sum_delta_r / (int)delta_r.size() << std::endl;
+
+}
+
+
 void analytics::create_num_s() {
 	num_s.push_back(pop_size - num_seeds);
 	for (int i = 0; i < delta_s.size(); i++) {

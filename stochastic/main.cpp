@@ -42,6 +42,6 @@ int main(){
   map.print_map();
   a.print_delta_analytics();
   a.print_num_analytics();
-  //a.create_num_s();
+  a.print_avg();
   return 0;
 }
