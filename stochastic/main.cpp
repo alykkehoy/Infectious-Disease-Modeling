@@ -15,6 +15,7 @@ This file is a test run file for our disease libraries
 #include "disease.h"
 #include "text_parse.h" //parse through simulation parameter text file
 #include "analytics.h"
+#include "SIR.h"
 
 using namespace std;
 

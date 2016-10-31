@@ -1,5 +1,5 @@
-#ifndef GUARD_MAP_H
-#define GUARD_MAP_H
+
+#pragma once
 #include "person.h"
 #include "disease.h"
 #include "analytics.h"
@@ -14,5 +14,6 @@ public:
 	int take_step_s(int i, int j, Disease& disease, Map& nextMap);
 	int take_step_i(int i, int j, Map& nextMap);
 	int take_step_r(int i, int j, Map& nextMap);
+private:
+
 };
-#endif
