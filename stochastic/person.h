@@ -11,9 +11,12 @@ public:
     Person(char s);
 	char getState();
     void setState(char s);
+	int get_num_infected();
+	void increment_num_infected();
 private:
 	char state;
 	int infectionTime;
+	int num_infected;
 };
 
 #endif

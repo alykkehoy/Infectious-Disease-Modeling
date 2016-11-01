@@ -6,6 +6,7 @@
 Person::Person(char s) {
 	state = s;
 	infectionTime = 0;
+	num_infected = 0;
 }
 
 Person::Person() {
@@ -27,5 +28,13 @@ char Person::getState(){
 void Person::setState(char s) {
 	state = s;
 	return;
+}
+
+
+int Person::get_num_infected() {
+	return num_infected;
+}
+void Person::increment_num_infected() {
+	num_infected++;
 }
 
