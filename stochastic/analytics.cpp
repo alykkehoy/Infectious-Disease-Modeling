@@ -99,13 +99,13 @@ void analytics::print_avg() {
 		sum_delta_r += delta_r[i];
 	}
 
-	std::cout << "Avg num s = " << sum_num_s / num_s.size() << std::endl;
-	std::cout << "Avg num i = " << sum_num_i / num_i.size() << std::endl;
-	std::cout << "Avg num r = " << sum_num_r / num_r.size() << std::endl;
+	std::cout << "Avg num s = " << (double)sum_num_s / num_s.size() << std::endl;
+	std::cout << "Avg num i = " << (double)sum_num_i / num_i.size() << std::endl;
+	std::cout << "Avg num r = " << (double)sum_num_r / num_r.size() << std::endl;
 
-	std::cout << "Avg delta s = " << sum_delta_s / (int)delta_s.size() << std::endl;
-	std::cout << "Avg delta i = " << sum_delta_i / (int)delta_i.size() << std::endl;
-	std::cout << "Avg delta r = " << sum_delta_r / (int)delta_r.size() << std::endl;
+	std::cout << "Avg delta s = " << (double)sum_delta_s / (double)delta_s.size() << std::endl;
+	std::cout << "Avg delta i = " << (double)sum_delta_i / (double)delta_i.size() << std::endl;
+	std::cout << "Avg delta r = " << (double)sum_delta_r / (double)delta_r.size() << std::endl;
 
 }
 
