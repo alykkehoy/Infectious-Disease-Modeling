@@ -59,6 +59,7 @@ void Map::print_map() {
 }
 
 void Map::print_num_infected_map() {
+	std::cout << "Number of people infected by a person:" << std::endl;
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
 			std::cout << population[i][j].get_num_infected();
@@ -105,6 +106,17 @@ int Map::get_person_infection_time(int i, int j) {
 	return population[i][j].get_infection_time();
 }
 
+void Map::increment_num_infected(int i, int j, int num) {
+	population[i][j].increment_num_infected(num);
+}
+
 void Map::increment_num_infected(int i, int j) {
-	population[i][j].increment_num_infected();
+	increment_num_infected(i, j, 1);
+}
+
+void Map::set_num_infected(int i, int j, int num) {
+	population[i][j].set_num_infected(num);
+}
+int Map::get_num_infected(int i, int j) {
+	return population[i][j].get_num_infected();
 }

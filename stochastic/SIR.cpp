@@ -31,7 +31,7 @@ Map SIR::take_step(Disease& disease, analytics& a, Map& current_map) {
 				delta_i -= take_step_i(i, j, nextMap, current_map);
 			}
 			else if (current_map.get_person_state(i, j) == 'R') {
-				take_step_r(i, j, nextMap);
+				take_step_r(i, j, nextMap, current_map);
 			}
 		}
 	}
@@ -52,7 +52,9 @@ int SIR::take_step_s(int y, int x, Disease& disease, Map& nextMap, Map& current_
 					if (!(y + k == y && x + l == x)) {
 						if (current_map.get_person_state(y + k, x + l) == 'I') {
 							if (rand() % 100 <= disease.getBeta()) {
+								nextMap.increment_num_infected(y + k, x + l);
 								nextMap.set_person_state(y, x, 'I');
+								nextMap.increment_num_infected(y, x, current_map.get_num_infected(y, x));
 								nextMap.set_person_infection_time(y, x, disease.getAlpha());
 								return 1;
 							}
@@ -69,16 +71,19 @@ int SIR::take_step_i(int i, int j, Map& nextMap, Map& current_map) {
 	int current_infection_time = current_map.get_person_infection_time(i, j);
 	if (current_infection_time == 0) {
 		nextMap.set_person_state(i, j, 'R');
+		nextMap.increment_num_infected(i, j, current_map.get_num_infected(i, j));
 		return 1;
 	}
 	else {
 		nextMap.set_person_state(i, j, 'I');
+		nextMap.increment_num_infected(i, j, current_map.get_num_infected(i, j));
 		nextMap.set_person_infection_time(i, j, current_infection_time - 1);
 		return 0;
 	}
 }
 
-int SIR::take_step_r(int i, int j, Map& nextMap) {
+int SIR::take_step_r(int i, int j, Map& nextMap, Map& current_map) {
 	nextMap.set_person_state(i, j, 'R');
+	nextMap.increment_num_infected(i, j, current_map.get_num_infected(i, j));
 	return 0;
 }

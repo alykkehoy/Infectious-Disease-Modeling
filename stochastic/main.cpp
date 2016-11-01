@@ -44,6 +44,7 @@ int main(){
   }
   std::cout << "Final: " << std::endl;
   map.print_map();
+  map.print_num_infected_map();
   a.print_delta_analytics();
   a.print_num_analytics();
   a.print_avg();

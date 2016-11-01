@@ -12,7 +12,8 @@ public:
 	char getState();
     void setState(char s);
 	int get_num_infected();
-	void increment_num_infected();
+	void increment_num_infected(int num);
+	void set_num_infected(int num);
 private:
 	char state;
 	int infectionTime;
