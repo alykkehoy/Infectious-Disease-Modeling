@@ -1,13 +1,15 @@
+
 #include <iostream>
 #include <vector>
+#include <math.h>
 #include <boost/numeric/odeint.hpp>
+#include <boost/numeric/odeint/stepper_rk4.hpp>
 
 using namespace std;
 using namespace boost::numeric::odeint;
 
-//[my_vector
 template< int MAX_N >
-class my_vector
+class SIR
 {
     typedef std::vector< double > vector;
 
@@ -15,14 +17,13 @@ public:
     typedef vector::iterator iterator;
     typedef vector::const_iterator const_iterator;
 
-public:
-    my_vector( const size_t N )
+    SIR( const size_t N )
         : m_v( N )
     { 
         m_v.reserve( MAX_N );
     }
 
-    my_vector()
+    SIR()
         : m_v()
     {
         m_v.reserve( MAX_N );
@@ -59,20 +60,20 @@ private:
 
 };
 
-namespace boost { namespace numeric { namespace odeint {
+/*namespace boost { namespace numeric { namespace odeint {
 
 template<size_t N>
-struct is_resizeable< my_vector<N> >
+struct is_resizeable < SIR<N> >
 {
     typedef boost::true_type type;
     static const bool value = type::value;
 };
 
-} } }
+} } }*/
 
-typedef my_vector<3> state_type;
+typedef SIR<double> state_Type;
 
-void diff( const state_type &x , state_type &dxdt , const double t )
+void diff( const state_Type &x , state_Type &dxdt , const double t )
 {
     const double beta = 12.0;
     const double alpha = 21.0;
@@ -81,11 +82,16 @@ void diff( const state_type &x , state_type &dxdt , const double t )
     dxdt[1] = beta*x[0]*x[1] - alpha* x[1];
     dxdt[2] = alpha*x[1];
 }
-
-int main()
+void write_diff( const state_Type &x , const double t )
 {
-    state_type x;
-	x[0] = 5.0 ; x[1] = 10.0 ;
+    cout << t << '\t' << x[0] << '\t' << x[1] << endl;
+}
 
-    integrate_const( runge_kutta4< state_type >() ,diff, x , 1.0 , 0.1 );
+int main(int argc, char** argv)
+{
+    state_Type x;
+	x[0] = 5.0 ; x[1] = 10.0 ;
+    stepper_rk4 < state_Type > srk4;
+   //integrate_const( srk4,diff, x , 1.0,10.0,0.1);
+   srk4.do_step(diff, x , 1.0,0.1);
 }
