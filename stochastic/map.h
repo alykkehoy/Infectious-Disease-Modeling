@@ -23,7 +23,6 @@ public:
 	char get_person_state(int i, int j);
 	int get_person_infection_time(int i, int j);
 	void set_person_infection_time(int i, int j, int time);
-	int number_of_adjacent_inffected(int x, int y, int range);
 	void increment_num_infected(int i, int j);
 
 private:

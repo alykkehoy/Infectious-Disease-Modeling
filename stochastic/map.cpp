@@ -108,37 +108,3 @@ int Map::get_person_infection_time(int i, int j) {
 void Map::increment_num_infected(int i, int j) {
 	population[i][j].increment_num_infected();
 }
-
-
-//This is needed fixed for ranges greater than 1
-int Map::number_of_adjacent_inffected(int x, int y, int range) {
-	int numInfected = 0;
-
-	for (int i = 1; i <= range; i++) {
-		if (x - i >= 0 && population[x - i][y].getState() == 'I') {
-			numInfected++;
-		}
-		if (x + i < rows && population[x + i][y].getState() == 'I') {
-			numInfected++;
-		}
-		if (y - i >= 0 && population[x][y - i].getState() == 'I') {
-			numInfected++;
-		}
-		if (y + i < cols && population[x][y + i].getState() == 'I') {
-			numInfected++;
-		}
-		if (y + i < cols && x + i < rows && population[x + i][y + i].getState() == 'I') {
-			numInfected++;
-		}
-		if (y + i < cols && x - i >= 0 && population[x - i][y + i].getState() == 'I') {
-			numInfected++;
-		}
-		if (y - i >= 0 && x - i >= 0 && population[x - i][y - i].getState() == 'I') {
-			numInfected++;
-		}
-		if (y - i >=0 && x + i < rows && population[x + i][y - i].getState() == 'I') {
-			numInfected++;
-		}
-	}
-	return numInfected;
-}

@@ -42,12 +42,24 @@ Map SIR::take_step(Disease& disease, analytics& a, Map& current_map) {
 	return nextMap;
 }
 
-int SIR::take_step_s(int i, int j, Disease& disease, Map& nextMap, Map& current_map) {
-	for (int k = 0; k < current_map.number_of_adjacent_inffected(i, j, disease.get_range()); k++) {
-		if (rand() % 100 <= disease.getBeta()) {
-			nextMap.set_person_state(i, j, 'I');
-			nextMap.set_person_infection_time(i, j, disease.getAlpha());
-			return 1;
+int SIR::take_step_s(int y, int x, Disease& disease, Map& nextMap, Map& current_map) {
+	int range = disease.get_range();
+
+	for (int k = -1 * range; k <= range; k++) {
+		if (y + k >= 0 && y + k < current_map.get_rows()) {
+			for (int l = -1 * range; l <= range; l++) {
+				if (x + l >= 0 && x + l < current_map.get_cols()) {
+					if (!(y + k == y && x + l == x)) {
+						if (current_map.get_person_state(y + k, x + l) == 'I') {
+							if (rand() % 100 <= disease.getBeta()) {
+								nextMap.set_person_state(y, x, 'I');
+								nextMap.set_person_infection_time(y, x, disease.getAlpha());
+								return 1;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 	return 0;
