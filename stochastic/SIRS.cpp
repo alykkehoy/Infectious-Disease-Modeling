@@ -1,5 +1,6 @@
 #include "SIRS.h"
 #include "map.h"
+#include "stdlib.h"
 
 SIRS::SIRS() {
 

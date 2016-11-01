@@ -1,7 +1,7 @@
 all: test
 
-test:  main.o analytics.o disease.o interaction.o map.o neighborhood.o person.o
-	g++ main.o analytics.o disease.o interaction.o map.o neighborhood.o person.o -o test1 
+test:  main.o analytics.o disease.o interaction.o SIR.o SIRS.o map.o neighborhood.o person.o
+	g++ main.o analytics.o disease.o interaction.o SIR.o SIRS.o map.o neighborhood.o person.o -o test1 
 
 main.o: main.cpp
 	g++ -c main.cpp
@@ -14,6 +14,12 @@ disease.o: disease.cpp disease.h
 
 interaction.o: interaction.cpp interaction.h
 	g++ -c interaction.cpp
+    
+SIR.o: SIR.cpp SIR.h
+	g++ -c SIR.cpp
+    
+SIRS.o: SIRS.cpp SIRS.h
+	g++ -c SIRS.cpp
 
 map.o: map.cpp map.h
 	g++ -c map.cpp
