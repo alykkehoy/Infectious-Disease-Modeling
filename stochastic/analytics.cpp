@@ -14,6 +14,13 @@ analytics::~analytics()
 {
 }
 
+void analytics::calc_analytics(Map& map) {
+	create_num_s();
+	create_num_i();
+	create_num_r();
+	create_avg_num_infected(map);
+}
+
 int analytics::get_pop_size() {
 	return pop_size;
 }
@@ -32,18 +39,6 @@ std::vector<int> analytics::get_delta_s() {
 std::vector<int> analytics::get_delta_r() {
 	return delta_r;
 }
-
-//int analytics::get_delta_i_val(int i) {
-//	return delta_i[i];
-//}
-//
-//int analytics::get_delta_s_val(int i) {
-//	return delta_s[i];
-//}
-//
-//int analytics::get_delta_r_val(int i) {
-//	return delta_r[i];
-//}
 
 void analytics::add_to_delta_i(int i) {
 	delta_i.push_back(i);
@@ -65,9 +60,7 @@ void analytics::print_delta_analytics() {
 }
 
 void analytics::print_num_analytics() {
-	create_num_s();
-	create_num_i();
-	create_num_r();
+
 	std::cout << "Time  |  Num_S  |  Num_I  |  Num_R" << std::endl;
 	std::cout << "----------------------------------" << std::endl;
 	for (int i = 0; i < delta_i.size(); i++) {
@@ -84,11 +77,6 @@ void analytics::print_avg() {
 	int sum_delta_i = 0;
 	int sum_delta_r = 0;
 
-	if (num_i.size() == 0) {
-		create_num_s();
-		create_num_i();
-		create_num_r();
-	}
 	for (int i = 0; i < num_i.size(); i++) {
 		sum_num_s += num_s[i];
 		sum_num_i += num_i[i];

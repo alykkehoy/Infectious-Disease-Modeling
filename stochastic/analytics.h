@@ -9,6 +9,7 @@ class analytics
 public:
 	analytics(std::string output_file, int population_size, int seeds);
 	~analytics();
+	void calc_analytics(Map& map);
 
 	void set_pop_size(int i);
 	void set_num_seeds(int i);
@@ -18,18 +19,10 @@ public:
 	std::vector<int> get_delta_i();
 	std::vector<int> get_delta_s();
 	std::vector<int> get_delta_r();
-	//int get_delta_i_val(int i);
-	//int get_delta_s_val(int i);
-	//int get_delta_r_val(int i);
 
 	void add_to_delta_i(int i);
 	void add_to_delta_s(int i);
 	void add_to_delta_r(int i);
-
-	void create_num_s();
-	void create_num_i();
-	void create_num_r();
-	void create_avg_num_infected(Map& map);
 
 	void print_delta_analytics();
 	void print_num_analytics();
@@ -49,5 +42,10 @@ private:
 	std::vector<int> num_i;
 	std::vector<int> num_s;
 	std::vector<int> num_r;
+
+	void create_num_s();
+	void create_num_i();
+	void create_num_r();
+	void create_avg_num_infected(Map& map);
 };
 

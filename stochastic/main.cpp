@@ -53,9 +53,9 @@ int main(){
 
   map.print_num_infected_map();
 
+  a.calc_analytics(map);
   a.print_delta_analytics();
   a.print_num_analytics();
-  a.create_avg_num_infected(map);
   a.print_avg();
 
   return 0;
