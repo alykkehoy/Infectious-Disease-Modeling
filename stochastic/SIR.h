@@ -8,7 +8,6 @@ class SIR {
 public:
 	SIR();
 	~SIR();
-	void random_seed(Disease& disease);
 	Map take_step(Disease& disease, analytics& a, Map& current_map);
 
 private:
