@@ -1,5 +1,6 @@
 #pragma once
 #include "map.h"
+#include "analytics.h"
 
 class SEIR
 {

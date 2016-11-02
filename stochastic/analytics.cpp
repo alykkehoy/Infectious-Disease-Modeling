@@ -1,12 +1,14 @@
-#include "analytics.h"
 #include <vector>
 #include <iostream>
 
+#include "analytics.h"
 
-analytics::analytics()
+analytics::analytics(std::string output_file, int population_size, int seeds)
 {
+	file_name = output_file;
+	pop_size = population_size;
+	num_seeds = seeds;
 }
-
 
 analytics::~analytics()
 {
@@ -31,17 +33,17 @@ std::vector<int> analytics::get_delta_r() {
 	return delta_r;
 }
 
-int analytics::get_delta_i_val(int i) {
-	return delta_i[i];
-}
-
-int analytics::get_delta_s_val(int i) {
-	return delta_s[i];
-}
-
-int analytics::get_delta_r_val(int i) {
-	return delta_r[i];
-}
+//int analytics::get_delta_i_val(int i) {
+//	return delta_i[i];
+//}
+//
+//int analytics::get_delta_s_val(int i) {
+//	return delta_s[i];
+//}
+//
+//int analytics::get_delta_r_val(int i) {
+//	return delta_r[i];
+//}
 
 void analytics::add_to_delta_i(int i) {
 	delta_i.push_back(i);
@@ -107,6 +109,7 @@ void analytics::print_avg() {
 	std::cout << "Avg delta i = " << (double)sum_delta_i / (double)delta_i.size() << std::endl;
 	std::cout << "Avg delta r = " << (double)sum_delta_r / (double)delta_r.size() << std::endl;
 
+	std::cout << "Avg number infected by a person: " << avg_num_infected << std::endl;
 }
 
 
@@ -137,4 +140,14 @@ int analytics::get_num_seeds() {
 
 void analytics::set_num_seeds(int i) {
 	num_seeds = i;
+}
+
+void analytics::create_avg_num_infected(Map& map) {
+	avg_num_infected = 0;
+	for (int i = 0; i < map.get_cols(); i++) {
+		for (int j = 0; j < map.get_rows(); j++) {
+			avg_num_infected += map.get_num_infected(j, i);
+		}
+	}
+	avg_num_infected /= pop_size;
 }

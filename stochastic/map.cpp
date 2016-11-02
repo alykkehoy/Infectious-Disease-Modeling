@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string>
+
 #include "person.h" 
 #include "map.h"
 #include "disease.h"
@@ -70,7 +71,6 @@ void Map::print_num_infected_map() {
 	return;
 }
 
-
 void Map::print_test_map() {
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
@@ -117,6 +117,7 @@ void Map::increment_num_infected(int i, int j) {
 void Map::set_num_infected(int i, int j, int num) {
 	population[i][j].set_num_infected(num);
 }
+
 int Map::get_num_infected(int i, int j) {
 	return population[i][j].get_num_infected();
 }

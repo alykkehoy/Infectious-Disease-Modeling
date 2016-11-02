@@ -3,7 +3,6 @@
 
 #include "person.h"
 #include "disease.h"
-#include "analytics.h"
 
 class Person;
 class Map
