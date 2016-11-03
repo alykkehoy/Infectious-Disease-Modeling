@@ -49,6 +49,17 @@ void Map::random_seed(Disease& disease) {
 	set_person_infection_time(rand_x, rand_y, disease.getAlpha());
 }
 
+void Map::random_seed_immunity(int percent) {
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < cols; j++) {
+			if ((rand() % 100 + 1) <= percent) {
+				population[i][j].set_immune(true);
+			}
+		}
+	}
+}
+
+
 void Map::print_map() {
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
@@ -71,6 +82,24 @@ void Map::print_num_infected_map() {
 	std::cout << '\n';
 	return;
 }
+
+void Map::print_immunity_map() {
+	std::cout << "Immunity map:" << std::endl;
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < cols; j++) {
+			if (population[i][j].get_immune()) {
+				std::cout << 'Y';
+			}
+			else {
+				std::cout << 'N';
+			}
+		}
+		std::cout << '\n';
+	}
+	std::cout << '\n';
+	return;
+}
+
 
 void Map::print_test_map() {
 	for (int i = 0; i < rows; i++) {

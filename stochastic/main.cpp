@@ -33,14 +33,12 @@ int main(){
   Map map(pop_width, pop_height);
   for (int i = 0; i < num_seeds; i++) {
 	  map.random_seed(disease);
-
   }
-
+  map.random_seed_immunity(30);
 
   SIR sir;
   SIRS sirs;
 
-  
   for (int loops = 0; loops < time; loops++) {
 	  std::cout << "Time: " << loops << std::endl;
 	  map.print_map();
@@ -51,6 +49,7 @@ int main(){
   cout << "Final: " << endl;
   map.print_map();
 
+  map.print_immunity_map();
   map.print_num_infected_map();
 
   a.calc_analytics(map);

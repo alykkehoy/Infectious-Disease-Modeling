@@ -13,8 +13,10 @@ public:
 	~Map();
 	Person** getGrid();
 	void random_seed(Disease& disease);
+	void random_seed_immunity(int percent);
 	void print_map();
 	void print_num_infected_map();
+	void print_immunity_map();
 	void print_test_map();
 	int get_rows();
 	int get_cols();

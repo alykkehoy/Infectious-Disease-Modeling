@@ -78,7 +78,7 @@ int SIR::take_step_i(int i, int j, Map& nextMap, Map& current_map) {
 	int current_infection_time = current_map.get_person_infection_time(i, j);
 	if (current_infection_time == 0) {
 		nextMap.set_person_state(i, j, 'R');
-		nextMap.set_immune(i, j, true);
+		//nextMap.set_immune(i, j, true);
 		return 1;
 	}
 	else {

@@ -85,7 +85,7 @@ int SIRS::take_step_i(int i, int j, Map& nextMap, Map& current_map) {
 int SIRS::take_step_r(int i, int j, Disease& disease, Map& nextMap, Map& current_map) {
 	if (rand() % 100 <= disease.get_mortality_rate()) {
 		nextMap.set_person_state(i, j, 'R');
-		nextMap.set_immune(i, j, true);
+		//nextMap.set_immune(i, j, true);
 		return 1;
 	}
 	nextMap.set_person_state(i, j, 'S');
