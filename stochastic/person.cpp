@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string.h>
+//#include <string.h>
 #include "person.h"
 
 
@@ -7,12 +7,14 @@ Person::Person(char s) {
 	state = s;
 	infectionTime = 0;
 	num_infected = 0;
+	immune = false;
 }
 
 Person::Person() {
 	state = 'S';
 	infectionTime = 0;
 	num_infected = 0;
+	immune = false;
 }
 
 void Person::set_infection_time(int time) {
@@ -39,8 +41,15 @@ int Person::get_num_infected() {
 void Person::increment_num_infected(int num) {
 	num_infected += num;
 }
+
 void Person::set_num_infected(int num) {
 	num_infected = num;
 }
 
+void Person::set_immune(bool a) {
+	immune = a;
+}
 
+bool Person::get_immune() {
+	return immune;
+}

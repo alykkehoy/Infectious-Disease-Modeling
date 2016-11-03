@@ -26,6 +26,8 @@ public:
 	int get_num_infected(int i, int j);
 	void increment_num_infected(int i, int j);
 	void increment_num_infected(int i, int j, int num);
+	void set_immune(int i, int j, bool a);
+	bool get_immune(int i, int j);
 
 private:
 	Person** population;

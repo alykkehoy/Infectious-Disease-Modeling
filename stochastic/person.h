@@ -14,8 +14,11 @@ public:
 	int get_num_infected();
 	void increment_num_infected(int num);
 	void set_num_infected(int num);
+	void set_immune(bool a);
+	bool get_immune();
 private:
 	char state;
+	bool immune;
 	int infectionTime;
 	int num_infected;
 };

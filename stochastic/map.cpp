@@ -35,6 +35,7 @@ void Map::setEveryoneHealthy() {
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
 			population[i][j].setState('S');
+			population[i][j].set_immune(false);
 		}
 	}
 	return;
@@ -120,4 +121,12 @@ void Map::set_num_infected(int i, int j, int num) {
 
 int Map::get_num_infected(int i, int j) {
 	return population[i][j].get_num_infected();
+}
+
+void Map::set_immune(int i, int j, bool a) {
+	population[i][j].set_immune(a);
+}
+
+bool Map::get_immune(int i, int j) {
+	return population[i][j].get_immune();
 }
