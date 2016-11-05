@@ -55,7 +55,6 @@ int SIRS::take_step_s(int y, int x, Disease& disease, Map& nextMap, Map& current
 								if (rand() % 100 <= disease.getBeta()) {
 									nextMap.increment_num_infected(y + k, x + l);
 									nextMap.set_person_state(y, x, 'I');
-									nextMap.increment_num_infected(y, x, current_map.get_num_infected(y, x));
 									nextMap.set_person_infection_time(y, x, disease.getAlpha());
 									return 1;
 								}

@@ -63,9 +63,10 @@ int SEIR::take_step_s(int y, int x, Disease& disease, Map& nextMap, Map& current
 							if (current_map.get_person_state(y + k, x + l) == 'I') {
 								if (rand() % 100 <= disease.getBeta()) {
 									nextMap.increment_num_infected(y + k, x + l);
-									nextMap.set_person_state(y, x, 'I');
-									nextMap.increment_num_infected(y, x, current_map.get_num_infected(y, x));
-									nextMap.set_person_infection_time(y, x, disease.getAlpha());
+									nextMap.set_person_state(y, x, 'E');
+									nextMap.set_incubation_timer(y, x, disease.get_incubation_time());
+									//nextMap.increment_num_infected(y, x, current_map.get_num_infected(y, x));
+									//nextMap.set_person_infection_time(y, x, disease.getAlpha());
 									return 1;
 								}
 							}
@@ -78,7 +79,16 @@ int SEIR::take_step_s(int y, int x, Disease& disease, Map& nextMap, Map& current
 	return 0;
 }
 
-int SEIR::take_step_e(int y, int x, Disease& disease, Map& nextMap, Map& current_map) {
+int SEIR::take_step_e(int i, int j, Disease& disease, Map& nextMap, Map& current_map) {
+	if (current_map.get_incubation_timer(i,j) == 0) {
+		nextMap.set_person_state(i, j, 'I');
+		nextMap.set_person_infection_time(i, j, disease.getAlpha());
+		return 1;
+	}
+	else {
+		nextMap.set_person_state(i, j, 'E');
+		nextMap.set_incubation_timer(i, j,current_map.get_incubation_timer(i, j) - 1);
+	}
 	return 0;
 }
 
@@ -97,11 +107,11 @@ int SEIR::take_step_i(int i, int j, Map& nextMap, Map& current_map) {
 }
 
 int SEIR::take_step_r(int i, int j, Disease& disease, Map& nextMap, Map& current_map) {
-	if (rand() % 100 <= disease.get_mortality_rate()) {
+	//if (rand() % 100 <= disease.get_mortality_rate()) {
 		nextMap.set_person_state(i, j, 'R');
 		//nextMap.set_immune(i, j, true);
 		return 1;
-	}
-	nextMap.set_person_state(i, j, 'S');
-	return 0;
+	//}
+	//nextMap.set_person_state(i, j, 'S');
+	//return 0;
 }
