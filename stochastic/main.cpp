@@ -28,7 +28,7 @@ int main(){
   //a.set_pop_size(pop_width  * pop_height);
   //a.set_num_seeds(num_seeds);
 
-  Disease disease("test", 3, 30, 10, 1);
+  Disease disease("test", 3, 30, 10, 1, 0);
 
   Map map(pop_width, pop_height);
   for (int i = 0; i < num_seeds; i++) {

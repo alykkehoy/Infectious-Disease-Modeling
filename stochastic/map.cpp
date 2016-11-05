@@ -159,3 +159,11 @@ void Map::set_immune(int i, int j, bool a) {
 bool Map::get_immune(int i, int j) {
 	return population[i][j].get_immune();
 }
+
+int Map::get_incubation_timer(int i, int j) {
+	return population[i][j].get_incubation_timer();
+}
+
+void Map::set_incubation_timer(int i, int j, int time) {
+	population[i][j].set_incubation_timer(time);
+}
