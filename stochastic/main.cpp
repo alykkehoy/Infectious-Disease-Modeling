@@ -7,6 +7,7 @@ This file is a test run file for our disease libraries
 //include c++ libraries
 #include <iostream>
 #include <string>
+#include <vector>
 
 //include all of the other files in the program
 //#include "neighborhood.h"
@@ -17,9 +18,23 @@ This file is a test run file for our disease libraries
 #include "SIRS.h"
 #include "SEIR.h"
 
+#include "Model.h"
+
 using namespace std;
 
 int main(){
+
+	//stuff for testing custom models
+	std::vector<State*> model;
+	S m_s();
+	//model.push_back((State*)m_s);
+	I i();
+	//model.push_back(i);
+	R r();
+	//model.push_back(r);
+	Model m_sir("SIR", model);
+
+
   int pop_width = 100;
   int pop_height = 30;
   int time = 50;
@@ -44,9 +59,9 @@ int main(){
   for (int loops = 0; loops < time; loops++) {
 	  std::cout << "Time: " << loops << std::endl;
 	  map.print_map();
-	  //map = sir.take_step(disease, a, map);
+	  map = sir.take_step(disease, a, map);
 	  //map = sirs.take_step(disease, a, map);
-	  map = seir.take_step(disease, a, map);
+	  //map = seir.take_step(disease, a, map);
   }
 
   cout << "Final: " << endl;
