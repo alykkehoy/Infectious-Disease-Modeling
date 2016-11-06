@@ -3,6 +3,7 @@
 
 #include "person.h"
 #include "disease.h"
+#include <random>
 
 class Person;
 class Map

@@ -42,6 +42,8 @@ void Map::setEveryoneHealthy() {
 }
 
 void Map::random_seed(Disease& disease) {
+	//std::default_random_engine generator;
+	//std::uniform_int_distribution<int> distribution(0,100);
 	int rand_x = ((double)(rand() % 100) / 100) * rows;
 	int rand_y = ((double)(rand() % 100) / 100) * cols;
 	std::cout << "Random seed for disease " << disease.getName() << ": " << rand_x << "," << rand_y << std::endl;
