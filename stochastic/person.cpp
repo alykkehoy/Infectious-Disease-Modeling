@@ -8,6 +8,7 @@ Person::Person(char s) {
 	infectionTime = 0;
 	num_infected = 0;
 	immune = false;
+	incubation_timer = 0;
 }
 
 Person::Person() {
@@ -15,6 +16,7 @@ Person::Person() {
 	infectionTime = 0;
 	num_infected = 0;
 	immune = false;
+	incubation_timer = 0;
 }
 
 void Person::set_infection_time(int time) {
@@ -52,4 +54,11 @@ void Person::set_immune(bool a) {
 
 bool Person::get_immune() {
 	return immune;
+}
+
+int Person::get_incubation_timer() {
+	return incubation_timer;
+}
+void Person::set_incubation_timer(int i) {
+	incubation_timer = i;
 }
