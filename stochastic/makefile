@@ -1,7 +1,7 @@
 all: test
 
-test:  main.o analytics.o disease.o interaction.o map.o neighborhood.o person.o
-	g++ main.o analytics.o disease.o interaction.o map.o neighborhood.o person.o -o test1 
+test:  main.o analytics.o disease.o interaction.o map.o neighborhood.o person.o text_parse.o
+	g++ main.o analytics.o disease.o interaction.o map.o neighborhood.o person.o text_parse.o -o test1 
 
 main.o: main.cpp
 	g++ -c main.cpp
@@ -23,6 +23,10 @@ neighborhood.o: neighborhood.cpp neighborhood.h
 
 person.o: person.cpp person.h
 	g++ -c person.cpp
+
+text_parse.o: text_parse.cpp text_parse.h
+	g++ -c text_parse.cpp
+
 clean:
 	rm test1
 	rm *.o 
