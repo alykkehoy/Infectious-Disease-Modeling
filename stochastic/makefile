@@ -3,8 +3,8 @@ CXXFLAGS=-std=c++11
 
 all: test
 
-test:  main.o analytics.o disease.o interaction.o SIR.o SIRS.o SEIR.o Model.o map.o neighborhood.o person.o
-	$(CXX) main.o analytics.o disease.o interaction.o SIR.o SIRS.o SEIR.o Model.o map.o neighborhood.o person.o -o test1 
+test:  main.o analytics.o disease.o interaction.o SIR.o SIRS.o SEIR.o map.o neighborhood.o person.o
+	$(CXX) main.o analytics.o disease.o interaction.o SIR.o SIRS.o SEIR.o map.o neighborhood.o person.o -o test1 
 
 main.o: main.cpp
 	$(CXX) $(CXXFLAGS) -c main.cpp
@@ -27,8 +27,8 @@ SIRS.o: SIRS.cpp SIRS.h
 SEIR.o: SEIR.cpp SEIR.h
 	$(CXX) $(CXXFLAGS) -c SEIR.cpp
 	
-Model.o: Model.cpp Model.h
-	$(CXX) $(CXXFLAGS) -c Model.cpp
+#Model.o: Model.cpp Model.h
+#	$(CXX) $(CXXFLAGS) -c Model.cpp
 
 map.o: map.cpp map.h
 	$(CXX) $(CXXFLAGS) -c map.cpp

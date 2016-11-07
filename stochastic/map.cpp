@@ -54,7 +54,10 @@ void Map::random_seed(Disease& disease) {
 void Map::random_seed_immunity(int percent) {
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
-			if ((rand() % 100 + 1) <= percent) {
+			std::default_random_engine generator { std::random_device()() };
+			std::uniform_int_distribution<int> distribution(1,100);
+			int rand = ((double)distribution(generator));
+			if ((rand) <= percent) {
 				population[i][j].set_immune(true);
 			}
 		}

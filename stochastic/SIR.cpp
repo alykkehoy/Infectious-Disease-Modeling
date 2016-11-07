@@ -58,7 +58,11 @@ int SIR::take_step_s(int y, int x, Disease& disease, Map& nextMap, Map& current_
 					if (x + l >= 0 && x + l < current_map.get_cols()) {
 						if (!(y + k == y && x + l == x)) {
 							if (current_map.get_person_state(y + k, x + l) == 'I') {
-								if (rand() % 100 <= disease.getBeta()) {
+								std::default_random_engine generator { std::random_device()() };
+								std::uniform_int_distribution<int> distribution(1,100);
+								int rand = ((double)distribution(generator));
+								int* myrand = (&rand);
+								if ( rand <= disease.getBeta()) {
 									nextMap.increment_num_infected(y + k, x + l);
 									nextMap.set_person_state(y, x, 'I');
 									nextMap.set_person_infection_time(y, x, disease.getAlpha());

@@ -17,13 +17,12 @@ This file is a test run file for our disease libraries
 #include "SIR.h"
 #include "SIRS.h"
 #include "SEIR.h"
-
 #include "Model.h"
 
 using namespace std;
 
 int main(){
-
+/*
 	//stuff for testing custom models
 	std::vector<State*> model;
 	S m_s();
@@ -32,7 +31,7 @@ int main(){
 	//model.push_back(i);
 	R r();
 	//model.push_back(r);
-	Model m_sir("SIR", model);
+	Model m_sir("SIR", model);*/
 
 
   int pop_width = 100;

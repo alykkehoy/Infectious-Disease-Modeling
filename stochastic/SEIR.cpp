@@ -61,7 +61,10 @@ int SEIR::take_step_s(int y, int x, Disease& disease, Map& nextMap, Map& current
 					if (x + l >= 0 && x + l < current_map.get_cols()) {
 						if (!(y + k == y && x + l == x)) {
 							if (current_map.get_person_state(y + k, x + l) == 'I') {
-								if (rand() % 100 <= disease.getBeta()) {
+								std::default_random_engine generator { std::random_device()() };
+								std::uniform_int_distribution<int> distribution(1,100);
+								int rand = ((double)distribution(generator));
+								if ( rand <= disease.getBeta()) {
 									nextMap.increment_num_infected(y + k, x + l);
 									nextMap.set_person_state(y, x, 'E');
 									nextMap.set_incubation_timer(y, x, disease.get_incubation_time());
