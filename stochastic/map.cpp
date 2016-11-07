@@ -2,16 +2,15 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string>
-
+#include <random>
 #include "person.h" 
 #include "map.h"
 #include "disease.h"
 
-//the map object, we'll start out as a matrix for now
+//the map object
 Map::Map(int width, int height) {
 	rows = height;
 	cols = width;
-
 	srand(time(NULL));
 	population = new Person*[rows];
 	for (int i = 0; i < rows; i++) {
@@ -41,11 +40,12 @@ void Map::setEveryoneHealthy() {
 	return;
 }
 
+//this function generates a random infected person somewhere in the grud as well as an infection time
 void Map::random_seed(Disease& disease) {
-	//std::default_random_engine generator;
-	//std::uniform_int_distribution<int> distribution(0,100);
-	int rand_x = ((double)(rand() % 100) / 100) * rows;
-	int rand_y = ((double)(rand() % 100) / 100) * cols;
+	std::default_random_engine generator { std::random_device()() };
+	std::uniform_int_distribution<int> distribution(1,100);
+	int rand_x = ((double)distribution(generator));
+	int rand_y = ((double)distribution(generator));
 	std::cout << "Random seed for disease " << disease.getName() << ": " << rand_x << "," << rand_y << std::endl;
 	set_person_state(rand_x, rand_y, 'I');
 	set_person_infection_time(rand_x, rand_y, disease.getAlpha());

@@ -56,6 +56,8 @@ int main(){
   SIRS sirs;
   SEIR seir;
 
+  //std::ofstream outfile("filename");
+  
   for (int loops = 0; loops < time; loops++) {
 	  std::cout << "Time: " << loops << std::endl;
 	  map.print_map();

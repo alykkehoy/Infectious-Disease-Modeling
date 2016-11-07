@@ -25,14 +25,21 @@ SIRS.o: SIRS.cpp SIRS.h
 	$(CXX) -c SIRS.cpp
 
 map.o: map.cpp map.h
-	$(CXX) -c map.cpp
-
+	$(CXX) $(CXXFLAGS) -c map.cpp
+	
 neighborhood.o: neighborhood.cpp neighborhood.h
 	$(CXX) -c neighborhood.cpp
 
 person.o: person.cpp person.h
 	$(CXX) -c person.cpp
 
+text_parse.o: text_parse.cpp text_parse.h
+	$(CXX) -c text_parse.cpp
+
+%.o: %.cpp %.h
+	$(CXX) $(CXXFLAGS) -c $>
+	
 clean:
 	rm test1
-	rm *.o 
+	rm *.o
+
