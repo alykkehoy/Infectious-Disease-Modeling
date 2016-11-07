@@ -24,4 +24,5 @@ neighborhood.o: neighborhood.cpp neighborhood.h
 person.o: person.cpp person.h
 	g++ -c person.cpp
 clean:
-	rm test1 
+	rm test1
+	rm *.o
