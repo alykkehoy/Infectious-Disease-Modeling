@@ -31,7 +31,7 @@ int main(){
   a.set_num_seeds(1);
   //map.random_seed(disease);
 
-
+  //std::ofstream outfile("filename");
   
   for (int loops = 0; loops < time; loops++) {
 	  std::cout << "Time: " << loops << std::endl;
