@@ -4,6 +4,9 @@
 # Compiled Source
 *.o
 
+# Test Files
+stochastic/test1
+
 # User-specific files
 *.suo
 *.user
