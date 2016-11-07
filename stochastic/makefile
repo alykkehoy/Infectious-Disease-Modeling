@@ -35,4 +35,4 @@ text_parse.o: text_parse.cpp text_parse.h
 	
 clean:
 	rm test1
-	rm *.o 
+	rm *.o
