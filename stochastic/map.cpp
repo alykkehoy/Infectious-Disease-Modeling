@@ -6,7 +6,7 @@
 #include "map.h"
 #include "disease.h"
 
-//the map object, we'll start out as a matrix for now
+//the map object
 Map::Map(int width, int height) {
 	rows = height;
 	cols = width;
