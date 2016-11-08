@@ -1,97 +1,122 @@
-
-#include <iostream>
-#include <vector>
-#include <math.h>
-#include <boost/numeric/odeint.hpp>
-#include <boost/numeric/odeint/stepper_rk4.hpp>
+#pragma once
+#include<iostream>
+#include<cmath>
 
 using namespace std;
-using namespace boost::numeric::odeint;
 
-template< int MAX_N >
-class SIR
-{
-    typedef std::vector< double > vector;
-
-public:
-    typedef vector::iterator iterator;
-    typedef vector::const_iterator const_iterator;
-
-    SIR( const size_t N )
-        : m_v( N )
-    { 
-        m_v.reserve( MAX_N );
-    }
-
-    SIR()
-        : m_v()
-    {
-        m_v.reserve( MAX_N );
-    }
-
-// ... [ implement container interface ]
-//]
-    const double & operator[]( const size_t n ) const
-    { return m_v[n]; }
-
-    double & operator[]( const size_t n )
-    { return m_v[n]; }
-
-    iterator begin()
-    { return m_v.begin(); }
-
-    const_iterator begin() const
-    { return m_v.begin(); }
-
-    iterator end()
-    { return m_v.end(); }
-    
-    const_iterator end() const
-    { return m_v.end(); }
-
-    size_t size() const 
-    { return m_v.size(); }
-
-    void resize( const size_t n )
-    { m_v.resize( n ); }
-
+class SIR{
 private:
-    std::vector< double > m_v;
 
+double t,S,I,R,Pop[3];
+double dPop[3],step;
+
+double beta, gamma;
+double tmax;
+public:
+
+SIR();
+SIR(double beta0, double gamma0, double step0, double S00, \
+          double I00, double tmax0);
+~SIR();
+
+void Diff(double Pop[3]);
+void Runge_Kutta();
+
+void output();
 };
 
-/*namespace boost { namespace numeric { namespace odeint {
-
-template<size_t N>
-struct is_resizeable < SIR<N> >
+SIR::SIR(double beta0, double gamma0, double step0,double S00, \
+       double I00, double tmax0)
 {
-    typedef boost::true_type type;
-    static const bool value = type::value;
-};
 
-} } }*/
+beta = beta0;
+gamma =gamma0;
+step = step0;
 
-typedef SIR<double> state_Type;
+S =S00;
+I = I00;
+R = 1 - S - I;
 
-void diff( const state_Type &x , state_Type &dxdt , const double t )
-{
-    const double beta = 12.0;
-    const double alpha = 21.0;
-
-    dxdt[0] = -beta *x[0]*x[1];
-    dxdt[1] = beta*x[0]*x[1] - alpha* x[1];
-    dxdt[2] = alpha*x[1];
+tmax = tmax0;
 }
-void write_diff( const state_Type &x , const double t )
-{
-    cout << t << '\t' << x[0] << '\t' << x[1] << endl;
+SIR::~SIR(){
+
 }
 
-int main(int argc, char** argv)
+void SIR::Diff(double Pop[3])
 {
-    state_Type x;
-	x[0] = 5.0 ; x[1] = 10.0 ;
-    stepper_rk4 < state_Type > srk4;
-   //integrate_const( srk4,diff, x , 1.0,10.0,0.1);
-   srk4.do_step(diff, x , 1.0,0.1);
+
+// The differential equations
+
+
+dPop[0] = - beta*Pop[0]*Pop[1];              // dS/dt
+
+  dPop[1] = beta*Pop[0]*Pop[1] - gamma*Pop[1];   // dI/dt
+
+  dPop[2] = gamma*Pop[1];                    // dR/dt
+
 }
+
+void SIR::Runge_Kutta(){
+int i;
+double dPop1[3], dPop2[3], dPop3[3], dPop4[3];
+
+double tmpPop[3], initialPop[3];
+
+initialPop[0]=S; initialPop[1]=I; initialPop[2]=R;
+
+Diff(initialPop);
+for(i=0;i<3;i++)
+{
+
+dPop1[i]=dPop[i];
+tmpPop[i]=initialPop[i]+step*dPop1[i]/2;
+}
+
+Diff(tmpPop);
+for(i=0;i<3;i++)
+{
+
+
+dPop2[i]=dPop[i];
+tmpPop[i]=initialPop[i]+step*dPop2[i]/2;
+}
+
+Diff(tmpPop);
+for(i=0;i<3;i++)
+{
+
+dPop3[i]=dPop[i];
+tmpPop[i]=initialPop[i]+step*dPop3[i];
+}
+
+Diff(tmpPop);
+
+for(i=0;i<3;i++)
+{
+
+dPop4[i]=dPop[i];
+tmpPop[i]=initialPop[i]+(dPop1[i]/6 + dPop2[i]/3 + dPop3[i]/3 + dPop4[i]/6)*step;
+}
+
+
+S=tmpPop[0]; I=tmpPop[1]; R=tmpPop[2];
+
+
+}
+
+void SIR::output(){
+t=0;
+cout <<"	t			S			I			R"<<endl;
+
+do
+{
+Runge_Kutta();
+t+=step;
+cout<<t<<"   		"<<S<<" 		  "<<I<<"	  		 "<<R<<"		   "<<endl;
+}
+
+while(t<tmax);
+
+}
+//#endif // GUARD_SIR
