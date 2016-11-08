@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <memory>
 
 #include "States\State.h"
 #include "States\S.h"
@@ -9,7 +10,7 @@
 class Model
 {
 public:
-	Model(std::string name, std::vector<State*> model);
+	Model(std::string name, std::vector<std::shared_ptr<State>> model);
 	~Model();
 
 	Map take_step(Disease& disease, Map& current_map);
@@ -18,5 +19,5 @@ public:
 
 private:
 	std::string m_name;
-	std::vector<State*> m_model;
+	std::vector<std::shared_ptr<State>> m_model;
 };

@@ -1,7 +1,7 @@
 #include <vector>
 #include "Model.h"
 
-Model::Model(std::string name, std::vector<State*> model)
+Model::Model(std::string name, std::vector<std::shared_ptr<State>> model)
 {
 	m_name = name;
 	m_model = model;

@@ -10,8 +10,8 @@ S::~S() {
 
 void S::take_step(int i, int j, Disease& disease, Map& nextMap, Map& current_map) {
 	//VAR NAMES NEED CHANGED BELOW
-	int x = i;
-	int y = j;
+	int x = j;
+	int y = i;
 
 	int range = disease.get_range();
 

@@ -8,6 +8,7 @@ This file is a test run file for our disease libraries
 #include <iostream>
 #include <string>
 #include <vector>
+#include <memory>
 
 //include all of the other files in the program
 //#include "neighborhood.h"
@@ -25,13 +26,16 @@ using namespace std;
 int main(){
 
 	//stuff for testing custom models
-	std::vector<State*> model;
-	S m_s();
-	//model.push_back((State*)m_s);
-	I i();
+	std::vector<std::shared_ptr<State>> model;
+	//S s();
+	//std::shared_ptr<State> s = std::make_shared<S>();
+	model.push_back(std::shared_ptr<State>(new S));
+	//I i();
 	//model.push_back(i);
-	R r();
+	model.push_back(std::shared_ptr<State>(new I));
+	//R r();
 	//model.push_back(r);
+	model.push_back(std::shared_ptr<State>(new R));
 	Model m_sir("SIR", model);
 
 
@@ -61,9 +65,10 @@ int main(){
   for (int loops = 0; loops < time; loops++) {
 	  std::cout << "Time: " << loops << std::endl;
 	  map.print_map();
-	  map = sir.take_step(disease, a, map);
+	  //map = sir.take_step(disease, a, map);
 	  //map = sirs.take_step(disease, a, map);
 	  //map = seir.take_step(disease, a, map);
+	  map = m_sir.take_step(disease, map);
   }
 
   cout << "Final: " << endl;
@@ -72,10 +77,10 @@ int main(){
   map.print_immunity_map();
   map.print_num_infected_map();
 
-  a.calc_analytics(map);
-  a.print_delta_analytics();
-  a.print_num_analytics();
-  a.print_avg();
+  //a.calc_analytics(map);
+  //a.print_delta_analytics();
+  //a.print_num_analytics();
+  //a.print_avg();
 
   return 0;
 }
