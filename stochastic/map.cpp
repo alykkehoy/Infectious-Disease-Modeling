@@ -44,8 +44,8 @@ void Map::setEveryoneHealthy() {
 void Map::random_seed(Disease& disease) {
 	std::default_random_engine generator { std::random_device()() };
 	std::uniform_int_distribution<int> distribution(1,100);
-	int rand_x = ((double)distribution(generator));
-	int rand_y = ((double)distribution(generator));
+	int rand_x = (((double)distribution(generator))*rows/100);
+	int rand_y = (((double)distribution(generator))*rows/100);
 	std::cout << "Random seed for disease " << disease.getName() << ": " << rand_x << "," << rand_y << std::endl;
 	set_person_state(rand_x, rand_y, 'I');
 	set_person_infection_time(rand_x, rand_y, disease.getAlpha());

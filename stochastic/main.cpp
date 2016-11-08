@@ -8,7 +8,7 @@ This file is a test run file for our disease libraries
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include <fstream>
 //include all of the other files in the program
 //#include "neighborhood.h"
 #include "map.h"
@@ -55,7 +55,7 @@ int main(){
   SIRS sirs;
   SEIR seir;
 
-  //std::ofstream outfile("filename");
+  std::ofstream outfile("output.txt", std::ofstream::out);
   
   for (int loops = 0; loops < time; loops++) {
 	  std::cout << "Time: " << loops << std::endl;
@@ -64,8 +64,8 @@ int main(){
 	  //map = sirs.take_step(disease, a, map);
 	  //map = seir.take_step(disease, a, map);
   }
-
-  cout << "Final: " << endl;
+  
+  std::cout << "Final: " << endl;
   map.print_map();
 
   map.print_immunity_map();
@@ -76,5 +76,7 @@ int main(){
   a.print_num_analytics();
   a.print_avg();
 
+  outfile.close();
+  
   return 0;
 }
