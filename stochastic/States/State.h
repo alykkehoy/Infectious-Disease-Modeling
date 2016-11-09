@@ -9,6 +9,7 @@
 
 class State {
 protected:
+	char next_char;
 	char char_representation;
 public:
 	State();
@@ -17,7 +18,7 @@ public:
 	virtual void take_step(int i, int j, Disease& disease, Map& nextMap, Map& current_map, std::vector<std::shared_ptr<State>> model) = 0;
 
 	char get_char_rep();
-	char get_next_char_rep(std::vector<std::shared_ptr<State>> model);
+	void create_next_char(std::vector<std::shared_ptr<State>> model);
 
 	void set_char_rep(char c);
 private:

@@ -13,8 +13,6 @@ void S::take_step(int i, int j, Disease& disease, Map& nextMap, Map& current_map
 	int x = j;
 	int y = i;
 
-	char next_char = get_next_char_rep(model);
-
 	int range = disease.get_range();
 
 	if (!current_map.get_immune(y, x)) {
