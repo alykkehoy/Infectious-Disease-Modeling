@@ -8,10 +8,12 @@ S::~S() {
 
 }
 
-void S::take_step(int i, int j, Disease& disease, Map& nextMap, Map& current_map) {
+void S::take_step(int i, int j, Disease& disease, Map& nextMap, Map& current_map, std::vector<std::shared_ptr<State>> model) {
 	//VAR NAMES NEED CHANGED BELOW
 	int x = j;
 	int y = i;
+
+	char next_char = get_next_char_rep(model);
 
 	int range = disease.get_range();
 
@@ -24,7 +26,7 @@ void S::take_step(int i, int j, Disease& disease, Map& nextMap, Map& current_map
 							if (current_map.get_person_state(y + k, x + l) == 'I') {
 								if (rand() % 100 <= disease.getBeta()) {
 									nextMap.increment_num_infected(y + k, x + l);
-									nextMap.set_person_state(y, x, 'I');
+									nextMap.set_person_state(y, x, next_char);
 									nextMap.set_person_infection_time(y, x, disease.getAlpha());
 									return;
 								}

@@ -159,6 +159,7 @@
     <ClCompile Include="..\..\stochastic\SEIR.cpp" />
     <ClCompile Include="..\..\stochastic\SIR.cpp" />
     <ClCompile Include="..\..\stochastic\SIRS.cpp" />
+    <ClCompile Include="..\..\stochastic\States\E.cpp" />
     <ClCompile Include="..\..\stochastic\States\I.cpp" />
     <ClCompile Include="..\..\stochastic\States\R.cpp" />
     <ClCompile Include="..\..\stochastic\States\S.cpp" />
@@ -174,6 +175,7 @@
     <ClInclude Include="..\..\stochastic\SEIR.h" />
     <ClInclude Include="..\..\stochastic\SIR.h" />
     <ClInclude Include="..\..\stochastic\SIRS.h" />
+    <ClInclude Include="..\..\stochastic\States\E.h" />
     <ClInclude Include="..\..\stochastic\States\I.h" />
     <ClInclude Include="..\..\stochastic\States\R.h" />
     <ClInclude Include="..\..\stochastic\States\S.h" />

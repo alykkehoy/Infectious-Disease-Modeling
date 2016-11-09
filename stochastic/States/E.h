@@ -4,10 +4,10 @@
 #include "../map.h"
 #include "State.h"
 
-class I : public State {
+class E : public State {
 public:
-	I();
-	~I();
+	E();
+	~E();
 
 	void take_step(int i, int j, Disease& disease, Map& nextMap, Map& current_map, std::vector<std::shared_ptr<State>> model);
 

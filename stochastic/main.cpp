@@ -27,15 +27,11 @@ int main(){
 
 	//stuff for testing custom models
 	std::vector<std::shared_ptr<State>> model;
-	//S s();
-	//std::shared_ptr<State> s = std::make_shared<S>();
 	model.push_back(std::shared_ptr<State>(new S));
-	//I i();
-	//model.push_back(i);
+	model.push_back(std::shared_ptr<State>(new E));
 	model.push_back(std::shared_ptr<State>(new I));
-	//R r();
-	//model.push_back(r);
 	model.push_back(std::shared_ptr<State>(new R));
+	//model.push_back(std::shared_ptr<State>(new S));
 	Model m_sir("SIR", model);
 
 
