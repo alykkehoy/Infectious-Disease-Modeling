@@ -3,26 +3,32 @@ CXXFLAGS=-std=c++11
 
 all: test
 
-test:  main.o analytics.o disease.o interaction.o SIR.o SIRS.o map.o neighborhood.o person.o
-	$(CXX) main.o analytics.o disease.o interaction.o SIR.o SIRS.o map.o neighborhood.o person.o -o test1 
+test:  main.o analytics.o disease.o interaction.o SIR.o SIRS.o SEIR.o map.o neighborhood.o person.o
+	$(CXX) main.o analytics.o disease.o interaction.o SIR.o SIRS.o SEIR.o map.o neighborhood.o person.o -o test1 
 
 main.o: main.cpp
-	$(CXX) -c main.cpp
+	$(CXX) $(CXXFLAGS) -c main.cpp
 
 analytics.o: analytics.cpp analytics.h
-	$(CXX) -c analytics.cpp
+	$(CXX) $(CXXFLAGS) -c analytics.cpp
 
 disease.o: disease.cpp disease.h
 	$(CXX) -c disease.cpp
 
 interaction.o: interaction.cpp interaction.h
-	$(CXX) -c interaction.cpp
+	$(CXX) $(CXXFLAGS) -c interaction.cpp
     
 SIR.o: SIR.cpp SIR.h
-	$(CXX) -c SIR.cpp
+	$(CXX) $(CXXFLAGS) -c SIR.cpp
     
 SIRS.o: SIRS.cpp SIRS.h
-	$(CXX) -c SIRS.cpp
+	$(CXX) $(CXXFLAGS) -c SIRS.cpp
+	
+SEIR.o: SEIR.cpp SEIR.h
+	$(CXX) $(CXXFLAGS) -c SEIR.cpp
+	
+#Model.o: Model.cpp Model.h
+#	$(CXX) $(CXXFLAGS) -c Model.cpp
 
 map.o: map.cpp map.h
 	$(CXX) $(CXXFLAGS) -c map.cpp

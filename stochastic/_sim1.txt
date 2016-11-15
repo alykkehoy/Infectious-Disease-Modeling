@@ -1,1 +1,16 @@
-this is a text file that we can fill with parameters for our test program
+//this is a text file that we can fill with parameters for our test program
+
+*/
+name
+alpha
+beta
+mortality
+range
+incubation time
+*/
+//parameter:data type:value
+name:string:test
+alpha:int:3
+beta:int:30
+mortality:int:10
+range:int:2

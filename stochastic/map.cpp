@@ -46,7 +46,8 @@ void Map::random_seed(Disease& disease) {
 	std::uniform_int_distribution<int> distribution(1,100);
 	int rand_x = ((double)distribution(generator) / 100) * rows;
 	int rand_y = ((double)distribution(generator) / 100) * cols;
-	std::cout << "Random seed for disease " << disease.getName() << ": " << rand_x << "," << rand_y << std::endl;
+	
+        std::cout << "Random seed for disease " << disease.getName() << ": " << rand_x << "," << rand_y << std::endl;
 	set_person_state(rand_x, rand_y, 'I');
 	set_person_infection_time(rand_x, rand_y, disease.getAlpha());
 }
@@ -54,7 +55,10 @@ void Map::random_seed(Disease& disease) {
 void Map::random_seed_immunity(int percent) {
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
-			if ((rand() % 100 + 1) <= percent) {
+			std::default_random_engine generator { std::random_device()() };
+			std::uniform_int_distribution<int> distribution(1,100);
+			int rand = ((double)distribution(generator));
+			if ((rand) <= percent) {
 				population[i][j].set_immune(true);
 			}
 		}

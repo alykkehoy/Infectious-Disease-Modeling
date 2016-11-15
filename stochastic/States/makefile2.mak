@@ -7,17 +7,20 @@ test: State.o S.o I.o R.o
 	$(CXX) State.o S.o I.o R.o -o test1 
 
 State.o: State.cpp State.h
-	$(CXX) -c State.cpp
+	$(CXX) $(CXXFLAGS) -c State.cpp
 	
 S.o: S.cpp S.h
-	$(CXX) -c S.cpp
+	$(CXX) $(CXXFLAGS) -c S.cpp
 	
 I.o: I.cpp I.h
-	$(CXX) -c I.cpp
+	$(CXX) $(CXXFLAGS) -c I.cpp
 	
 R.o: R.cpp R.h
-	$(CXX) -c R.cpp
+	$(CXX) $(CXXFLAGS) -c R.cpp
 
+%.o: %.cpp %.h
+	$(CXX) $(CXXFLAGS) -c $>
+	
 clean:
 	rm test2
 	rm *.o 
