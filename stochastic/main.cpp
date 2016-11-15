@@ -8,7 +8,6 @@ This file is a test run file for our disease libraries
 #include <iostream>
 #include <string>
 #include <vector>
-<<<<<<< HEAD
 #include <memory>
 #include <fstream>
 //include all of the other files in the program
