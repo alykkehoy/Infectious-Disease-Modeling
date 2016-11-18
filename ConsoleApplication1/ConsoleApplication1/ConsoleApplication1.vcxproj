@@ -89,10 +89,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>.\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32.lib;glew32s.lib;SDL2.lib;SDL2main.lib;SDL2test.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -119,12 +122,15 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>.\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32.lib;glew32s.lib;SDL2.lib;SDL2main.lib;SDL2test.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -155,6 +161,10 @@
     <ClCompile Include="..\..\stochastic\map.cpp" />
     <ClCompile Include="..\..\stochastic\Model.cpp" />
     <ClCompile Include="..\..\stochastic\neighborhood.cpp" />
+    <ClCompile Include="..\..\stochastic\OpenGL stuff\Display.cpp" />
+    <ClCompile Include="..\..\stochastic\OpenGL stuff\main.cpp" />
+    <ClCompile Include="..\..\stochastic\OpenGL stuff\Mesh.cpp" />
+    <ClCompile Include="..\..\stochastic\OpenGL stuff\Shader.cpp" />
     <ClCompile Include="..\..\stochastic\person.cpp" />
     <ClCompile Include="..\..\stochastic\SEIR.cpp" />
     <ClCompile Include="..\..\stochastic\SIR.cpp" />
@@ -171,6 +181,9 @@
     <ClInclude Include="..\..\stochastic\map.h" />
     <ClInclude Include="..\..\stochastic\Model.h" />
     <ClInclude Include="..\..\stochastic\neighborhood.h" />
+    <ClInclude Include="..\..\stochastic\OpenGL stuff\Display.h" />
+    <ClInclude Include="..\..\stochastic\OpenGL stuff\Mesh.h" />
+    <ClInclude Include="..\..\stochastic\OpenGL stuff\Shader.h" />
     <ClInclude Include="..\..\stochastic\person.h" />
     <ClInclude Include="..\..\stochastic\SEIR.h" />
     <ClInclude Include="..\..\stochastic\SIR.h" />

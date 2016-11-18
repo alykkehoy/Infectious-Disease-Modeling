@@ -19,6 +19,12 @@
     <Filter Include="Source Files\States">
       <UniqueIdentifier>{4918ea49-de6b-45da-8510-88acb3635749}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\OpenGL">
+      <UniqueIdentifier>{e5e1bd70-ffbe-4475-8d93-e2083f1682ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\OpenGL">
+      <UniqueIdentifier>{bdc562d7-6096-4ad3-9af1-c31e9f640b7e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\stochastic\_sim1.txt">
@@ -71,6 +77,18 @@
     <ClCompile Include="..\..\stochastic\States\E.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\stochastic\OpenGL stuff\Display.cpp">
+      <Filter>Source Files\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\stochastic\OpenGL stuff\main.cpp">
+      <Filter>Source Files\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\stochastic\OpenGL stuff\Mesh.cpp">
+      <Filter>Source Files\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\stochastic\OpenGL stuff\Shader.cpp">
+      <Filter>Source Files\OpenGL</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\stochastic\disease.h">
@@ -117,6 +135,15 @@
     </ClInclude>
     <ClInclude Include="..\..\stochastic\States\E.h">
       <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\stochastic\OpenGL stuff\Display.h">
+      <Filter>Header Files\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\stochastic\OpenGL stuff\Mesh.h">
+      <Filter>Header Files\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\stochastic\OpenGL stuff\Shader.h">
+      <Filter>Header Files\OpenGL</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
