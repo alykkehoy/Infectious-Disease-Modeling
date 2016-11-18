@@ -8,7 +8,7 @@ R::~R() {
 
 }
 
-void R::take_step(int i, int j, Disease& disease, Map& nextMap, Map& current_map, std::vector<std::shared_ptr<State>> model) {
+void R::take_step(int i, int j, Disease& disease, Map& nextMap, Map& current_map) {
 	if (rand() % 100 <= disease.get_mortality_rate()) {
 		nextMap.set_person_state(i, j, 'R');
 		//nextMap.set_immune(i, j, true);

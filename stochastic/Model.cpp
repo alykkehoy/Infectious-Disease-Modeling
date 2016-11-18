@@ -30,7 +30,7 @@ Map Model::take_step(Disease& disease, Map& current_map) {
 			nextMap.set_immune(i, j, current_map.get_immune(i, j));
 			for(int k = 0; k < m_model.size(); k++){
 				if (m_model[k]->get_char_rep() == current_map.get_person_state(i, j)) {
-					m_model[k]->take_step(i, j, disease, nextMap, current_map, m_model);
+					m_model[k]->take_step(i, j, disease, nextMap, current_map);
 					break;
 				}
 			}

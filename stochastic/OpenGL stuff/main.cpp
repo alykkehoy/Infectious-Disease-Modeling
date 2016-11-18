@@ -14,7 +14,7 @@ int main(int argc, char** argv) {
 	//stuff for testing custom models
 	std::vector<std::shared_ptr<State>> model;
 	model.push_back(std::shared_ptr<State>(new S));
-	model.push_back(std::shared_ptr<State>(new E));
+	//model.push_back(std::shared_ptr<State>(new E));
 	model.push_back(std::shared_ptr<State>(new I));
 	model.push_back(std::shared_ptr<State>(new R));
 	//model.push_back(std::shared_ptr<State>(new S));

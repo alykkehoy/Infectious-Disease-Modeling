@@ -8,7 +8,7 @@ S::~S() {
 
 }
 
-void S::take_step(int i, int j, Disease& disease, Map& nextMap, Map& current_map, std::vector<std::shared_ptr<State>> model) {
+void S::take_step(int i, int j, Disease& disease, Map& nextMap, Map& current_map) {
 	//VAR NAMES NEED CHANGED BELOW
 	int x = j;
 	int y = i;
