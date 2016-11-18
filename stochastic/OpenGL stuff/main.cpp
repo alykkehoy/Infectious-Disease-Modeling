@@ -46,7 +46,6 @@ int main(int argc, char** argv) {
 		display.Clear(0.0f, 0.15f, 0.3f, 1.0f);
 
 		shader.Bind();
-		//mesh.Draw();
 
 		if (loops < time) {
 			std::cout << "Time: " << loops << std::endl;

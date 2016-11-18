@@ -197,7 +197,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\stochastic\makefile" />
-    <None Include="ClassDiagram.cd" />
+    <None Include="res\basicShader.frag" />
+    <None Include="res\basicShader.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

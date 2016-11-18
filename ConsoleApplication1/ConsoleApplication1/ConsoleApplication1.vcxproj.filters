@@ -9,10 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Header Files\States">
       <UniqueIdentifier>{b6672aac-369c-4663-838b-ec4a62762b2c}</UniqueIdentifier>
     </Filter>
@@ -24,6 +20,15 @@
     </Filter>
     <Filter Include="Source Files\OpenGL">
       <UniqueIdentifier>{bdc562d7-6096-4ad3-9af1-c31e9f640b7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{77203421-11ab-4f51-ad4e-9604e0966a15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\Fragment">
+      <UniqueIdentifier>{2a1a5133-b82f-40bf-b391-2f273baf0594}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\Vertex">
+      <UniqueIdentifier>{2ff10ecd-6a9b-405d-9d8c-ed6ec2cf4a8a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +155,11 @@
     <None Include="..\..\stochastic\makefile">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="ClassDiagram.cd" />
+    <None Include="res\basicShader.vert">
+      <Filter>Shaders\Vertex</Filter>
+    </None>
+    <None Include="res\basicShader.frag">
+      <Filter>Shaders\Fragment</Filter>
+    </None>
   </ItemGroup>
 </Project>
