@@ -10,9 +10,9 @@ incubation time
 random seed //need to implement this still
 */
 
-//parameter:data type:value
-name:string:test
-alpha:int:3
-beta:int:30
-mortality:int:10
-range:int:2
+//parameter value
+name test
+alpha 3
+beta 30
+mortality 10
+range 2
