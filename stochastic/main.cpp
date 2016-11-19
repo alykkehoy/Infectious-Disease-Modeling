@@ -21,7 +21,14 @@ This file is a test run file for our disease libraries
 
 using namespace std;
 
-int main(){
+int main(int argc, char** argv){
+  if(argc != 1)//input file validation
+  {
+    cout << "Must have the name of a text file with no spaces as only argument" << endl;
+    return 1;
+  }
+  string filename = argv[1];
+  text_parse(); //take in parameters
 /*
 	//stuff for testing custom models
 	std::vector<State*> model;
