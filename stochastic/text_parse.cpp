@@ -2,7 +2,7 @@
 #include <string>
 
 //parse input text
-void text_parse::input() //TODO add input file parameter 
+auto text_parse::input() //TODO add input file parameter
 {
   string iline;
   while(getline(cin, iline))
@@ -15,7 +15,7 @@ void text_parse::input() //TODO add input file parameter
     
     if(pname == "name")
     {
-         
+
     }
     else if(pname == "alpha")
     {
