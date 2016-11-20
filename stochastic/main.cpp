@@ -20,7 +20,8 @@ This file is a test run file for our disease libraries
 #include "Model.h"
 #include "text_parse.h";
 
-using namespace std;
+using std::cout;
+using std::endl;
 
 int main(int argc, char** argv){
   if(argc != 1)//input file validation
@@ -44,33 +45,33 @@ int main(int argc, char** argv){
   //I don't know what this does
   int num_seeds = 1;
 
+  //get variables
+  string diseaseModel = Text_parse::getDiseaseModel();
+  int sim_len = Text_parse::getSim_len();
+  int pop_width = Text_parse::getPop_width();
+  int pop_height = Text_parse::getPop_height();
 
-  analytics a("Analytics", Text_parse::getPop_width()  * Text_parse::getPop_height(), num_seeds);
+  analytics a("Analytics", pop_width  * pop_height, num_seeds);
   //a.set_pop_size(pop_width  * pop_height);
   //a.set_num_seeds(num_seeds);
+
 
   //initialize disease
   Disease disease("test", 3, 30, 10, 1, 2);
 
+  //initialize map according to disease
   Map map(pop_width, pop_height);
   for (int i = 0; i < num_seeds; i++) {
 	  map.random_seed(disease);
   }
   //map.random_seed_immunity(30);
 
-  SIR sir;
-  SIRS sirs;
-  SEIR seir;
-
   std::ofstream outfile("output.txt", std::ofstream::out);
-
-
-  string diseaseModel = Text_parse::getDiseaseModel();
-  int sim_len = Text_parse::getSim_len();
 
   //implement different simulations based on input
   if(diseaseModel == "SIR")
   {
+    SIR sir;
     for (int loops = 0; loops < sim_len; loops++) {
       std::cout << "Time: " << loops << std::endl;
       map.print_map();
@@ -79,6 +80,7 @@ int main(int argc, char** argv){
   }
   else if(diseaseModel == "SIRS")
   {
+    SIRS sirs;
     for (int loops = 0; loops < sim_len; loops++) {
       std::cout << "Time: " << loops << std::endl;
       map.print_map();
@@ -87,6 +89,7 @@ int main(int argc, char** argv){
   }
   else if(diseaseModel == "SEIR")
   {
+    SEIR seir;
     for (int loops = 0; loops < sim_len; loops++) {
       std::cout << "Time: " << loops << std::endl;
       map.print_map();
