@@ -22,7 +22,7 @@ void Text_parse::Text_parse(string fileName) //TODO add input file parameter
         cerr << "Error opening parameter file for simulation" << endl;
         exit(1); //exit the program
     }
-    while(!inFile.eof()) {
+    while(!inFile.eof()) { //while not end of file
 
         string pname;
         inFile >> pname;
