@@ -28,9 +28,9 @@ void Text_parse::Text_parse(string fileName) //TODO add input file parameter
         inFile >> pname;
         if (pname == "diseaseName")
         {
-            string s;
-            inFile >> s;
-            Text_parse::setDiseaseName(s);
+          string s;
+          inFile >> s;
+          Text_parse::setDiseaseName(s);
         }
         else if (pname == "diseaseModel")
         {

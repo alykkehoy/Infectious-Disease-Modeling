@@ -18,6 +18,7 @@ This file is a test run file for our disease libraries
 #include "SIRS.h"
 #include "SEIR.h"
 #include "Model.h"
+#include "text_parse.h";
 
 using namespace std;
 
@@ -28,7 +29,7 @@ int main(int argc, char** argv){
     return 1;
   }
   string filename = argv[1];
-  text_parse(); //take in parameters
+  Text_parse::Text_parse(filename); //take in parameters
 /*
 	//stuff for testing custom models
 	std::vector<State*> model;
@@ -40,16 +41,15 @@ int main(int argc, char** argv){
 	//model.push_back(r);
 	Model m_sir("SIR", model);*/
 
-
-  int pop_width = 100;
-  int pop_height = 30;
-  int time = 50;
+  //I don't know what this does
   int num_seeds = 1;
 
-  analytics a("Analytics", pop_width  * pop_height, num_seeds);
+
+  analytics a("Analytics", Text_parse::getPop_width()  * Text_parse::getPop_height(), num_seeds);
   //a.set_pop_size(pop_width  * pop_height);
   //a.set_num_seeds(num_seeds);
 
+  //initialize disease
   Disease disease("test", 3, 30, 10, 1, 2);
 
   Map map(pop_width, pop_height);
@@ -63,14 +63,37 @@ int main(int argc, char** argv){
   SEIR seir;
 
   std::ofstream outfile("output.txt", std::ofstream::out);
-  
-  for (int loops = 0; loops < time; loops++) {
-	  std::cout << "Time: " << loops << std::endl;
-	  map.print_map();
-	  map = sir.take_step(disease, a, map);
-	  //map = sirs.take_step(disease, a, map);
-	  //map = seir.take_step(disease, a, map);
+
+
+  string diseaseModel = Text_parse::getDiseaseModel();
+  int sim_len = Text_parse::getSim_len();
+
+  //implement different simulations based on input
+  if(diseaseModel == "SIR")
+  {
+    for (int loops = 0; loops < sim_len; loops++) {
+      std::cout << "Time: " << loops << std::endl;
+      map.print_map();
+      map = sir.take_step(disease, a, map);
+    }
   }
+  else if(diseaseModel == "SIRS")
+  {
+    for (int loops = 0; loops < sim_len; loops++) {
+      std::cout << "Time: " << loops << std::endl;
+      map.print_map();
+      map = sirs.take_step(disease, a, map);
+    }
+  }
+  else if(diseaseModel == "SEIR")
+  {
+    for (int loops = 0; loops < sim_len; loops++) {
+      std::cout << "Time: " << loops << std::endl;
+      map.print_map();
+      map = seir.take_step(disease, a, map);
+    }
+  }
+
   
   std::cout << "Final: " << endl;
   map.print_map();
