@@ -1,70 +1,95 @@
 #include <sstream>
 #include <string>
 #include <iostream>
+#include <fstream>
 #include "text_parse.h"
 
-using std::istringstream;
+using std::ifstream;
 using std::cout;
 using std::string;
 using std::cin;
+using std::cerr;
+using std::endl;
 
 //parse input text
-void Text_parse::Text_parse(string iline) //TODO add input file parameter
+void Text_parse::Text_parse(string fileName) //TODO add input file parameter
 {
-  while(getline(cin, iline))
-  {
-    istringstream iss(iline);
-    string pname;
-    auto value;
-    iss >> pname;
-    iss >> value;
+    ifstream inFile;
+    ifstream.open(fileName);
 
-    if(pname == "diseaseName")
+    if(inFile.fail()) //check for error in file reading
     {
-
+        cerr << "Error opening parameter file for simulation" << endl;
+        exit(1); //exit the program
     }
-    else if(pname == "diseaseModel")
-    {
+    while(!inFile.eof()) {
 
+        string pname;
+        inFile >> pname;
+        if (pname == "diseaseName")
+        {
+            string s;
+            inFile >> s;
+            Text_parse::setDiseaseName(s);
+        }
+        else if (pname == "diseaseModel")
+        {
+          string s;
+          inFile >> s;
+          Text_parse::setDiseaseModel(s);
+        }
+        else if (pname == "alpha")
+        {
+          int x;
+          inFile >> x;
+          Text_parse::setAlpha(x);
+        }
+        else if (pname == "beta")
+        {
+          int x;
+          inFile >> x;
+          Text_parse::setBeta(x);
+        }
+        else if (pname == "mortality")
+        {
+          int x;
+          inFile >> x;
+          Text_parse::setMortality(x);
+        }
+        else if (pname == "range")
+        {
+          int x;
+          inFile >> x;
+          Text_parse::setRange(x);
+        }
+        else if (pname == "pop_width")
+        {
+          int x;
+          inFile >> x;
+          Text_parse::setPop_width(x);
+        }
+        else if (pname == "pop_height")
+        {
+          int x;
+          inFile >> x;
+          Text_parse::setPop_height(x);
+        }
+        else if (pname == "sim_len")
+        {
+          int x;
+          inFile >> x;
+          Text_parse::setSim_len(x);
+        }
+        else if (pname == "seed")
+        {
+          long l;
+          inFile >> l;
+        }
+        else //incorrect input
+        {
+            cout << "Input file error detected." << endl;
+        }
     }
-    else if(pname == "alpha")
-    {
-
-    }
-    else if(pname == "beta")
-    {
-
-    }
-    else if(pname == "mortality")
-    {
-
-    }
-    else if(pname == "range")
-    {
-
-    }
-    else if(pname == "pop_width")
-    {
-
-    }
-    else if(pname == "pop_height")
-    {
-
-    }
-    else if(pname == "sim_len")
-    {
-
-    }
-    else if(pname == "seed")
-    {
-
-    }
-    else //incorrect input
-    {
-      cout << "Incorrect input, please check parameters";
-    }
-
-  }
 }
 
 const string &Text_parse::getDiseaseName() const {
