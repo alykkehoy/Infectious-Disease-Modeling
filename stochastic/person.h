@@ -7,6 +7,7 @@ class Person
 public:
 	Person();
 	Person(char s);
+	~Person();
 
 	void increment_num_infected(int num);
 
