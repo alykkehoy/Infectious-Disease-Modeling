@@ -52,15 +52,6 @@
     <ClCompile Include="..\..\stochastic\analytics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\stochastic\SIR.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\stochastic\SIRS.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\stochastic\SEIR.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\stochastic\States\S.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
@@ -109,15 +100,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\stochastic\analytics.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\stochastic\SIR.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\stochastic\SIRS.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\stochastic\SEIR.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\stochastic\States\S.h">
