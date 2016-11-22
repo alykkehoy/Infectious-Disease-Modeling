@@ -102,7 +102,6 @@ void Map::random_seed_immunity(int percent) {
 	}
 }
 
-
 void Map::print_map() {
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
