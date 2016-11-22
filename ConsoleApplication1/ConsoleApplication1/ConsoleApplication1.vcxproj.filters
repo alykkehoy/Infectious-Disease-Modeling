@@ -82,6 +82,9 @@
     <ClCompile Include="..\..\stochastic\OpenGL stuff\Shader.cpp">
       <Filter>Source Files\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\stochastic\text_parse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\stochastic\disease.h">

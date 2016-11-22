@@ -1,5 +1,3 @@
-#include <iostream>
-//#include <string.h>
 #include "person.h"
 
 
@@ -36,7 +34,6 @@ char Person::getState(){
 
 void Person::setState(char s) {
 	state = s;
-	return;
 }
 
 int Person::get_num_infected() {

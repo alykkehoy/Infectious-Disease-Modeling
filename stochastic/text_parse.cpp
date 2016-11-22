@@ -12,10 +12,10 @@ using std::cerr;
 using std::endl;
 
 //parse input text
-void Text_parse::Text_parse(string fileName)
+Text_parse::Text_parse(string fileName)
 {
     ifstream inFile;
-    ifstream.open(fileName);
+    inFile.open(fileName);
 
     if(inFile.fail()) //check for error in file reading
     {

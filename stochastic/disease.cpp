@@ -1,6 +1,5 @@
 #include "disease.h"
 
-//In Disease class, implement the Disease ctor
 Disease::Disease(std::string n, double a, double b, double m_r, int r, int time) {
 	range = r;
 	name = n;
@@ -28,7 +27,6 @@ Disease::Disease(std::string n, double a, double b, double m_r) {
 	mortality_rate = m_r;
 	incubation_time = 0;
 }
-
 
 double Disease::getAlpha(){
   return alpha;

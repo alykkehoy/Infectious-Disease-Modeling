@@ -7,7 +7,6 @@
 #include "map.h"
 #include "disease.h"
 
-//the map object
 Map::Map(int width, int height) {
 	rows = height;
 	cols = width;
@@ -36,7 +35,6 @@ Map::Map(Map &original) {
 	}
 }
 
-
 Map::~Map() {
 	for (int i = 0; i < rows; i++) {
 		delete[] population[i];
@@ -61,8 +59,6 @@ Map& Map::operator=(Map &arg) {
 	return *this;
 }
 
-
-
 Person** Map::getGrid() {
 	return population;
 }
@@ -77,7 +73,7 @@ void Map::setEveryoneHealthy() {
 	return;
 }
 
-//this function generates a random infected person somewhere in the grud as well as an infection time
+//this function generates a random infected person somewhere in the grid as well as an infection time
 void Map::random_seed(Disease& disease) {
 	std::default_random_engine generator { std::random_device()() };
 	std::uniform_int_distribution<int> distribution(1,100);
@@ -141,7 +137,6 @@ void Map::print_immunity_map() {
 	std::cout << '\n';
 	return;
 }
-
 
 void Map::print_test_map() {
 	for (int i = 0; i < rows; i++) {

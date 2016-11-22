@@ -170,6 +170,7 @@
     <ClCompile Include="..\..\stochastic\States\R.cpp" />
     <ClCompile Include="..\..\stochastic\States\S.cpp" />
     <ClCompile Include="..\..\stochastic\States\State.cpp" />
+    <ClCompile Include="..\..\stochastic\text_parse.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\stochastic\analytics.h" />
