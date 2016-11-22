@@ -45,11 +45,12 @@ int main(int argc, char** argv){
   //I don't know what this does
   int num_seeds = 1;
 
+  Text_parse parser(filename);
   //get variables
-  string diseaseModel = Text_parse::getDiseaseModel();
-  int sim_len = Text_parse::getSim_len();
-  int pop_width = Text_parse::getPop_width();
-  int pop_height = Text_parse::getPop_height();
+  string diseaseModel = parser.getDiseaseModel();
+  int sim_len = parser.getSim_len();
+  int pop_width = parser.getPop_width();
+  int pop_height = parser.getPop_height();
 
   analytics a("Analytics", pop_width  * pop_height, num_seeds);
   //a.set_pop_size(pop_width  * pop_height);
