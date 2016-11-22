@@ -5,7 +5,6 @@
 #include "disease.h"
 #include <random>
 
-class Person;
 class Map
 {
 public:

@@ -193,6 +193,10 @@
     <None Include="..\..\stochastic\makefile" />
     <None Include="res\basicShader.frag" />
     <None Include="res\basicShader.vert" />
+    <None Include="res\imunityMap.frag" />
+    <None Include="res\imunityMap.vert" />
+    <None Include="res\infectedMap.frag" />
+    <None Include="res\infectedMap.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
