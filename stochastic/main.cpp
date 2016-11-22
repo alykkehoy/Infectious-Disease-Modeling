@@ -23,7 +23,7 @@ This file is a test run file for our disease libraries
 using namespace std;
 
 int main(){
-
+/*
 	//stuff for testing custom models
 	std::vector<std::shared_ptr<State>> model;
 	model.push_back(std::shared_ptr<State>(new S));
@@ -32,6 +32,14 @@ int main(){
 	model.push_back(std::shared_ptr<State>(new R));
 	//model.push_back(std::shared_ptr<State>(new S));
 	Model m_sir("SIR", model);
+	std::vector<State*> model;
+	S m_s();
+	//model.push_back((State*)m_s);
+	I i();
+	//model.push_back(i);
+	R r();
+	//model.push_back(r);
+	Model m_sir("SIR", model);*/
 
 
   int pop_width = 100;
