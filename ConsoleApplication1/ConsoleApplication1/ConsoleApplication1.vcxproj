@@ -157,7 +157,6 @@
   <ItemGroup>
     <ClCompile Include="..\..\stochastic\analytics.cpp" />
     <ClCompile Include="..\..\stochastic\disease.cpp" />
-    <ClCompile Include="..\..\stochastic\main.cpp" />
     <ClCompile Include="..\..\stochastic\map.cpp" />
     <ClCompile Include="..\..\stochastic\Model.cpp" />
     <ClCompile Include="..\..\stochastic\neighborhood.cpp" />

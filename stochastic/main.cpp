@@ -50,7 +50,7 @@ int main(){
   for (int loops = 0; loops < time; loops++) {
 	  std::cout << "Time: " << loops << std::endl;
 	  map.print_map();
-	  map = m_sir.take_step(disease, map);
+	 // map = m_sir.take_step(disease, map);
   }
 
   cout << "Final: " << endl;

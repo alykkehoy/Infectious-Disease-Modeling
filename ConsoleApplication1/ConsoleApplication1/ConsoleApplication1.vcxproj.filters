@@ -40,9 +40,6 @@
     <ClCompile Include="..\..\stochastic\disease.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\stochastic\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\stochastic\map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

@@ -19,12 +19,49 @@ Map::Map(int width, int height) {
 	setEveryoneHealthy();
 }
 
-Map::~Map() {
-	//for (int i = 0; i < rows; i++) {
-		//free(population[i]);
-	//}
-	//free(population);
+Map::Map(Map &original) {
+	rows = original.get_rows();
+	cols = original.get_cols();
+	srand(time(NULL));
+	population = new Person*[rows];
+	for (int i = 0; i < rows; i++) {
+		population[i] = new Person[cols];
+		for (int j = 0; j < cols; j++) {
+			population[i][j].setState(original.get_person_state(i, j));
+			population[i][j].set_immune(original.get_immune(i, j));
+			population[i][j].set_incubation_timer(original.get_incubation_timer(i, j));
+			population[i][j].set_infection_time(original.get_person_infection_time(i, j));
+			population[i][j].set_num_infected(original.get_num_infected(i, j));
+		}
+	}
 }
+
+
+Map::~Map() {
+	for (int i = 0; i < rows; i++) {
+		delete[] population[i];
+	}
+	delete[] population;
+	population = NULL;
+}
+
+Map& Map::operator=(Map &arg) {
+	rows = arg.get_rows();
+	cols = arg.get_cols();
+	srand(time(NULL));
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < cols; j++) {
+			population[i][j].setState(arg.get_person_state(i, j));
+			population[i][j].set_immune(arg.get_immune(i, j));
+			population[i][j].set_incubation_timer(arg.get_incubation_timer(i, j));
+			population[i][j].set_infection_time(arg.get_person_infection_time(i, j));
+			population[i][j].set_num_infected(arg.get_num_infected(i, j));
+		}
+	}
+	return *this;
+}
+
+
 
 Person** Map::getGrid() {
 	return population;

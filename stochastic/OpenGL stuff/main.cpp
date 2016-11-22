@@ -27,6 +27,10 @@ int main(int argc, char** argv) {
 
 	//Disease disease("seir test", 3, 15, 10, 3, 5);
 	Disease disease("sir", 3, 15, 10, 2, 2);
+	//for (int i = 0; i < 10; i++) {
+	//	Map test(pop_height, pop_width);
+	//}
+
 
 
 	Map map(pop_width, pop_height);
@@ -47,8 +51,10 @@ int main(int argc, char** argv) {
 
 		shader.Bind();
 
+
 		if (loops < time) {
 			std::cout << "Time: " << loops << std::endl;
+			//m_sir.take_step(disease, map);
 			map = m_sir.take_step(disease, map);
 		}
 
@@ -60,11 +66,19 @@ int main(int argc, char** argv) {
 				v_map[i * pop_width + j].set_vec(glm::vec3(x, y, z));
 			}
 		}
+
 		Mesh mesh(v_map, pop_height * pop_width);
 		mesh.Draw();
 
 		display.Update();
 		loops++;
 	}
+
+	//for (int i = 0; i < time; i++){
+	//	std::cout << "Time: " << i << std::endl;
+	//	m_sir.take_step(disease, map).print_map();
+	//	map = m_sir.take_step(disease, map);
+	//	map.print_map();
+	//}
 	return 0;
 }

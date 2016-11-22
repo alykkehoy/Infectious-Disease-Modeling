@@ -19,6 +19,7 @@ public:
 	std::string get_name();
 
 private:
+
 	std::string m_name;
 	std::vector<std::shared_ptr<State>> m_model;
 };

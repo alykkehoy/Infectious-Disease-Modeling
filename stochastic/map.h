@@ -10,7 +10,9 @@ class Map
 {
 public:
 	Map(int width, int height);
+	Map(Map &original);
 	~Map();
+	Map& operator=(Map &arg);
 
 	void setEveryoneHealthy();
 	void random_seed(Disease& disease);
