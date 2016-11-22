@@ -13,6 +13,6 @@ public:
   std::vector<std::pair<unsigned int, unsigned int>> getNeighbors(enum pattern, std::pair<unsigned int, unsigned int>);
 
    
-}
+};
 
 #endif //GUARD_NEIGHBORHOOD_H
