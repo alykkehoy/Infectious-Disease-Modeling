@@ -7,9 +7,6 @@
 #include "States\E.h"
 #include "States\I.h"
 #include "States\R.h"
-#include "States\S.h"
-#include "States\I.h"
-#include "States\R.h"
 
 class Model
 {
