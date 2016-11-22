@@ -1,16 +1,9 @@
-//this is a text file that we can fill with parameters for our test program
-
-*/
-name
-alpha
-beta
-mortality
-range
-incubation time
-*/
-//parameter:data type:value
-name:string:test
-alpha:int:3
-beta:int:30
-mortality:int:10
-range:int:2
+diseaseName test
+diseaseModel SIR
+alpha 3
+beta 30
+mortality 10
+range 2
+pop_width 100
+pop_height 30
+sim_len 50

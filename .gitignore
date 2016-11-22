@@ -4,6 +4,10 @@
 # Compiled Source
 *.o
 
+# Clion files
+.idea/
+CMakeLists.txt
+
 # Test Files
 stochastic/test1
 
