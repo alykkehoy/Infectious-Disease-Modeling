@@ -2,11 +2,11 @@
 #include <vector>
 #include <memory>
 
-#include "States\State.h"
-#include "States\S.h"
-#include "States\E.h"
-#include "States\I.h"
-#include "States\R.h"
+#include "States/State.h"
+#include "States/S.h"
+#include "States/E.h"
+#include "States/I.h"
+#include "States/R.h"
 
 class Model
 {

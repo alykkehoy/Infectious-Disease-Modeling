@@ -1,8 +1,8 @@
 #include "person.h"
 
 
-Person::Person(char s) {
-	state = s;
+Person::Person(char s) : state(s)
+{
 	infectionTime = 0;
 	num_infected = 0;
 	immune = false;
@@ -20,7 +20,8 @@ Person::Person() {
 Person::~Person() {
 }
 
-void Person::set_infection_time(int time) {
+void Person::set_infection_time(int time)
+{
 	infectionTime = time;
 }
 

@@ -7,9 +7,9 @@
 #include "map.h"
 #include "disease.h"
 
-Map::Map(int width, int height) {
-	rows = height;
-	cols = width;
+Map::Map(int width, int height)
+		: rows(width), cols(height)
+{
 	srand(time(NULL));
 	population = new Person*[rows];
 	for (int i = 0; i < rows; i++) {

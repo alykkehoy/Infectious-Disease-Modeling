@@ -4,10 +4,9 @@
 #include "analytics.h"
 
 analytics::analytics(std::string output_file, int population_size, int seeds)
+	: file_name(output_file), pop_size(population_size), num_seeds(seeds)
 {
-	file_name = output_file;
-	pop_size = population_size;
-	num_seeds = seeds;
+
 }
 
 analytics::~analytics()
