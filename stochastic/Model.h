@@ -1,4 +1,6 @@
-#pragma once
+#ifndef GUARD_MODEL_H
+#define GUARD_MODEL_H
+
 #include <vector>
 #include <memory>
 
@@ -23,3 +25,5 @@ private:
 	std::string m_name;
 	std::vector<std::shared_ptr<State>> m_model;
 };
+
+#endif

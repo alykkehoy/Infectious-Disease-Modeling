@@ -1,4 +1,6 @@
-#pragma once
+#ifndef GUARD_ANALYTICS_H
+#define GUARD_ANALYTICS_H
+
 #include <vector>
 #include <string>
 
@@ -49,3 +51,4 @@ private:
 	void create_avg_num_infected(Map& map);
 };
 
+#endif

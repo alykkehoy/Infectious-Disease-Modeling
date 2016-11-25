@@ -1,4 +1,5 @@
-#pragma once
+#ifndef GUARD_MESH_H
+#define GUARD_MESH_H
 #include <glm\glm.hpp>
 #include <GL\glew.h>
 
@@ -36,3 +37,4 @@ private:
 	unsigned int m_drawCount;
 };
 
+#endif

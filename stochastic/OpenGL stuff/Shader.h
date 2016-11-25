@@ -1,4 +1,6 @@
-#pragma once
+#ifndef GUARD_SHADER_H
+#define GUARD_SHADER_H
+
 #include <string>
 #include<GL\glew.h>
 
@@ -19,3 +21,4 @@ private:
 	GLuint m_sharders[NUM_SHADERS];
 };
 
+#endif
