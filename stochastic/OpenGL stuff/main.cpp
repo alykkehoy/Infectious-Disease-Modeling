@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
 
 	//Disease disease("seir test", 3, 5, 10, 3, 5);
 	//Disease disease("sir", 3, 15, 10, 2, 2);
-	Disease disease("sir_small range", 3, 15, 10);
+	Disease disease("sir_small range", 3, 20, 10);
 
 	Map map(pop_width, pop_height);
 	for (int i = 0; i < num_seeds; i++) {
