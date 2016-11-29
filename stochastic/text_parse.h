@@ -14,7 +14,7 @@ private:
     long seed;
 
 public:
-    Text_parse(string);
+    Text_parse(string fileName);
     //getters and setters //
     const string &getDiseaseName() const;
     void setDiseaseName(const string &diseaseName);

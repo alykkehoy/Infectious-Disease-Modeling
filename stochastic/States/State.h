@@ -1,4 +1,6 @@
-#pragma once
+#ifndef GUARD_STATE_H
+#define GUARD_STATE_H
+
 //#include "../person.h"
 #include <memory>
 #include <vector>
@@ -23,3 +25,5 @@ public:
 	void set_char_rep(char c);
 private:
 };
+
+#endif

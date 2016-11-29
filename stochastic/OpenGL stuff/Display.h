@@ -1,4 +1,6 @@
-#pragma once
+#ifndef GUARD_DISPLAY_H
+#define GUARD_DISPLAY_H
+
 #include <SDL2\SDL.h>
 #include <string>
 class Display
@@ -15,3 +17,4 @@ private:
 	bool m_isClosed;
 };
 
+#endif

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef GUARD_S_H
+#define GUARD_S_H
 
 #include "../disease.h"
 #include "../map.h"
@@ -13,3 +14,5 @@ public:
 
 private:
 };
+
+#endif

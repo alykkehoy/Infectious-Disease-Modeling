@@ -1,12 +1,14 @@
-#pragma once
+#ifndef GUARD_MODEL_H
+#define GUARD_MODEL_H
+
 #include <vector>
 #include <memory>
 
-#include "States\State.h"
-#include "States\S.h"
-#include "States\E.h"
-#include "States\I.h"
-#include "States\R.h"
+#include "States/State.h"
+#include "States/S.h"
+#include "States/E.h"
+#include "States/I.h"
+#include "States/R.h"
 
 class Model
 {
@@ -23,3 +25,5 @@ private:
 	std::string m_name;
 	std::vector<std::shared_ptr<State>> m_model;
 };
+
+#endif

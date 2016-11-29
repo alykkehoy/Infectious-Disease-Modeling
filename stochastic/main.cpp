@@ -32,6 +32,7 @@ int main(int argc, char** argv){
   }
   string filename = argv[1];
   Text_parse::Text_parse(filename); //take in parameters
+
 	//stuff for testing custom models
 	std::vector<std::shared_ptr<State>> model;
 	model.push_back(std::shared_ptr<State>(new S));

@@ -1,30 +1,27 @@
 #include "disease.h"
 
-Disease::Disease(std::string n, double a, double b, double m_r, int r, int time) {
-	range = r;
-	name = n;
-	alpha = a; //average infectious period (aka 1/alpha)
-	beta = b; //contact rate
-	mortality_rate = m_r;
-	incubation_time = time;
-}
+// alpha average infectious period (aka 1/alpha)
+//beta contact rate
+Disease::Disease(std::string n, double a, double b, double m_r, int r, int time)
+	: range(r), name(n), alpha(a), beta(b), mortality_rate(m_r), incubation_time(time)
+{
 
-Disease::Disease(std::string n, double a, double b, double m_r, int r) {
-	range = r;
-	name = n;
-	alpha = a; //average infectious period (aka 1/alpha)
-	beta = b; //contact rate
-	mortality_rate = m_r;
+}
+// alpha average infectious period (aka 1/alpha)
+//beta contact rate
+Disease::Disease(std::string n, double a, double b, double m_r, int r)
+	: range(r), name(n), alpha(a), beta(b), mortality_rate(m_r)
+{
 	incubation_time = 0;
 }
 
-Disease::Disease(std::string n, double a, double b, double m_r) {
+// alpha average infectious period (aka 1/alpha)
+//beta contact rate
+Disease::Disease(std::string n, double a, double b, double m_r)
+	: name(n), alpha(a), beta(b), mortality_rate(m_r)
+{
 	//Disease(n, a, b, m_r, 1);
 	range = 1;
-	name = n;
-	alpha = a; //average infectious period (aka 1/alpha)
-	beta = b; //contact rate
-	mortality_rate = m_r;
 	incubation_time = 0;
 }
 

@@ -12,7 +12,7 @@ using std::cerr;
 using std::endl;
 
 //parse input text
-Text_parse::Text_parse(string fileName)
+Text_parse::Text_parse(fileName)
 {
     ifstream inFile;
     inFile.open(fileName);
@@ -22,7 +22,8 @@ Text_parse::Text_parse(string fileName)
         cerr << "Error opening parameter file for simulation" << endl;
         exit(1); //exit the program
     }
-    while(!inFile.eof()) { //while not end of file
+    while(!inFile.eof())
+    { //while not end of file
 
         string pname;
         inFile >> pname;

@@ -2,12 +2,11 @@
 #include "Model.h"
 
 Model::Model(std::string name, std::vector<std::shared_ptr<State>> model)
+	: m_name(name), m_model(model)
 {
 	for (int i = 0; i < model.size(); i++) {
 		model[i]->create_next_char(model);
 	}
-	m_name = name;
-	m_model = model;
 }
 
 Model::~Model()
