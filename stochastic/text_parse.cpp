@@ -12,7 +12,7 @@ using std::cerr;
 using std::endl;
 
 //parse input text
-Text_parse::Text_parse(fileName)
+Text_parse::Text_parse(string fileName)
 {
     ifstream inFile;
     inFile.open(fileName);

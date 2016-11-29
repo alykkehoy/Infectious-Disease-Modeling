@@ -1,6 +1,10 @@
 #include <vector>
 #include "Model.h"
 
+//TODO: add take steps function
+//TODO: add deterministic to run both at same time
+//TODO: add way to use predefined model
+//TODO: add counters for population state for each step of model (vector of pairs of state, int)
 Model::Model(std::string name, std::vector<std::shared_ptr<State>> model)
 	: m_name(name), m_model(model)
 {
