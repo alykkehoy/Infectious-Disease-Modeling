@@ -57,11 +57,12 @@ vector <pair<unsigned int, unsigned int>>Neighborhood::calculate_Circle(x, y, h,
   int x = magitude; //X = R
   int y = 0; //Y = 0
 
-
-
 }
 
-vector <pair<unsigned int, unsigned int>>Neighborhood::calculate_Adjacent(x, y, h, w)
+vector <pair<unsigned int, unsigned int>>Neighborhood::calculate_Adjacent(unsigned int x,
+                                                                          unsigned int y,
+                                                                          unsigned int h,
+                                                                          unsigned int w)
 {
   vector<pair<unsigned int, unsigned int>> n; //neighbors
 
@@ -81,7 +82,23 @@ vector <pair<unsigned int, unsigned int>>Neighborhood::calculate_Adjacent(x, y, 
   return n;
 }
 
-vector <pair<unsigned int, unsigned int>>Neighborhood::calculate_Square(x, y, h, w, magnitude)
+vector <pair<unsigned int, unsigned int>>Neighborhood::calculate_Square(unsigned int x,
+                                                                        unsigned int y,
+                                                                        unsigned int h,
+                                                                        unsigned int w,
+                                                                        unsigned int magnitude)
 {
+  vector<pair<unsigned int, unsigned int>> n; //neighbors
+
+  //add by row, from bottom to top
+
+  //calculate min and max x and y values
+  int x_min, x_max, y_min, y_max;
+  x_min = magnitude - x;
+  x_max = magnitude + x;
+  y_min = magnitude - y;
+  y_max = magnitude + y;
+
+  //allow out of bounds and then correct when adding to vector
 
 }
