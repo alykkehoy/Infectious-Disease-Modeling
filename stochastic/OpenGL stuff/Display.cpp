@@ -39,7 +39,6 @@ bool Display::IsClosed(){
 }
 
 void Display::Update() {
-	//glClear();
 	SDL_GL_SwapWindow(m_window);
 
 	SDL_Event e;
