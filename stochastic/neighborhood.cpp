@@ -58,7 +58,8 @@ vector <pair<unsigned int, unsigned int>>Neighborhood::calculate_Circle(x, y, h,
   int y = 0; //Y = 0
 
 }
-
+//can return pointers to people objects
+//mapping of coord to people
 vector <pair<unsigned int, unsigned int>>Neighborhood::calculate_Adjacent(unsigned int x,
                                                                           unsigned int y,
                                                                           unsigned int h,
