@@ -15,11 +15,8 @@ This file is a test run file for our disease libraries
 #include "map.h"
 #include "disease.h"
 #include "analytics.h"
-#include "SIR.h"
-#include "SIRS.h"
-#include "SEIR.h"
 #include "Model.h"
-#include "text_parse.h";
+#include "text_parse.h"
 
 using std::cout;
 using std::endl;

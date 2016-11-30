@@ -3,49 +3,16 @@ CXXFLAGS=-std=c++11
 
 all: test
 
-test:  main.o analytics.o disease.o interaction.o SIR.o SIRS.o SEIR.o map.o neighborhood.o person.o
-	$(CXX) main.o analytics.o disease.o interaction.o SIR.o SIRS.o SEIR.o map.o neighborhood.o person.o -o test1 
-
-main.o: main.cpp
-	$(CXX) $(CXXFLAGS) -c main.cpp
-
-analytics.o: analytics.cpp analytics.h
-	$(CXX) $(CXXFLAGS) -c analytics.cpp
-
-disease.o: disease.cpp disease.h
-	$(CXX) -c disease.cpp
-
-interaction.o: interaction.cpp interaction.h
-	$(CXX) $(CXXFLAGS) -c interaction.cpp
-    
-SIR.o: SIR.cpp SIR.h
-	$(CXX) $(CXXFLAGS) -c SIR.cpp
-    
-SIRS.o: SIRS.cpp SIRS.h
-	$(CXX) $(CXXFLAGS) -c SIRS.cpp
-	
-SEIR.o: SEIR.cpp SEIR.h
-	$(CXX) $(CXXFLAGS) -c SEIR.cpp
-	
-#Model.o: Model.cpp Model.h
-#	$(CXX) $(CXXFLAGS) -c Model.cpp
-
-map.o: map.cpp map.h
-	$(CXX) $(CXXFLAGS) -c map.cpp
-	
-neighborhood.o: neighborhood.cpp neighborhood.h
-	$(CXX) -c neighborhood.cpp
-
-person.o: person.cpp person.h
-	$(CXX) -c person.cpp
-
-text_parse.o: text_parse.cpp text_parse.h
-	$(CXX) -c text_parse.cpp
+test:  main.o analytics.o disease.o interaction.o States/State.o States/S.o States/I.o States/R.o States/E.o Model.o map.o neighborhood.o person.o
+	#$(CXX) main.o analytics.o disease.o interaction.o S.o I.o R.o SIR.o SIRS.o SEIR.o Model.o map.o neighborhood.o person.o -o test1 
+	$(CXX) $^ -o test1 $(CXXLIBS)
 
 %.o: %.cpp %.h
-	$(CXX) $(CXXFLAGS) -c $>
+	$(CXX) $(CXXFLAGS) -c $<
+	
+States/%.o: %.cpp %.h
+	$(CXX) $(CXXFLAGS) -c $<
 	
 clean:
 	rm test1
 	rm *.o
-
