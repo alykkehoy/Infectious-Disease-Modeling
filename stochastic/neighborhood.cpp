@@ -43,7 +43,7 @@ vector<pair<unsigned int, unsigned int>> Neighborhood::findNeighbors(int x, int 
     case circle:
       return Neighborhood::calculate_Circle(x, y, h, w, magnitude);
     case adjacent: //right next to infected (no diagonals)
-      return Neighborhood::calculate_Adjacent(x, y, h, w);
+      return Neighborhood::calculate_Cross(x, y, h, w, magnitude);
     case square:
       return Neighborhood::calculate_Square(x, y, h, w, magnitude);
   }
@@ -60,25 +60,35 @@ vector <pair<unsigned int, unsigned int>>Neighborhood::calculate_Circle(x, y, h,
 }
 //can return pointers to people objects
 //mapping of coord to people
-vector <pair<unsigned int, unsigned int>>Neighborhood::calculate_Adjacent(unsigned int x,
+vector <pair<unsigned int, unsigned int>>Neighborhood::calculate_Cross(unsigned int x,
                                                                           unsigned int y,
                                                                           unsigned int h,
-                                                                          unsigned int w)
+                                                                          unsigned int w,
+                                                                          unsigned int magnitude)
 {
   vector<pair<unsigned int, unsigned int>> n; //neighbors
+  int x_neg, x_pos, y_neg, y_pos;
 
-  //up (y++)
-  if((y + 1) > h) n.push_back(make_pair(x, 0)); //at top of map, up neighbor is bottom
-  else n.push_back(make_pair(x, ++y));
-  //down
-  if((y - 1) < 0) n.push_back(make_pair(x, h)); //at bottom of map, down neighbor is top
-  else n.push_back(make_pair(x, --y));
-  //left
-  if ((x - 1) < 0) n.push_back(make_pair(w, y)); //at left of map, left neighbor is right
-  else n.push_back(make_pair(--x, y));
-  //right
-  if ((x + 1) > w) n.push_back(make_pair(0, y)); //at right of map, right neighbor is left
-  else n.push_back(make_pair(++x, y));
+  for (unsigned int n = 1; n <= magnitude; n++) //loop through for neighbors within magnitude
+  {
+
+    //bounds checking
+    //if() // x_pos
+
+    //up (+y)
+    if(j > h) n.push_back(make_pair(x, 0)); //at top of map, up neighbor is bottom
+    else n.push_back(make_pair(x, j));
+    //down (-y)
+    if(j < 0) n.push_back(make_pair(x, h)); //at bottom of map, down neighbor is top
+    else n.push_back(make_pair(x, --y));
+    //left (-x)
+    if ((x - 1) < 0) n.push_back(make_pair(w, y)); //at left of map, left neighbor is right
+    else n.push_back(make_pair(--x, y));
+    //right (+x)
+    if ((x + 1) > w) n.push_back(make_pair(0, y)); //at right of map, right neighbor is left
+    else n.push_back(make_pair(++x, y));
+  }
+
 
   return n;
 }

@@ -25,10 +25,11 @@ public:
                                                                           unsigned int w,
                                                                           unsigned int magnitude);
 
-  vector <pair<unsigned int, unsigned int>>Neighborhood::calculate_Adjacent(unsigned int x,
+  vector <pair<unsigned int, unsigned int>>Neighborhood::calculate_Cross(unsigned int x,
                                                                             unsigned int y,
                                                                             unsigned int h,
-                                                                            unsigned int w);
+                                                                            unsigned int w,
+                                                                            unsigned int magnitude);
 
   vector <pair<unsigned int, unsigned int>>Neighborhood::calculate_Square(unsigned int x,
                                                                           unsigned int y,
