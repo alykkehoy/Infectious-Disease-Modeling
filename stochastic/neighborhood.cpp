@@ -67,28 +67,63 @@ vector <pair<unsigned int, unsigned int>>Neighborhood::calculate_Cross(unsigned 
                                                                           unsigned int magnitude)
 {
   vector<pair<unsigned int, unsigned int>> n; //neighbors
-  int x_neg, x_pos, y_neg, y_pos;
 
-  for (unsigned int n = 1; n <= magnitude; n++) //loop through for neighbors within magnitude
+  //current comparative values
+  unsigned int x_neg = x;
+  unsigned int x_pos = x;
+  unsigned int y_neg = y;
+  unsigned int y_pos = y;
+
+  for (unsigned int n = 1; n <= magnitude; n++) //loop through neighbors with magnitude into account
   {
-
-    //bounds checking
-    //if() // x_pos
-
     //up (+y)
-    if(j > h) n.push_back(make_pair(x, 0)); //at top of map, up neighbor is bottom
-    else n.push_back(make_pair(x, j));
-    //down (-y)
-    if(j < 0) n.push_back(make_pair(x, h)); //at bottom of map, down neighbor is top
-    else n.push_back(make_pair(x, --y));
-    //left (-x)
-    if ((x - 1) < 0) n.push_back(make_pair(w, y)); //at left of map, left neighbor is right
-    else n.push_back(make_pair(--x, y));
-    //right (+x)
-    if ((x + 1) > w) n.push_back(make_pair(0, y)); //at right of map, right neighbor is left
-    else n.push_back(make_pair(++x, y));
-  }
+    if(y_pos == h) // bounds checking: at top of map, up neighbor is bottom
+    {
+      y_pos = 0;
+      n.push_back(make_pair(x, y_pos));
+    }
+    else
+    {
+      ++y_pos;
+      n.push_back(make_pair(x, y_pos));
+    }
 
+    //down (-y)
+    if(y_neg == 0) // bounds checking: at bottom of map, down neighbor is top
+    {
+      y_neg = h;
+      n.push_back(make_pair(x, y_neg));
+    }
+    else
+    {
+      --y_neg;
+      n.push_back(make_pair(x, y_neg));
+    }
+
+    //left (-x)
+    if(x_neg == 0) // bounds checking: at left of map, left neighbor is right
+    {
+      x_neg = w;
+      n.push_back(make_pair(x_neg, y));
+    }
+    else
+    {
+      --x_neg;
+      n.push_back(make_pair(x_neg, y));
+    }
+
+    //right (+x)
+    if (x_pos == w) // bounds checking: at right of map, right neighbor is left
+    {
+      x_pos = 0;
+      n.push_back(make_pair(x_pos, y));
+    }
+    else
+    {
+      ++x_pos;
+      n.push_back(make_pair(x_pos, y));
+    }
+  }
 
   return n;
 }
