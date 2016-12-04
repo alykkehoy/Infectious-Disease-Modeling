@@ -20,6 +20,7 @@ Mesh::Mesh(Vertex* verticies, unsigned int numVerticess)
 
 Mesh::~Mesh()
 {
+	glDeleteBuffers(NUM_BUFFERS, m_vertexArrayBuffers);
 	glDeleteVertexArrays(1, &m_vertexArrayObject);
 }
 

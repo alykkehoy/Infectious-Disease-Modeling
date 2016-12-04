@@ -78,7 +78,7 @@ void Map::setEveryoneHealthy() {
 
 //this function generates a random infected person somewhere in the grid as well as an infection time
 void Map::random_seed(Disease& disease) {
-	//std::default_random_engine generator { std::random_device()() };
+	std::default_random_engine generator { std::random_device()() };
 	std::uniform_int_distribution<int> distribution(1,100);
 	int rand_x = ((double)distribution(generator) / 100) * rows;
 	int rand_y = ((double)distribution(generator) / 100) * cols;
@@ -91,7 +91,7 @@ void Map::random_seed(Disease& disease) {
 void Map::random_seed_immunity(int percent) {
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
-			//std::default_random_engine generator { std::random_device()() };
+			std::default_random_engine generator { std::random_device()() };
 			std::uniform_int_distribution<int> distribution(1,100);
 			int rand = ((double)distribution(generator));
 			if ((rand) <= percent) {

@@ -14,27 +14,27 @@ int main(int argc, char** argv) {
 	//stuff for testing custom models
 	std::vector<std::shared_ptr<State>> model;
 	model.push_back(std::shared_ptr<State>(new S));
-	model.push_back(std::shared_ptr<State>(new E));
+	//model.push_back(std::shared_ptr<State>(new E));
 	model.push_back(std::shared_ptr<State>(new I));
 	model.push_back(std::shared_ptr<State>(new R));
-	//model.push_back(std::shared_ptr<State>(new S));
+	model.push_back(std::shared_ptr<State>(new S));
 	Model m_sir("SIR", model);
 
 	int pop_width = 500;
 	int pop_height = 500;
 	int time = 1000;
-	int num_seeds = 1;
+	int num_seeds = 2;
 
 	//Disease disease("seir test", 3, 5, 10, 3, 5);
-	//Disease disease("sir", 3, 15, 10, 2, 2);
-	Disease disease("sir_small range", 3, 20, 10);
+	Disease disease("sir", 3, 15, 10, 2, 2);
+	//Disease disease("sir_small range", 3, 20, 10);
 
 	Map map(pop_width, pop_height);
 	for (int i = 0; i < num_seeds; i++) {
 		map.random_seed(disease);
 	}
 
-	//map.random_seed_immunity(20);
+	map.random_seed_immunity(5);
 
 	Display display(pop_height, pop_width, "Disease Map");
 
