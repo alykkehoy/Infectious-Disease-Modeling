@@ -9,6 +9,31 @@ Model::Model(std::string name, std::vector<std::shared_ptr<State>> model)
 	}
 }
 
+Model::Model(std::string name): m_name(name) {
+	for (int i = 0; i < name.length(); i++) {
+		if (name[i] == 'S') {
+			std::cout << "S";
+			m_model.push_back(std::shared_ptr<State>(new S));
+		}
+		else if (name[i] == 'E') {
+			std::cout << "E";
+			m_model.push_back(std::shared_ptr<State>(new E));
+		}
+		else if (name[i] == 'I') {
+			std::cout << "I";
+			m_model.push_back(std::shared_ptr<State>(new I));
+		}
+		else if (name[i] == 'R') {
+			std::cout << "R";
+			m_model.push_back(std::shared_ptr<State>(new R));
+		}
+	}
+	std::cout << std::endl;
+	for (int i = 0; i < name.size(); i++) {
+		m_model[i]->create_next_char(m_model);
+	}
+}
+
 Model::~Model()
 {
 }
@@ -36,4 +61,11 @@ Map Model::take_step(Disease &disease, Map &current_map) {
 		}
 	}
 	return nextMap;
+}
+
+Map Model::take_step(Disease& disease, Map& current_map, int steps) {
+	for (int i = 0; i < steps; i++) {
+		current_map = take_step(disease, current_map);
+	}
+	return current_map;
 }

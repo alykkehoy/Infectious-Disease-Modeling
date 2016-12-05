@@ -14,9 +14,11 @@ class Model
 {
 public:
 	Model(std::string name, std::vector<std::shared_ptr<State>> model);
+	Model(std::string name);
 	~Model();
 
 	Map take_step(Disease& disease, Map& current_map);
+	Map take_step(Disease& disease, Map& current_map, int steps);
 
 	std::string get_name();
 

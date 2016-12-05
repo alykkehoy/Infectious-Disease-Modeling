@@ -17,8 +17,10 @@ int main(int argc, char** argv) {
 	//model.push_back(std::shared_ptr<State>(new E));
 	model.push_back(std::shared_ptr<State>(new I));
 	model.push_back(std::shared_ptr<State>(new R));
-	model.push_back(std::shared_ptr<State>(new S));
-	Model m_sir("SIR", model);
+	//model.push_back(std::shared_ptr<State>(new S));
+	//Model m_sir("SIR", model);
+
+	Model m_sir("SIR");
 
 	int pop_width = 500;
 	int pop_height = 500;
@@ -26,8 +28,8 @@ int main(int argc, char** argv) {
 	int num_seeds = 2;
 
 	//Disease disease("seir test", 3, 5, 10, 3, 5);
-	Disease disease("sir", 3, 15, 10, 2, 2);
-	//Disease disease("sir_small range", 3, 20, 10);
+	//Disease disease("sir", 3, 15, 10, 2, 2);
+	Disease disease("sir_small range", 3, 20, 10);
 
 	Map map(pop_width, pop_height);
 	for (int i = 0; i < num_seeds; i++) {
@@ -76,7 +78,7 @@ int main(int argc, char** argv) {
 			}
 		} else {
 			shader.Bind();
-			if (loops < time) {
+			if (loops < time && !state[SDL_SCANCODE_P]) {
 				std::cout << "Time: " << loops << std::endl;
 				map = m_sir.take_step(disease, map);
 				loops++;
