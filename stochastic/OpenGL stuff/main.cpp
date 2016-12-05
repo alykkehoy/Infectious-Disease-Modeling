@@ -33,6 +33,8 @@ int main(int argc, char** argv) {
 
 	Map map(pop_width, pop_height);
 
+	m_sir.init_counters(map);
+
 	map.random_seed(disease, num_seeds);
 
 	map.random_seed_immunity(5);

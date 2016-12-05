@@ -38,6 +38,35 @@ Model::~Model()
 {
 }
 
+void Model::init_counters(Map &map) {
+	counters_on = true;
+	for (int i = 0; i < m_model.size(); i++) {
+		std::vector<int> counter;
+		m_counters.push_back(counter);
+	}
+	take_count(map);
+}
+
+void Model::take_count(Map &map) {
+	int rows = map.get_rows();
+	int cols = map.get_cols();
+
+	for (int i = 0; i < m_counters.size(); i++) {
+		m_counters[i].push_back(0);
+	}
+
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < cols; j++) {
+			for (int k = 0; k < m_model.size(); k++) {
+				if (m_model[k]->get_char_rep() == map.get_person_state(i, j)) {
+					m_counters[k][m_counters[k].size() - 1]++;
+					break;
+				}
+			}
+		}
+	}
+}
+
 std::string Model::get_name() {
 	return m_name;
 }
@@ -59,6 +88,10 @@ Map Model::take_step(Disease &disease, Map &current_map) {
 				}
 			}
 		}
+	}
+
+	if (counters_on) {
+		take_count(nextMap);
 	}
 	return nextMap;
 }
