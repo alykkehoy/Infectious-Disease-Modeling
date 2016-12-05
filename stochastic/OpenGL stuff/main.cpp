@@ -32,9 +32,8 @@ int main(int argc, char** argv) {
 	Disease disease("sir_small range", 3, 20, 10);
 
 	Map map(pop_width, pop_height);
-	for (int i = 0; i < num_seeds; i++) {
-		map.random_seed(disease);
-	}
+
+	map.random_seed(disease, num_seeds);
 
 	map.random_seed_immunity(5);
 

@@ -15,6 +15,7 @@ public:
 
 	void setEveryoneHealthy();
 	void random_seed(Disease& disease);
+	void random_seed(Disease& disease, int num_seeds);
 	void random_seed_immunity(int percent);
 
 	int get_rows();
