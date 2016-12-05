@@ -79,6 +79,22 @@ void Model::print_counters() {
 	return;
 }
 
+void Model::export_counters(std::string file_name) {
+	std::ofstream file;
+	file.open(file_name + ".csv", std::ofstream::out);
+
+	for (int i = 0; i < m_counters[0].size(); i++) {
+		for (int j = 0; j < m_counters.size() - 1; j++) {
+			file << m_counters[j][i] << ",";
+		}
+		file << m_counters[m_counters.size() - 1][i];
+		file << '\n';
+	}
+
+	file.close();
+	return;
+}
+
 std::string Model::get_name() {
 	return m_name;
 }

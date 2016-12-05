@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <memory>
+#include <fstream>
 
 #include "States/State.h"
 #include "States/S.h"
@@ -19,6 +20,7 @@ public:
 
 	void init_counters(Map &map);
 	void print_counters();
+	void export_counters(std::string file_name);
 	Map take_step(Disease& disease, Map& current_map);
 	Map take_step(Disease& disease, Map& current_map, int steps);
 
