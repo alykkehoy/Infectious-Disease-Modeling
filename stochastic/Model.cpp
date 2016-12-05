@@ -70,28 +70,35 @@ void Model::take_count(Map &map) {
 }
 
 void Model::print_counters() {
-	for (int i = 0; i < m_counters[0].size(); i++) {
-		for (int j = 0; j < m_counters.size(); j++) {
-			std::cout << m_counters[j][i] << " ";
+	if (counters_on) {
+		for (int i = 0; i < m_counters[0].size(); i++) {
+			for (int j = 0; j < m_counters.size(); j++) {
+				std::cout << m_counters[j][i] << " ";
+			}
+			std::cout << std::endl;
 		}
-		std::cout << std::endl;
 	}
 	return;
 }
 
 void Model::export_counters(std::string file_name) {
-	std::ofstream file;
-	file.open(file_name + ".csv", std::ofstream::out);
+	if (counters_on) {
+		std::cout << "Export to " << file_name << ".csv started..." << std::endl;
 
-	for (int i = 0; i < m_counters[0].size(); i++) {
-		for (int j = 0; j < m_counters.size() - 1; j++) {
-			file << m_counters[j][i] << ",";
+		std::ofstream file;
+		file.open(file_name + ".csv", std::ofstream::out);
+
+		for (int i = 0; i < m_counters[0].size(); i++) {
+			for (int j = 0; j < m_counters.size() - 1; j++) {
+				file << m_counters[j][i] << ",";
+			}
+			file << m_counters[m_counters.size() - 1][i];
+			file << '\n';
 		}
-		file << m_counters[m_counters.size() - 1][i];
-		file << '\n';
-	}
 
-	file.close();
+		file.close();
+		std::cout << "Export complete." << std::endl;
+	}
 	return;
 }
 
