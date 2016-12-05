@@ -18,6 +18,7 @@ public:
 	~Model();
 
 	void init_counters(Map &map);
+	void print_counters();
 	Map take_step(Disease& disease, Map& current_map);
 	Map take_step(Disease& disease, Map& current_map, int steps);
 

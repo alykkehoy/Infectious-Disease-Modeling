@@ -45,6 +45,7 @@ void Model::init_counters(Map &map) {
 		m_counters.push_back(counter);
 	}
 	take_count(map);
+	return;
 }
 
 void Model::take_count(Map &map) {
@@ -65,6 +66,17 @@ void Model::take_count(Map &map) {
 			}
 		}
 	}
+	return;
+}
+
+void Model::print_counters() {
+	for (int i = 0; i < m_counters[0].size(); i++) {
+		for (int j = 0; j < m_counters.size(); j++) {
+			std::cout << m_counters[j][i] << " ";
+		}
+		std::cout << std::endl;
+	}
+	return;
 }
 
 std::string Model::get_name() {

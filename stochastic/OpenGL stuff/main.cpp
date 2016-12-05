@@ -99,5 +99,6 @@ int main(int argc, char** argv) {
 
 		display.Update();
 	}
+	m_sir.print_counters();
 	return 0;
 }
