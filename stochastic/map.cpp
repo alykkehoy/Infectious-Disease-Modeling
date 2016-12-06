@@ -45,7 +45,7 @@ Map::~Map() {
 	population = NULL;
 }
 
-Map& Map::operator=(Map &arg) {
+Map& Map::operator=(Map const& arg) {
 	rows = arg.get_rows();
 	cols = arg.get_cols();
 	srand(time(NULL));
@@ -159,15 +159,15 @@ void Map::print_test_map() {
 	return;
 }
 
-char Map::get_person_state(int i, int j) {
+char Map::get_person_state(int i, int j) const{
 	return population[i][j].getState();
 }
 
-int Map::get_rows() {
+int Map::get_rows() const{
 	return rows;
 }
 
-int Map::get_cols() {
+int Map::get_cols() const{
 	return cols;
 }
 
@@ -179,15 +179,15 @@ void Map::set_person_infection_time(int i, int j, int time) {
 	population[i][j].set_infection_time(time);
 }
 
-int Map::get_person_infection_time(int i, int j) {
+int Map::get_person_infection_time(int i, int j) const{
 	return population[i][j].get_infection_time();
 }
 
-void Map::increment_num_infected(int i, int j, int num) {
+void Map::increment_num_infected(int i, int j, int num){
 	population[i][j].increment_num_infected(num);
 }
 
-void Map::increment_num_infected(int i, int j) {
+void Map::increment_num_infected(int i, int j){
 	increment_num_infected(i, j, 1);
 }
 
@@ -195,7 +195,7 @@ void Map::set_num_infected(int i, int j, int num) {
 	population[i][j].set_num_infected(num);
 }
 
-int Map::get_num_infected(int i, int j) {
+int Map::get_num_infected(int i, int j) const{
 	return population[i][j].get_num_infected();
 }
 
@@ -203,11 +203,11 @@ void Map::set_immune(int i, int j, bool a) {
 	population[i][j].set_immune(a);
 }
 
-bool Map::get_immune(int i, int j) {
+bool Map::get_immune(int i, int j) const{
 	return population[i][j].get_immune();
 }
 
-int Map::get_incubation_timer(int i, int j) {
+int Map::get_incubation_timer(int i, int j) const{
 	return population[i][j].get_incubation_timer();
 }
 

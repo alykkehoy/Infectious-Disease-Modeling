@@ -6,7 +6,6 @@
 #include <vector>
 
 #include "../disease.h"
-#include "../analytics.h"
 #include "../map.h"
 
 class State {
