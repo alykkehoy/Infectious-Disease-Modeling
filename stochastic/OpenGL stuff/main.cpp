@@ -25,7 +25,7 @@ int main(int argc, char** argv) {
 	int pop_width = 500;
 	int pop_height = 500;
 	int time = 500;
-	int num_seeds = 10;
+	int num_seeds = 1;
 
 	//Disease disease("seir test", 3, 5, 10, 3, 5);
 	//Disease disease("sir", 3, 15, 10, 2, 2);
