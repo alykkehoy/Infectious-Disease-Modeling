@@ -11,19 +11,19 @@ Model::Model(std::string name, std::vector<std::shared_ptr<State>> model)
 
 Model::Model(std::string name): m_name(name) {
 	for (int i = 0; i < name.length(); i++) {
-		if (name[i] == 'S') {
+		if (name[i] == 'S' || name[i] == 's') {
 			std::cout << "S";
 			m_model.push_back(std::shared_ptr<State>(new S));
 		}
-		else if (name[i] == 'E') {
+		else if (name[i] == 'E' || name[i] == 'e') {
 			std::cout << "E";
 			m_model.push_back(std::shared_ptr<State>(new E));
 		}
-		else if (name[i] == 'I') {
+		else if (name[i] == 'I' || name[i] == 'i') {
 			std::cout << "I";
 			m_model.push_back(std::shared_ptr<State>(new I));
 		}
-		else if (name[i] == 'R') {
+		else if (name[i] == 'R' || name[i] == 'r') {
 			std::cout << "R";
 			m_model.push_back(std::shared_ptr<State>(new R));
 		}
