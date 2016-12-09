@@ -1,9 +1,0 @@
-diseaseName test
-diseaseModel SIR
-alpha 3
-beta 30
-mortality 10
-range 2
-pop_width 100
-pop_height 30
-sim_len 50
