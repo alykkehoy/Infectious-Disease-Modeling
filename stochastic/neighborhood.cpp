@@ -74,55 +74,23 @@ vector <pair<unsigned int, unsigned int>>Neighborhood::calculate_Cross(unsigned 
   unsigned int y_neg = y;
   unsigned int y_pos = y;
 
-  for (unsigned int n = 1; n <= magnitude; n++) //loop through neighbors with magnitude into account
+  for (unsigned int i = 1; i <= magnitude; i++) //loop through neighbors with magnitude into account
   {
-    //up (+y)
-    if(y_pos == h) // bounds checking: at top of map, up neighbor is bottom
-    {
-      y_pos = 0;
-      n.push_back(make_pair(x, y_pos));
-    }
-    else
-    {
-      ++y_pos;
-      n.push_back(make_pair(x, y_pos));
-    }
-
-    //down (-y)
-    if(y_neg == 0) // bounds checking: at bottom of map, down neighbor is top
-    {
-      y_neg = h;
-      n.push_back(make_pair(x, y_neg));
-    }
-    else
-    {
-      --y_neg;
-      n.push_back(make_pair(x, y_neg));
-    }
-
-    //left (-x)
-    if(x_neg == 0) // bounds checking: at left of map, left neighbor is right
-    {
-      x_neg = w;
+      //take step left, then push to vector
+      x_neg = oneLeft(x_neg, w);
       n.push_back(make_pair(x_neg, y));
-    }
-    else
-    {
-      --x_neg;
-      n.push_back(make_pair(x_neg, y));
-    }
 
-    //right (+x)
-    if (x_pos == w) // bounds checking: at right of map, right neighbor is left
-    {
-      x_pos = 0;
-      n.push_back(make_pair(x_pos, y));
-    }
-    else
-    {
-      ++x_pos;
-      n.push_back(make_pair(x_pos, y));
-    }
+      //take step right, then push to vector
+      x_pos = oneRight(x_pos, w);
+      n.push_back(make_pair (x_pos, y));
+
+      //take step up, then push to vector
+      y_pos = oneUp(y_pos, h);
+      n.push_back(make_pair(x, y_pos));
+
+      //take step down, then push to vector
+      y_neg = oneDown(y_neg, h);
+      n.push_back(make_pair(x, y_neg));
   }
 
   return n;
@@ -135,16 +103,79 @@ vector <pair<unsigned int, unsigned int>>Neighborhood::calculate_Square(unsigned
                                                                         unsigned int magnitude)
 {
   vector<pair<unsigned int, unsigned int>> n; //neighbors
+    unsigned int cursor_x = x;
+    unsigned int cursor_y = y;
 
-  //add by row, from bottom to top
+    unsigned int count_mag_x = 0;
+    unsigned int count_mag_y = 0;
 
-  //calculate min and max x and y values
-  int x_min, x_max, y_min, y_max;
-  x_min = magnitude - x;
-  x_max = magnitude + x;
-  y_min = magnitude - y;
-  y_max = magnitude + y;
+    //go up
+    while(count_mag_y <= magnitude) //until reach max of magnitude
+    {
+        ++count_mag_y; //add to y magnitude
 
+
+        //add center
+        n.push_back(make_pair(cursor_x, cursor_y));
+    }
   //allow out of bounds and then correct when adding to vector
 
+}
+
+int oneUp(unsigned int y, unsigned int h)
+{
+    //up (++y)
+    if(y == h) // bounds checking: at top of map, up neighbor is bottom
+    {
+        return 0;
+    }
+    else
+    {
+        ++y;
+        return y;
+    }
+}
+
+int oneDown(unsigned int y, unsigned int h)
+{
+    //down (--y)
+    if(y == 0) // bounds checking: at bottom of map, down neighbor is top
+    {
+        return h;
+    }
+    else
+    {
+        --y;
+        return y;
+    }
+}
+
+int oneLeft(unsigned int x, unsigned int w)
+{
+    //left (-x)
+    if(x == 0) // bounds checking: at left of map, left neighbor is right
+    {
+        x = w;
+        return x;
+    }
+    else
+    {
+        --x;
+        return x;
+    }
+}
+
+int oneRight(unsigned int x, unsigned int w)
+{
+    //right (+x)
+    if (x == w) // bounds checking: at right of map, right neighbor is left
+    {
+        x = 0;
+        return x;
+    }
+    else
+    {
+        ++x;
+        return x;
+    }
 }
