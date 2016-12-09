@@ -38,6 +38,10 @@ public:
                                                                           unsigned int magnitude);
 
 private:
+    int oneUp(unsigned int y, unsigned int h);
+    int oneDown(unsigned int y, unsigned int h);
+    int oneLeft(unsigned int x, unsigned int w);
+    int oneRight(unsigned int x, unsigned int w);
 
 };
 

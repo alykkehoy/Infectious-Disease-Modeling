@@ -52,7 +52,7 @@ vector<pair<unsigned int, unsigned int>> Neighborhood::findNeighbors(int x, int 
 
 vector <pair<unsigned int, unsigned int>>Neighborhood::calculate_Circle(x, y, h, w, magnitude)
 {
-  //Brensenham's midpoint circle algorithm
+  //midpoint circle algorithm
   int e = -1 * magnitude; //E = -R
   int x = magitude; //X = R
   int y = 0; //Y = 0
@@ -96,6 +96,7 @@ vector <pair<unsigned int, unsigned int>>Neighborhood::calculate_Cross(unsigned 
   return n;
 }
 
+
 vector <pair<unsigned int, unsigned int>>Neighborhood::calculate_Square(unsigned int x,
                                                                         unsigned int y,
                                                                         unsigned int h,
@@ -106,21 +107,59 @@ vector <pair<unsigned int, unsigned int>>Neighborhood::calculate_Square(unsigned
     unsigned int cursor_x = x;
     unsigned int cursor_y = y;
 
-    unsigned int count_mag_x = 0;
-    unsigned int count_mag_y = 0;
-
-    //go up
-    while(count_mag_y <= magnitude) //until reach max of magnitude
+    //go up and push center row
+    for(unsigned int mag_count_y = 0; mag_count_y <= magnitude; mag_count_y++, cursor_y++) //until reach max of magnitude
     {
-        ++count_mag_y; //add to y magnitude
+        //go left
+        for(unsigned int mag_count_x = 0; mag_count_x < magnitude; mag_count_x++)
+        {
+            cursor_x = oneLeft(cursor_x, w);
+            n.push_back(make_pair(cursor_x, cursor_y));
+        }
+        //reset cursor
+        cursor_x = x;
+        //go right
+        for(unsigned int mag_count_x = 0 ; mag_count_x < magnitude; mag_count_x++)
+        {
+            cursor_x = oneRight(cursor_x, w);
+            n.push_back(make_pair(cursor_x, cursor_y));
+        }
+        //reset cursor
+        cursor_x = x;
+        //push center
+        n.push_back(make_pair(cursor_x,cursor_y));
 
-
-        //add center
-        n.push_back(make_pair(cursor_x, cursor_y));
     }
-  //allow out of bounds and then correct when adding to vector
+    //set y_cursor to one below middle row
+    cursor_y = y - 1;
 
+
+    //go down not including center row
+    for(unsigned int mag_count_y = 1; mag_count_y <= magnitude; mag_count_y++,cursor_y--) //until reach min of magnitude
+    {
+        //go left
+        for(unsigned int mag_count_x = 0; mag_count_x < magnitude; mag_count_x++)
+        {
+            cursor_x = oneLeft(cursor_x, w);
+            n.push_back(make_pair(cursor_x, cursor_y));
+        }
+        //reset cursor
+        cursor_x = x;
+        //go right
+        for(unsigned int mag_count_x = 0; mag_count_x < magnitude; mag_count_x++)
+        {
+            cursor_x = oneRight(cursor_x, w);
+            n.push_back(make_pair(cursor_x, cursor_y));
+        }
+        //reset cursor
+        cursor_x = x;
+        //push center
+        n.push_back(make_pair(cursor_x,cursor_y));
+    }
+
+    return n;
 }
+
 
 int oneUp(unsigned int y, unsigned int h)
 {
