@@ -52,7 +52,7 @@ vector<pair<unsigned int, unsigned int>> Neighborhood::findNeighbors(int x, int 
 
 vector <pair<unsigned int, unsigned int>>Neighborhood::calculate_Circle(x, y, h, w, magnitude)
 {
-  //midpoint circle algorithm
+  //midpoint circle algorithm https://en.wikipedia.org/wiki/Midpoint_circle_algorithm
   int e = -1 * magnitude; //E = -R
   int x = magitude; //X = R
   int y = 0; //Y = 0
