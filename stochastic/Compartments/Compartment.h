@@ -8,18 +8,18 @@
 #include "../disease.h"
 #include "../map.h"
 
-class State {
+class Compartment {
 protected:
 	char next_char;
 	char char_representation;
 public:
-	State();
-	~State();
+	Compartment();
+	~Compartment();
 
 	virtual void take_step(int i, int j, Disease& disease, Map& nextMap, Map& current_map) = 0;
 
 	char get_char_rep();
-	void create_next_char(std::vector<std::shared_ptr<State>> model);
+	void create_next_char(std::vector<std::shared_ptr<Compartment>> model);
 
 	void set_char_rep(char c);
 private:

@@ -1,14 +1,14 @@
-#ifndef GUARD_R_H
-#define GUARD_R_H
+#ifndef GUARD_E_H
+#define GUARD_E_H
 
 #include "../disease.h"
 #include "../map.h"
-#include "State.h"
+#include "Compartment.h"
 
-class R : public State {
+class E : public Compartment {
 public:
-	R();
-	~R();
+	E();
+	~E();
 
 	void take_step(int i, int j, Disease& disease, Map& nextMap, Map& current_map);
 

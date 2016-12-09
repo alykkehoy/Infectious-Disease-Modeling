@@ -1,7 +1,7 @@
 #include <vector>
 #include "Model.h"
 
-Model::Model(std::string name, std::vector<std::shared_ptr<State>> model)
+Model::Model(std::string name, std::vector<std::shared_ptr<Compartment>> model)
 	: m_name(name), m_model(model)
 {
 	for (int i = 0; i < model.size(); i++) {
@@ -13,19 +13,19 @@ Model::Model(std::string name): m_name(name) {
 	for (int i = 0; i < name.length(); i++) {
 		if (name[i] == 'S' || name[i] == 's') {
 			std::cout << "S";
-			m_model.push_back(std::shared_ptr<State>(new S));
+			m_model.push_back(std::shared_ptr<Compartment>(new S));
 		}
 		else if (name[i] == 'E' || name[i] == 'e') {
 			std::cout << "E";
-			m_model.push_back(std::shared_ptr<State>(new E));
+			m_model.push_back(std::shared_ptr<Compartment>(new E));
 		}
 		else if (name[i] == 'I' || name[i] == 'i') {
 			std::cout << "I";
-			m_model.push_back(std::shared_ptr<State>(new I));
+			m_model.push_back(std::shared_ptr<Compartment>(new I));
 		}
 		else if (name[i] == 'R' || name[i] == 'r') {
 			std::cout << "R";
-			m_model.push_back(std::shared_ptr<State>(new R));
+			m_model.push_back(std::shared_ptr<Compartment>(new R));
 		}
 	}
 	std::cout << std::endl;

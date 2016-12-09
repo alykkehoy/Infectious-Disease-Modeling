@@ -3,9 +3,9 @@
 
 #include "../disease.h"
 #include "../map.h"
-#include "State.h"
+#include "Compartment.h"
 
-class S: public State{
+class S: public Compartment{
 public:
 	S();
 	~S();

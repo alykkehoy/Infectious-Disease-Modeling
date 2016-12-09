@@ -5,16 +5,16 @@
 #include <memory>
 #include <fstream>
 
-#include "States/State.h"
-#include "States/S.h"
-#include "States/E.h"
-#include "States/I.h"
-#include "States/R.h"
+#include "Compartments/Compartment.h"
+#include "Compartments/S.h"
+#include "Compartments/E.h"
+#include "Compartments/I.h"
+#include "Compartments/R.h"
 
 class Model
 {
 public:
-	Model(std::string name, std::vector<std::shared_ptr<State>> model);
+	Model(std::string name, std::vector<std::shared_ptr<Compartment>> model);
 	Model(std::string name);
 	~Model();
 
@@ -31,7 +31,7 @@ private:
 
 	bool counters_on = false;
 	std::string m_name;
-	std::vector<std::shared_ptr<State>> m_model;
+	std::vector<std::shared_ptr<Compartment>> m_model;
 	std::vector<std::vector<int>> m_counters;
 };
 
