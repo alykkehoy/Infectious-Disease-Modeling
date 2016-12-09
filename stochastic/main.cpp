@@ -10,6 +10,7 @@ using std::endl;
 
 int main(int argc, char** argv){
 	
+	//Declare a new model
 	Model m_sir("SIR");
 
 	int pop_width = 50;
