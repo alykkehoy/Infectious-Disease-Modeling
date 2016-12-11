@@ -1,8 +1,8 @@
 #ifndef GUARD_E_H
 #define GUARD_E_H
 
-#include "../disease.h"
-#include "../map.h"
+#include "../Disease.h"
+#include "../Map.h"
 #include "Compartment.h"
 
 class E : public Compartment {

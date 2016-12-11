@@ -1,6 +1,5 @@
 #ifndef GUARD_MODEL_H
 #define GUARD_MODEL_H
-
 #include <vector>
 #include <memory>
 #include <fstream>
@@ -11,28 +10,27 @@
 #include "Compartments/I.h"
 #include "Compartments/R.h"
 
-class Model
-{
-public:
-	Model(std::string name, std::vector<std::shared_ptr<Compartment>> model);
-	Model(std::string name);
-	~Model();
+class Model {
+    public:
+    Model(std::string name, std::vector < std::shared_ptr < Compartment >> model);
+    Model(std::string name);
+    ~Model();
 
-	void init_counters(Map &map);
-	void print_counters();
-	void export_counters(std::string file_name);
-	Map take_step(Disease& disease, Map& current_map);
-	Map take_step(Disease& disease, Map& current_map, int steps);
+    void init_counters(Map & map);
+    void print_counters();
+    void export_counters(std::string file_name);
+    Map take_step(Disease & disease, Map & current_map);
+    Map take_step(Disease & disease, Map & current_map, int steps);
 
-	std::string get_name();
+    std::string get_name();
 
-private:
-	void take_count(Map &map);
+    private:
+    void take_count(Map & map);
 
-	bool counters_on = false;
-	std::string m_name;
-	std::vector<std::shared_ptr<Compartment>> m_model;
-	std::vector<std::vector<int>> m_counters;
+    bool counters_on = false;
+    std::string m_name;
+    std::vector < std::shared_ptr < Compartment >> m_model;
+    std::vector < std::vector < int >> m_counters;
 };
 
 #endif

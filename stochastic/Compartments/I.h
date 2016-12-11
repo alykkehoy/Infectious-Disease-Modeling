@@ -1,8 +1,8 @@
 #ifndef GUARD_I_H
 #define GUARD_I_H
 
-#include "../disease.h"
-#include "../map.h"
+#include "../Disease.h"
+#include "../Map.h"
 #include "Compartment.h"
 
 class I : public Compartment {

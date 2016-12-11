@@ -1,26 +1,26 @@
 #ifndef GUARD_MAP_H
 #define GUARD_MAP_H
 
-#include "person.h"
-#include "disease.h"
+#include "Person.h"
+#include "Disease.h"
 #include <random>
 
-class Map
-{
-public:
+class Map {
+	public:
 	Map(int width, int height);
-	Map(Map &original);
+	Map(Map & original);
 	~Map();
-	Map& operator=(Map const& arg);
+	Map & operator = (Map
+		const & arg);
 
 	void setEveryoneHealthy();
-	void random_seed(Disease& disease);
-	void random_seed(Disease& disease, int num_seeds);
+	void random_seed(Disease & disease);
+	void random_seed(Disease & disease, int num_seeds);
 	void random_seed_immunity(int percent);
 
 	int get_rows() const;
 	int get_cols() const;
-	Person** getGrid();
+	Person * * getGrid();
 	char get_person_state(int i, int j) const;
 	int get_person_infection_time(int i, int j) const;
 	int get_num_infected(int i, int j) const;
@@ -40,10 +40,10 @@ public:
 	void print_immunity_map();
 	void print_test_map();
 
-private:
-	Person** population;
+	private:
+		Person * * population;
 	int rows;
 	int cols;
 
 };
-#endif // GUARD_MAP_H
+	#endif // GUARD_MAP_H

@@ -3,8 +3,7 @@ CXXFLAGS=-std=c++11
 
 all: test
 
-test:  sample.o disease.o interaction.o Compartments/Compartment.o Compartments/S.o Compartments/I.o Compartments/R.o Compartments/E.o Model.o map.o neighborhood.o person.o
-	#$(CXX) main.o analytics.o disease.o interaction.o S.o I.o R.o SIR.o SIRS.o SEIR.o Model.o map.o neighborhood.o person.o -o test1 
+test:  sample.o Disease.o Compartments/Compartment.o Compartments/S.o Compartments/I.o Compartments/R.o Compartments/E.o Model.o Map.o Neighborhood.o Person.o
 	$(CXX) $^ -o test1 $(CXXLIBS)
 	
 %.o: %.cpp %.h
@@ -12,4 +11,4 @@ test:  sample.o disease.o interaction.o Compartments/Compartment.o Compartments/
 	
 clean:
 	rm *.o
-	rm Compartment/*.o
+	rm Compartments/*.o
