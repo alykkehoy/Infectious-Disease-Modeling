@@ -1,6 +1,7 @@
 #include <vector> 
 #include "Model.h"
 
+
 Model::Model(std::string name, std::vector <std::shared_ptr<Compartment>> model): m_name(name), m_model(model) {
     for (int i = 0; i < model.size(); i++) {
         model[i] -> create_next_char(model);
