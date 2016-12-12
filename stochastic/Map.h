@@ -1,3 +1,9 @@
+/*
+ *  @filename       Map.h
+ *  @tile           Map
+ *  @author         Team Infection
+ *
+ */
 #ifndef GUARD_MAP_H
 #define GUARD_MAP_H
 

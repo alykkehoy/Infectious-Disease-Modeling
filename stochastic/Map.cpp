@@ -1,4 +1,11 @@
-#include <iostream> 
+/*
+ *  @filename       Map.cpp
+ *  @fileheader     Map.h
+ *  @tile           Map
+ *  @author         Team Infection
+ *
+ */
+#include <iostream>
 #include <stdlib.h> 
 #include <time.h> 
 #include <string> 

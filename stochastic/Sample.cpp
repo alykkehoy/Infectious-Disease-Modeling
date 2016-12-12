@@ -1,3 +1,9 @@
+/*
+ *  @filename       Sample.cpp
+ *  @tile           Sample
+ *  @author         Team Infection
+ *
+ */
 #include <iostream>
 #include <array>
 

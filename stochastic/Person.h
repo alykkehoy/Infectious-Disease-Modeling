@@ -1,3 +1,9 @@
+/*
+ *  @filename       Person.h
+ *  @tile           Person
+ *  @author         Team Infection
+ *
+ */
 #ifndef GUARD_PERSON_H
 #define GUARD_PERSON_H
 

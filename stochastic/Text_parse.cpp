@@ -1,3 +1,10 @@
+/*
+ *  @filename       Text_parse.cpp
+ *  @fileheader     Text_parse.h
+ *  @tile           Text_parse
+ *  @author         Team Infection
+ *
+ */
 #include <sstream>
 #include <string>
 #include <iostream>

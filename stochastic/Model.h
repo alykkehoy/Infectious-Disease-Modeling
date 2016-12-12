@@ -1,3 +1,9 @@
+/*
+ *  @filename       Model.h
+ *  @tile           Model
+ *  @author         Team Infection
+ *
+ */
 #ifndef GUARD_MODEL_H
 #define GUARD_MODEL_H
 #include <vector>

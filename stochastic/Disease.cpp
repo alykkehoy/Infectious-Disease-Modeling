@@ -1,7 +1,7 @@
 /*
- *  @filename       Model.cpp
- *  @fileheader
- *  @tile           Model
+ *  @filename       Disease.cpp
+ *  @fileheader     Disease.h
+ *  @tile           Disease
  *  @author         Team Infection
  *
  */

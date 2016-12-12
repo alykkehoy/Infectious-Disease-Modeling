@@ -1,3 +1,10 @@
+/*
+ *  @filename       _
+ *  @fileheader     _
+ *  @tile           _
+ *  @author         Team Infection
+ *
+ */
 #include<iostream>
 #include<cmath>
 #include "SIR.h"

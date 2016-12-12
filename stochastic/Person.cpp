@@ -1,3 +1,10 @@
+/*
+ *  @filename       Person.cpp
+ *  @fileheader     Person.h
+ *  @tile           Person
+ *  @author         Team Infection
+ *
+ */
 #include "Person.h"
 
 Person::Person(char s): state(s) {

@@ -1,3 +1,9 @@
+/*
+ *  @filename       Disease.h
+ *  @tile           Disease
+ *  @author         Team Infection
+ *
+ */
 #ifndef GUARD_DISEASE_H
 #define GUARD_DISEASE_H
 

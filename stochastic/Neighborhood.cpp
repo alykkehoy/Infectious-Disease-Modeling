@@ -1,3 +1,10 @@
+/*
+ *  @filename       Neighborhood.cpp
+ *  @fileheader     Neighborhood.h
+ *  @tile           Neighborhood
+ *  @author         Team Infection
+ *
+ */
 #include <utility>
 #include "Neighborhood.h"
 #include "Map.h"

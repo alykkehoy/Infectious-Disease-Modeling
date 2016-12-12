@@ -1,3 +1,9 @@
+/*
+ *  @filename       Text_parse.h
+ *  @tile           Text_parse
+ *  @author         Team Infection
+ *
+ */
 #ifndef GUARD_TEXT_PARSE_H
 #define GUARD_TEXT_PARSE_H
 

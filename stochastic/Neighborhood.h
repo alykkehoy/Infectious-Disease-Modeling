@@ -1,3 +1,9 @@
+/*
+ *  @filename       Neighborhood.h
+ *  @tile           Neighborhood
+ *  @author         Team Infection
+ *
+ */
 #ifndef GUARD_NEIGHBORHOOD_H
 #define GUARD_NEIGHBORHOOD_H
 
