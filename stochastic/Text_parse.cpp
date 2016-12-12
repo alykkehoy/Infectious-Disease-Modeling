@@ -19,81 +19,59 @@ using std::cerr;
 using std::endl;
 
 //parse input text
-Text_parse::Text_parse(string fileName)
-{
+Text_parse::Text_parse(string fileName) {
     ifstream inFile;
     inFile.open(fileName);
 
-    if(inFile.fail()) //check for error in file reading
+    if (inFile.fail()) //check for error in file reading
     {
         cerr << "Error opening parameter file for simulation" << endl;
         exit(1); //exit the program
     }
-    while(!inFile.eof())
-    { //while not end of file
+    while (!inFile.eof()) { //while not end of file
 
         string pname;
         inFile >> pname;
-        if (pname == "diseaseName")
-        {
-          string s;
-          inFile >> s;
-          Text_parse::setDiseaseName(s);
-        }
-        else if (pname == "diseaseModel")
-        {
-          string s;
-          inFile >> s;
-          Text_parse::setDiseaseModel(s);
-        }
-        else if (pname == "alpha")
-        {
-          int x;
-          inFile >> x;
-          Text_parse::setAlpha(x);
-        }
-        else if (pname == "beta")
-        {
-          int x;
-          inFile >> x;
-          Text_parse::setBeta(x);
-        }
-        else if (pname == "mortality")
-        {
-          int x;
-          inFile >> x;
-          Text_parse::setMortality(x);
-        }
-        else if (pname == "range")
-        {
-          int x;
-          inFile >> x;
-          Text_parse::setRange(x);
-        }
-        else if (pname == "pop_width")
-        {
-          int x;
-          inFile >> x;
-          Text_parse::setPop_width(x);
-        }
-        else if (pname == "pop_height")
-        {
-          int x;
-          inFile >> x;
-          Text_parse::setPop_height(x);
-        }
-        else if (pname == "sim_len")
-        {
-          int x;
-          inFile >> x;
-          Text_parse::setSim_len(x);
-        }
-        else if (pname == "seed")
-        {
-          long l;
-          inFile >> l;
-        }
-        else //incorrect input
+        if (pname == "diseaseName") {
+            string s;
+            inFile >> s;
+            Text_parse::setDiseaseName(s);
+        } else if (pname == "diseaseModel") {
+            string s;
+            inFile >> s;
+            Text_parse::setDiseaseModel(s);
+        } else if (pname == "alpha") {
+            int x;
+            inFile >> x;
+            Text_parse::setAlpha(x);
+        } else if (pname == "beta") {
+            int x;
+            inFile >> x;
+            Text_parse::setBeta(x);
+        } else if (pname == "mortality") {
+            int x;
+            inFile >> x;
+            Text_parse::setMortality(x);
+        } else if (pname == "range") {
+            int x;
+            inFile >> x;
+            Text_parse::setRange(x);
+        } else if (pname == "pop_width") {
+            int x;
+            inFile >> x;
+            Text_parse::setPop_width(x);
+        } else if (pname == "pop_height") {
+            int x;
+            inFile >> x;
+            Text_parse::setPop_height(x);
+        } else if (pname == "sim_len") {
+            int x;
+            inFile >> x;
+            Text_parse::setSim_len(x);
+        } else if (pname == "seed") {
+            long l;
+            inFile >> l;
+        } else //incorrect input
         {
             cout << "Input file error detected." << endl;
         }

@@ -14,26 +14,26 @@
 #include "Map.h"
 #include "Disease.h"
 
-Map::Map(int width, int height): rows(width), cols(height) {
+Map::Map(int width, int height) : rows(width), cols(height) {
     srand(time(NULL));
-    std::default_random_engine generator {
-        std::random_device()()
+    std::default_random_engine generator{
+            std::random_device()()
     };
-    population = new Person * [rows];
+    population = new Person *[rows];
     for (int i = 0; i < rows; i++) {
         population[i] = new Person[cols];
     }
     setEveryoneHealthy();
 }
 
-Map::Map(Map & original) {
+Map::Map(Map &original) {
     rows = original.get_rows();
     cols = original.get_cols();
     srand(time(NULL));
-    std::default_random_engine generator {
-        std::random_device()()
+    std::default_random_engine generator{
+            std::random_device()()
     };
-    population = new Person * [rows];
+    population = new Person *[rows];
     for (int i = 0; i < rows; i++) {
         population[i] = new Person[cols];
         for (int j = 0; j < cols; j++) {
@@ -54,13 +54,13 @@ Map::~Map() {
     population = NULL;
 }
 
-Map & Map::operator = (Map
-    const & arg) {
+Map &Map::operator=(Map
+                    const &arg) {
     rows = arg.get_rows();
     cols = arg.get_cols();
     srand(time(NULL));
-    std::default_random_engine generator {
-        std::random_device()()
+    std::default_random_engine generator{
+            std::random_device()()
     };
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
@@ -74,7 +74,7 @@ Map & Map::operator = (Map
     return *this;
 }
 
-Person * * Map::getGrid() {
+Person **Map::getGrid() {
     return population;
 }
 
@@ -89,11 +89,11 @@ void Map::setEveryoneHealthy() {
 }
 
 //this function generates a random infected person somewhere in the grid as well as an infection time
-void Map::random_seed(Disease & disease) {
-    std::default_random_engine generator {
-        std::random_device()()
+void Map::random_seed(Disease &disease) {
+    std::default_random_engine generator{
+            std::random_device()()
     };
-    std::uniform_int_distribution < int > distribution(1, 100);
+    std::uniform_int_distribution<int> distribution(1, 100);
     int rand_x = ((double) distribution(generator) / 100) * rows;
     int rand_y = ((double) distribution(generator) / 100) * cols;
 
@@ -102,7 +102,7 @@ void Map::random_seed(Disease & disease) {
     set_person_infection_time(rand_x, rand_y, disease.getAlpha());
 }
 
-void Map::random_seed(Disease & disease, int num_seeds) {
+void Map::random_seed(Disease &disease, int num_seeds) {
     for (int i = 0; i < num_seeds; i++) {
         random_seed(disease);
     }
@@ -111,10 +111,10 @@ void Map::random_seed(Disease & disease, int num_seeds) {
 void Map::random_seed_immunity(int percent) {
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
-            std::default_random_engine generator {
-                std::random_device()()
+            std::default_random_engine generator{
+                    std::random_device()()
             };
-            std::uniform_int_distribution < int > distribution(1, 100);
+            std::uniform_int_distribution<int> distribution(1, 100);
             int rand = ((double) distribution(generator));
             if ((rand) <= percent) {
                 population[i][j].set_immune(true);

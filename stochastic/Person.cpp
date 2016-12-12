@@ -7,7 +7,7 @@
  */
 #include "Person.h"
 
-Person::Person(char s): state(s) {
+Person::Person(char s) : state(s) {
     infectionTime = 0;
     num_infected = 0;
     immune = false;
@@ -43,6 +43,7 @@ void Person::setState(char s) {
 int Person::get_num_infected() {
     return num_infected;
 }
+
 void Person::increment_num_infected(int num) {
     num_infected += num;
 }

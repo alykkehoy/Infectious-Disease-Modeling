@@ -12,21 +12,24 @@
 using namespace std;
 
 class SIR {
-    private:
+private:
 
     double t, S, I, R, Pop[3];
     double dPop[3], step;
 
     double beta, gamma;
     double tmax;
-    public:
+public:
 
     SIR();
+
     SIR(double beta0, double gamma0, double step0, double S00, \
         double I00, double tmax0);
+
     ~SIR();
 
     void Diff(double Pop[3]);
+
     void Runge_Kutta();
 
     void output();
@@ -45,6 +48,7 @@ SIR::SIR(double beta0, double gamma0, double step0, double S00, \
 
     tmax = tmax0;
 }
+
 SIR::~SIR() {
 
 }
@@ -114,12 +118,11 @@ void SIR::output() {
         Runge_Kutta();
         t += step;
         cout << t << "   		" << S << " 		  " << I << "	  		 " << R << "		   " << endl;
-    }
-
-    while (t < tmax);
+    } while (t < tmax);
 
 }
-int main(int argc, char * * argv) {
+
+int main(int argc, char **argv) {
 
     double beta0 = 1.5;
     double gamma0 = 0.2;
