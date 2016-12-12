@@ -2,7 +2,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
-#include "text_parse.h"
+#include "Text_parse.h"
 
 using std::ifstream;
 using std::cout;

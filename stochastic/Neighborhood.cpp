@@ -1,6 +1,6 @@
 #include <utility>
-#include "neighborhood.h"
-#include "map.h"
+#include "Neighborhood.h"
+#include "Map.h"
 
 using std::vector;
 using std::pair;

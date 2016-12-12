@@ -1,4 +1,12 @@
-#include <vector> 
+/*
+ *  @filename       Model.cpp
+ *  @fileheader     Model.h
+ *  @tile           Model
+ *  @author         Team Infection
+ *
+ */
+
+#include <vector>
 #include "Model.h"
 
 

@@ -1,8 +1,8 @@
 #include <iostream>
 #include <array>
 
-#include "map.h"
-#include "disease.h"
+#include "Map.h"
+#include "Disease.h"
 #include "Model.h"
 
 using std::cout;

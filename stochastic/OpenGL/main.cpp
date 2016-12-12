@@ -5,8 +5,8 @@
 #include "Shader.h"
 #include "Mesh.h"
 
-#include "../map.h"
-#include "../disease.h"
+#include "../Map.h"
+#include "../Disease.h"
 #include "../Model.h"
 
 int main(int argc, char** argv) {

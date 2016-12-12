@@ -1,3 +1,10 @@
+/*
+ *  @filename       Model.cpp
+ *  @fileheader
+ *  @tile           Model
+ *  @author         Team Infection
+ *
+ */
 #include "Disease.h"
 
 // alpha average infectious period (aka 1/alpha)
