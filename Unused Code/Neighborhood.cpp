@@ -3,11 +3,13 @@
  *  @fileheader     Neighborhood.h
  *  @tile           Neighborhood
  *  @author         Team Infection
+ *  @description    Intended to be implemented in stochastic model.
+ *                  Returns pairs of coordinates that correlate with people in the map.
  *
  */
 #include <utility>
 #include "Neighborhood.h"
-#include "Map.h"
+#include "../stochastic/Map.h"
 
 using std::vector;
 using std::pair;

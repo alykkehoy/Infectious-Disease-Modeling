@@ -2,6 +2,8 @@
  *  @filename       Neighborhood.h
  *  @tile           Neighborhood
  *  @author         Team Infection
+ *  @description    Intended to be implemented in stochastic model.
+ *                  Returns pairs of coordinates that correlate with people in the map.
  *
  */
 #ifndef GUARD_NEIGHBORHOOD_H
