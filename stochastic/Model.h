@@ -10,6 +10,7 @@
 #include <vector>
 #include <memory>
 #include <fstream>
+#include <string>
 
 #include "Compartments/Compartment.h"
 #include "Compartments/S.h"
@@ -19,7 +20,7 @@
 
 class Model {
 public:
-    Model(std::string name, std::vector <std::shared_ptr<Compartment >> model);
+    Model(std::string name, std::vector <std::shared_ptr<Compartment>> model);
 
     Model(std::string name);
 

@@ -155,38 +155,35 @@
     <Text Include="..\..\stochastic\_sim1.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\stochastic\analytics.cpp" />
+    <ClCompile Include="..\..\stochastic\Compartments\Compartment.cpp" />
+    <ClCompile Include="..\..\stochastic\Compartments\E.cpp" />
+    <ClCompile Include="..\..\stochastic\Compartments\I.cpp" />
+    <ClCompile Include="..\..\stochastic\Compartments\R.cpp" />
+    <ClCompile Include="..\..\stochastic\Compartments\S.cpp" />
     <ClCompile Include="..\..\stochastic\disease.cpp" />
     <ClCompile Include="..\..\stochastic\map.cpp" />
     <ClCompile Include="..\..\stochastic\Model.cpp" />
-    <ClCompile Include="..\..\stochastic\neighborhood.cpp" />
-    <ClCompile Include="..\..\stochastic\OpenGL stuff\Display.cpp" />
-    <ClCompile Include="..\..\stochastic\OpenGL stuff\main.cpp" />
-    <ClCompile Include="..\..\stochastic\OpenGL stuff\Mesh.cpp" />
-    <ClCompile Include="..\..\stochastic\OpenGL stuff\Shader.cpp" />
+    <ClCompile Include="..\..\stochastic\OpenGL\Display.cpp" />
+    <ClCompile Include="..\..\stochastic\OpenGL\main.cpp" />
+    <ClCompile Include="..\..\stochastic\OpenGL\Mesh.cpp" />
+    <ClCompile Include="..\..\stochastic\OpenGL\Shader.cpp" />
     <ClCompile Include="..\..\stochastic\person.cpp" />
-    <ClCompile Include="..\..\stochastic\States\E.cpp" />
-    <ClCompile Include="..\..\stochastic\States\I.cpp" />
-    <ClCompile Include="..\..\stochastic\States\R.cpp" />
-    <ClCompile Include="..\..\stochastic\States\S.cpp" />
-    <ClCompile Include="..\..\stochastic\States\State.cpp" />
     <ClCompile Include="..\..\stochastic\text_parse.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\stochastic\analytics.h" />
+    <ClInclude Include="..\..\stochastic\Compartments\Compartment.h" />
+    <ClInclude Include="..\..\stochastic\Compartments\E.h" />
+    <ClInclude Include="..\..\stochastic\Compartments\I.h" />
+    <ClInclude Include="..\..\stochastic\Compartments\R.h" />
+    <ClInclude Include="..\..\stochastic\Compartments\S.h" />
     <ClInclude Include="..\..\stochastic\disease.h" />
     <ClInclude Include="..\..\stochastic\map.h" />
     <ClInclude Include="..\..\stochastic\Model.h" />
-    <ClInclude Include="..\..\stochastic\neighborhood.h" />
-    <ClInclude Include="..\..\stochastic\OpenGL stuff\Display.h" />
-    <ClInclude Include="..\..\stochastic\OpenGL stuff\Mesh.h" />
-    <ClInclude Include="..\..\stochastic\OpenGL stuff\Shader.h" />
+    <ClInclude Include="..\..\stochastic\OpenGL\Display.h" />
+    <ClInclude Include="..\..\stochastic\OpenGL\Mesh.h" />
+    <ClInclude Include="..\..\stochastic\OpenGL\Shader.h" />
     <ClInclude Include="..\..\stochastic\person.h" />
-    <ClInclude Include="..\..\stochastic\States\E.h" />
-    <ClInclude Include="..\..\stochastic\States\I.h" />
-    <ClInclude Include="..\..\stochastic\States\R.h" />
-    <ClInclude Include="..\..\stochastic\States\S.h" />
-    <ClInclude Include="..\..\stochastic\States\State.h" />
     <ClInclude Include="..\..\stochastic\text_parse.h" />
   </ItemGroup>
   <ItemGroup>
