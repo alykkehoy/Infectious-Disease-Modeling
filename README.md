@@ -20,3 +20,5 @@ To record your iteration data, initialize a counter for your model and pass in y
 EXPORTING TO A CSV
 ==================
 To export the data, call the single argument function 'export_counters' on your model object, and pass in a file name.
+
+https://docs.google.com/presentation/d/16KkOZWPbrZJvsBUbHZHHWpwsA_D2TFLOCbWqj9dr534/edit#slide=id.g1a11fe49bf_0_9
