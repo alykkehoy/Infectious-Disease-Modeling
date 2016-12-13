@@ -11,7 +11,8 @@
 
 int main(int argc, char **argv) {
 
-    Model m_sir("SIR");
+    //Model m_sir("SIR");
+	Model m_sir("SEIR");
 
     int pop_width = 500;
     int pop_height = 500;
@@ -20,7 +21,8 @@ int main(int argc, char **argv) {
 
     //Disease disease("seir test", 3, 5, 10, 3, 5);
     //Disease disease("sir", 3, 15, 10, 2, 2);
-    Disease disease("sir_small range", 3, 20, 10);
+    //Disease disease("sir_small range", 3, 20, 10);
+	Disease disease("H1N1", 3, 43, 10);
 
     Map map(pop_width, pop_height);
 
@@ -28,7 +30,7 @@ int main(int argc, char **argv) {
 
     map.random_seed(disease, num_seeds);
 
-    map.random_seed_immunity(5);
+    //map.random_seed_immunity(10);
 
     Display display(pop_height, pop_width, "Disease Map");
 
