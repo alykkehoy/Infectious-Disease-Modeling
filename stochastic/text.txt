@@ -1,3 +1,0 @@
-compare stochastic and deterministic
-  behaviors need to match on average
-
