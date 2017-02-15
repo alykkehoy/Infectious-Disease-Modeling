@@ -33,8 +33,33 @@ Model m_custom("SIR", model); //String name, vector of the model
 #### Creating Custom Compartments 
 To create a new custom Compartment, a new class needs to be written that inherits the State class. The take_step function must be defined for the new Compartment, as well as a unique character to represent the Compartment on a Map.
 
+#### Creating a Disease
+To creat a Disease, create a Disease object with a string for the name, a double representing 1/alpha, a double representing the beta value, and a double for the mortality rate. Additionaly you can add and integer for the range, default set to 1, and an integer for the time representing the incubation period. The range represents the number of spaces in all directions a Disease can infect. Here is an example of creating H1N1 using data from US National Library of Medicine:
+```
+Disease disease("H1N1", 3, 43, 10);
+```
+
+#### Creating a Map
+
+#### Seeding the Map
+To seed a Map, call the random_seed function on a Map passing in a Disease and an integer for the number of people to be seeded with the Disease. If a number is not provided the function defaults to 1 person.
+
+#### Taking a Step
+
 #### Collecing Data From The Model / Exporting to a CSV
 To record your iteration data, initialize a counter for your model and pass in your map. To export the data, call the single argument function 'export_counters' on your model object, and pass in a file name.
+
+#### Example of Everything Together
+This is an example of modeling H1N1 using the SIR model for 50 steps.
+```
+Model sir("SIR");
+Disease disease("H1N1", 3, 43, 10);
+Map map(100, 100);
+map.random_seed(disease, 2);
+
+map = sir.take_step(disease, map, 50);
+map.print_map();
+```
 
 ## API
 
