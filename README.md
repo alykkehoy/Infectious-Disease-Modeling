@@ -15,6 +15,7 @@ The sample program can be compiled by running `make` in the stochastic folder.
 #### Creating a Model
 Available pre-packed compartments are S, I, R, and E. We recommend using these to create the SIR, SIRS, and SEIR models, but any combiniation is usable. These can be created by calling the model constructor with a string containing the compartment combininations as a name. Here are some examples:
 ```
+\\Model model(string Name);
 Model sir("SIR");
 Model seir("SEIR");
 Model other("SRIES");
@@ -23,12 +24,16 @@ Model other("SRIES");
 #### Creating a Disease
 To creat a Disease, create a Disease object with a string for the name, a double representing 1/alpha, a double representing the beta value, and a double for the mortality rate. Additionaly you can add and integer for the range, default set to 1, and an integer for the time representing the incubation period. The range represents the number of spaces in all directions a Disease can infect. Here is an example of creating H1N1 using data from US National Library of Medicine:
 ```
+\\Disease disease(string Name, double Alpha, double Beta, double Mortality Rate);
+\\Disease disease(string Name, double Alpha, double Beta, double Mortality Rate, integer Range);
+\\Disease disease(string Name, double Alpha, double Beta, double Mortality Rate, integer Range, integer Incubation Period);
 Disease disease("H1N1", 3, 43, 10);
 ```
 
 #### Creating a Map
 Since Maps are represented as rectangles, to create a Map simply create a Map object with a width and a height. An example of a few maps with a population of 100 are:
 ```
+\\Map map(integer Rows, integer Columns);
 Map map(10,10);
 Map map2(25,4);
 Map map3(20, 5);
@@ -36,6 +41,10 @@ Map map3(20, 5);
 
 #### Seeding the Map
 To seed a Map, call the random_seed function on a Map passing in a Disease and an integer for the number of people to be seeded with the Disease. If a number is not provided the function defaults to 1 person.
+```
+map.random_seed(disease)
+map2.random_seed(disease, 5);
+```
 
 #### Taking a Step
 To take a step, call the take_step function from the Model and give it the Disease and Map. Multiple steps can be taken by also passing in the number of steps to take. Here are examples of both options:
@@ -70,13 +79,13 @@ To record your iteration data, initialize a counter for your model and pass in y
 To creat a custom model, create a vector using a shared_ptr to hold the Compartments. Push desired compartments to the vector in the order they should be used. Here is an example:
 ```
 std::vector<std::shared_ptr<Compartment>> model;
-model.push_back(std::shared_ptr<Compartment>(new S));
-model.push_back(std::shared_ptr<Compartment>(new I));
-model.push_back(std::shared_ptr<Compartment>(new S));
+model.push_back(std::shared_ptr<Compartment>(new customS));
+model.push_back(std::shared_ptr<Compartment>(new customI));
+model.push_back(std::shared_ptr<Compartment>(new customS));
 Model m_custom("SIR", model); //String name, vector of the model
 ```
 
-#### Creating Custom Compartments 
+#### Creating Custom Compartments
 To create a new custom Compartment, a new class needs to be written that inherits the State class. The take_step function must be defined for the new Compartment, as well as a unique character to represent the Compartment on a Map.
 
 ## API
