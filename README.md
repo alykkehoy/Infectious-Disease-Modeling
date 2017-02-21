@@ -7,11 +7,14 @@ This C++ library can be used to model infectious diseases using both stochastic 
 Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
 
 ## Installation
-
+#### Stochatic Model
 Compiling the library can be done by running `make lib` in the stochastic folder.
 The sample program can be compiled by running `make` in the stochastic folder.
 
-## Basic Options
+#### Deterministic Model
+Running `make` in the deterministic folder will compile the models seperatly. Each model is an independant exicutable. This is a by product of the Deterministic system for modeling.
+
+## Basic Options: Stochastic Model
 #### Creating a Model
 Available pre-packed compartments are S, I, R, and E. We recommend using these to create the SIR, SIRS, and SEIR models, but any combiniation is usable. These can be created by calling the model constructor with a string containing the compartment combininations as a name. Here are some examples:
 ```
@@ -71,7 +74,7 @@ map = sir.take_step(disease, map, 50);
 map.print_map();
 ```
 
-## Advanced Options
+## Advanced Options: Stochastic Model
 #### Collecing Data From The Model / Exporting to a CSV
 To record your iteration data, initialize a counter for your model and pass in your map. After the model is finished running, to export the data in a csv, call the function 'export_counters' on your model object and pass in a file name to be used.
 

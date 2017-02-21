@@ -20,3 +20,6 @@ test3:  Sis_model.o
 	
 clean:
 	rm *.o
+	rm Sir_model
+	rm Sirs_model
+	rm Sis_model
