@@ -8,7 +8,7 @@ S::~S() {
 
 }
 
-void S::take_step(int i, int j, Disease& disease, Map& nextMap, Map& current_map) {
+void S::take_step(int i, int j, Disease& disease, Map& current_map) {
 	//VAR NAMES NEED CHANGED BELOW
 	int x = j;
 	int y = i;
@@ -23,9 +23,9 @@ void S::take_step(int i, int j, Disease& disease, Map& nextMap, Map& current_map
 						if (!(y + k == y && x + l == x)) {
 							if (current_map.get_person_state(y + k, x + l) == 'I') {
 								if (rand() % 100 <= disease.getBeta()) {
-									nextMap.increment_num_infected(y + k, x + l);
-									nextMap.set_person_state(y, x, next_char);
-									nextMap.set_person_infection_time(y, x, disease.getAlpha());
+									current_map.increment_num_infected(y + k, x + l);
+									current_map.set_next_person_state(y, x, next_char);
+									current_map.set_next_person_infection_time(y, x, disease.getAlpha());
 									return;
 								}
 							}

@@ -10,12 +10,12 @@ lib:  Disease.o Compartments/Compartment.o Compartments/S.o Compartments/I.o Com
 	$(CXX) $^ -o libstoch.so -shared $(CXXLIBS)
 
 test:  Sample.o libstoch.so
-	$(CXX) $^ -o Sample -L. -lstoch$(CXXLIBS)
+	$(CXX) $^ -o Sample -L. -lstoch $(CXXLIBS)
 	
 %.o: %.cpp %.h
 	$(CXX) $(CXXFLAGS) -c $< -fPIC -o $@
 	
 clean:
-	rm Sample
 	rm *.o
 	rm Compartments/*.o
+	rm Sample

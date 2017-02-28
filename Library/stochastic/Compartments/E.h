@@ -10,7 +10,7 @@ public:
 	E();
 	~E();
 
-	void take_step(int i, int j, Disease& disease, Map& nextMap, Map& current_map);
+	void take_step(int i, int j, Disease& disease, Map& current_map);
 
 private:
 };

@@ -32,9 +32,9 @@ public:
 
     void export_counters(std::string file_name);
 
-    Map take_step(Disease &disease, Map &current_map);
+    void take_step(Disease &disease, Map &current_map);
 
-    Map take_step(Disease &disease, Map &current_map, int steps);
+    void take_step(Disease &disease, Map &current_map, int steps);
 
     std::string get_name();
 

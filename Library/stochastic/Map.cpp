@@ -19,9 +19,12 @@ Map::Map(int width, int height) : rows(width), cols(height) {
     std::default_random_engine generator{
             std::random_device()()
     };
+
     population = new Person *[rows];
+    next_population = new Person *[rows];
     for (int i = 0; i < rows; i++) {
         population[i] = new Person[cols];
+        next_population[i] = new Person[cols];
     }
     setEveryoneHealthy();
 }
@@ -33,9 +36,12 @@ Map::Map(Map &original) {
     std::default_random_engine generator{
             std::random_device()()
     };
+
+    next_population = new Person *[rows];
     population = new Person *[rows];
     for (int i = 0; i < rows; i++) {
-        population[i] = new Person[cols];
+      next_population[i] = new Person[cols];
+      population[i] = new Person[cols];
         for (int j = 0; j < cols; j++) {
             population[i][j].setState(original.get_person_state(i, j));
             population[i][j].set_immune(original.get_immune(i, j));
@@ -49,9 +55,12 @@ Map::Map(Map &original) {
 Map::~Map() {
     for (int i = 0; i < rows; i++) {
         delete[] population[i];
+        delete[] next_population[i];
     }
     delete[] population;
+    delete[] next_population;
     population = NULL;
+    next_population = NULL;
 }
 
 Map &Map::operator=(Map
@@ -227,4 +236,26 @@ int Map::get_incubation_timer(int i, int j) const {
 
 void Map::set_incubation_timer(int i, int j, int time) {
     population[i][j].set_incubation_timer(time);
+}
+
+void Map::set_next_incubation_timer(int i, int j, int time){
+  next_population[i][j].set_incubation_timer(time);
+}
+
+void Map::set_next_person_state(int i, int j, char state){
+  next_population[i][j].setState(state);
+}
+
+void Map::set_next_person_infection_time(int i, int j, int time){
+  next_population[i][j].set_infection_time(time);
+}
+
+void Map::set_next_num_infected(int i, int j, int num){
+  next_population[i][j].set_num_infected(num);
+}
+
+void Map::swap(){
+  Person **temp = population;
+  population = next_population;
+  next_population = temp;
 }

@@ -31,29 +31,21 @@ public:
     void random_seed_immunity(int percent);
 
     int get_rows() const;
-
     int get_cols() const;
 
     Person **getGrid();
 
     char get_person_state(int i, int j) const;
-
     int get_person_infection_time(int i, int j) const;
-
     int get_num_infected(int i, int j) const;
-
     bool get_immune(int i, int j) const;
-
     int get_incubation_timer(int i, int j) const;
 
     void set_person_state(int i, int j, char state);
-
     void set_person_infection_time(int i, int j, int time);
-
     void set_num_infected(int i, int j, int num);
 
     void increment_num_infected(int i, int j);
-
     void increment_num_infected(int i, int j, int num);
 
     void set_immune(int i, int j, bool a);
@@ -68,7 +60,14 @@ public:
 
     void print_test_map();
 
+    void set_next_person_state(int i, int j, char state);
+    void set_next_person_infection_time(int i, int j, int time);
+    void set_next_num_infected(int i, int j, int num);
+    void set_next_incubation_timer(int i, int j, int time);
+    void swap();
+
 private:
+    Person **next_population;
     Person **population;
     int rows;
     int cols;

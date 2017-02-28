@@ -16,7 +16,7 @@ class Compartment {
     Compartment();
     ~Compartment();
 
-    virtual void take_step(int i, int j, Disease & disease, Map & nextMap, Map & current_map) = 0;
+    virtual void take_step(int i, int j, Disease & disease, Map & current_map) = 0;
 
     char get_char_rep();
     void create_next_char(std::vector < std::shared_ptr < Compartment >> model);
