@@ -10,7 +10,7 @@ public:
 	I();
 	~I();
 
-	void take_step(int i, int j, Disease& disease, Map& current_map);
+	bool take_step(int i, int j, Disease& disease, Map& current_map);
 
 private:
 };

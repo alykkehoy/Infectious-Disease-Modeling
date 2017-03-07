@@ -26,8 +26,6 @@ public:
 
     ~Model();
 
-    void init_counters(Map &map);
-
     void print_counters();
 
     void export_counters(std::string file_name);
@@ -35,13 +33,13 @@ public:
     void take_step(Disease &disease, Map &current_map);
 
     void take_step(Disease &disease, Map &current_map, int steps);
-
+    
     std::string get_name();
 
 private:
-    void take_count(Map &map);
+    int findCompartment(char state);
+    void init_counters();
 
-    bool counters_on = false;
     std::string m_name;
     std::vector <std::shared_ptr<Compartment >> m_model;
     std::vector <std::vector<int >> m_counters;

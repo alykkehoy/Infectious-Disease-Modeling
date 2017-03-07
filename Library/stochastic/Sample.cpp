@@ -17,7 +17,7 @@ using std::endl;
 int main(int argc, char **argv) {
 
     //Declare a new model
-    Model m_sir("SIS");
+    Model m_sir("SIR");
 
     /*
     std::vector<std::shared_ptr<Compartment>> model;
@@ -32,16 +32,16 @@ int main(int argc, char **argv) {
     Disease disease("sir_small range", 3, 20, 10);
 
     //Initialize map
-    Map map(500, 500);
+    Map map(10, 10);
 
-    m_sir.init_counters(map);
+    //m_sir.init_counters(map);
 
     map.random_seed(disease, 1);
 
-    m_sir.take_step(disease, map, 200);
+    m_sir.take_step(disease, map, 30);
 
     //Print the map
-    //map.print_map();
-
+    map.print_map();
+    m_sir.print_counters();
     return 0;
 }

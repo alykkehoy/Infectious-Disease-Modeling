@@ -8,7 +8,7 @@ S::~S() {
 
 }
 
-void S::take_step(int i, int j, Disease& disease, Map& current_map) {
+bool S::take_step(int i, int j, Disease& disease, Map& current_map) {
 	//VAR NAMES NEED CHANGED BELOW
 	int x = j;
 	int y = i;
@@ -26,7 +26,7 @@ void S::take_step(int i, int j, Disease& disease, Map& current_map) {
 									current_map.increment_num_infected(y + k, x + l);
 									current_map.set_next_person_state(y, x, next_char);
 									current_map.set_next_person_infection_time(y, x, disease.getAlpha());
-									return;
+									return true;
 								}
 							}
 						}
@@ -35,5 +35,5 @@ void S::take_step(int i, int j, Disease& disease, Map& current_map) {
 			}
 		}
 	}
-	return;
+	return false;
 }
