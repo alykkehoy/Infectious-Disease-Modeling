@@ -2,10 +2,6 @@
 
 This C++ library can be used to model infectious diseases using both stochastic and deterministic systems with support for known scientific models including SIR/SEIR/SIS as well as the ability to create custom models. As well as the ablility for custom containers to be ceated and used in models.
 
-## Code Example
-
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
-
 ## Installation
 #### Stochatic Model
 Compiling the library can be done by running `make lib` in the stochastic folder.
@@ -52,8 +48,8 @@ map2.random_seed(disease, 5);
 #### Taking a Step
 To take a step, call the take_step function from the Model and give it the Disease and Map. Multiple steps can be taken by also passing in the number of steps to take. Here are examples of both options:
 ```
-map = sir.take_step(disease, map);
-map = sir.take_step(disease, map, 10);
+sir.take_step(disease, map);
+sir.take_step(disease, map, 10);
 ```
 
 #### Printing the Map
@@ -70,7 +66,7 @@ Disease disease("H1N1", 3, 43, 10);
 Map map(100, 100);
 map.random_seed(disease, 2);
 
-map = sir.take_step(disease, map, 50);
+sir.take_step(disease, map, 50);
 map.print_map();
 ```
 
@@ -94,9 +90,5 @@ To create a new custom Compartment, a new class needs to be written that inherit
 ## API
 
 INPROGRESS
-
-## Contributors
-
-Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
 
 https://docs.google.com/presentation/d/16KkOZWPbrZJvsBUbHZHHWpwsA_D2TFLOCbWqj9dr534/edit#slide=id.g1a11fe49bf_0_9
