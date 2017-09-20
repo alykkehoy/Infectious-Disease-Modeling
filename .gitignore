@@ -9,7 +9,7 @@
 
 # Clion files
 .idea/
-CMakeLists.txt
+#CMakeLists.txt
 /cmake-build-debug/*
 
 # Test Files
